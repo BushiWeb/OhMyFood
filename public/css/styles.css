@@ -1,3 +1,5 @@
+@charset "UTF-8";
+/* Import des librairies externes */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -333,6 +335,12 @@ template {
  */
 [hidden] {
   display: none;
+}
+
+/* Import des styles de base */
+/* Tous les éléments ont un box-sizing: border-box, sauf ceux dont cette propriété est redéfinie dans le fichier normalize (sélecteurs plus spécifiques) */
+* {
+  box-sizing: border-box;
 }
 
 /*# sourceMappingURL=styles.css.map */
