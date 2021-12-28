@@ -1,4 +1,4 @@
-/* Tous les éléments ont un box-sizing: border-box, sauf ceux dont cette propriété est redéfinie dans le fichier normalize (sélecteurs plus spécifiques) */
+/* Box-sizing pour tous les éléments sauf ceux dont la propriété est redéfinie dans normalize.css */
 * {
     box-sizing: border-box;
 }

@@ -1,6 +1,6 @@
-@charset "UTF-8";
 /* Import utils */
-/* Polices */
+/* Fonts */
+/* Colors */
 /* Import vendors */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -340,7 +340,7 @@ template {
 }
 
 /* Import base styles */
-/* Tous les éléments ont un box-sizing: border-box, sauf ceux dont cette propriété est redéfinie dans le fichier normalize (sélecteurs plus spécifiques) */
+/* All elements have the property box-sizing: border-box, except those whose property is redefined in normalize.css */
 * {
   box-sizing: border-box;
 }
