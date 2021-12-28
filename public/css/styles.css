@@ -1,5 +1,7 @@
 @charset "UTF-8";
-/* Import des librairies externes */
+/* Import utils */
+/* Polices */
+/* Import vendors */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -337,10 +339,18 @@ template {
   display: none;
 }
 
-/* Import des styles de base */
+/* Import base styles */
 /* Tous les éléments ont un box-sizing: border-box, sauf ceux dont cette propriété est redéfinie dans le fichier normalize (sélecteurs plus spécifiques) */
 * {
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-family: "Shrikhand", cursive;
 }
 
 /*# sourceMappingURL=styles.css.map */

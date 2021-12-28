@@ -1,5 +1,9 @@
-/* Import des librairies externes */
+/* Import utils */
+@import "./utils/variables";
+
+/* Import vendors */
 @import "./vendors/normalize";
 
-/* Import des styles de base */
+/* Import base styles */
 @import "./base/box-sizing";
+@import "./base/fonts";
