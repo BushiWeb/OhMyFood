@@ -1,0 +1,45 @@
+.operating {
+    width: 100%;
+    padding: $xxl-space $page-padding $xxxl-space;
+
+    background-color: white;
+
+
+    h2 {
+        @include margin-reset;
+        margin-bottom: $m-space;
+    }
+
+
+    &__steps {
+        @include list-reset;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: $s-space;
+    }
+
+
+    &__step-card {
+        font-size: $base-font-size;
+        font-weight: bold;
+
+        background-color: $neutral-light;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1), 0px 12px 24px 0px rgba(0,0,0,0.1);
+
+        border-radius: $s-space;
+        height: 90px;
+        width: calc(100% - $s-space / 2); /* Space for the ::before pseudo-element */
+        padding-left: $m-space; /* $s-space + half of the ::before pseudo-element */
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: $s-space;
+    }
+
+
+    &__step-icon {
+        color: $neutral-dark;
+    }
+}
