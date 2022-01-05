@@ -1,3 +1,5 @@
+@charset "UTF-8";
+/* Sass modules */
 /* Import utils */
 /* Fonts */
 /* Font sizes */
@@ -460,6 +462,13 @@ header a {
   justify-content: flex-start;
   align-items: center;
   gap: 24px;
+  /* Styles de la dernière étape */
+}
+.operating__step-card:last-child {
+  background-color: rgba(147, 86, 220, 0.1);
+}
+.operating__step-card:last-child .operating__step-icon {
+  color: #9356DC;
 }
 .operating__step-icon {
   color: #7E7E7E;

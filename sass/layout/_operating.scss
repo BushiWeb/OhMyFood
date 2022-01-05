@@ -36,6 +36,15 @@
         justify-content: flex-start;
         align-items: center;
         gap: $s-space;
+
+        /* Styles de la dernière étape */
+        &:last-child {
+            background-color: color.scale($primary-color, $alpha: -90%);
+
+            .operating__step-icon {
+                color: $primary-color;
+            }
+        }
     }
 
 
