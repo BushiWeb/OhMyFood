@@ -1,5 +1,6 @@
 /* Import utils */
 @import "./utils/variables";
+@import "./utils/mixins";
 
 /* Import vendors */
 @import "./vendors/normalize";
@@ -7,6 +8,9 @@
 /* Import base styles */
 @import "./base/box-sizing";
 @import "./base/fonts";
+
+/* Import components */
+@import "./components/button";
 
 /* Import layout */
 @import "./layout/header";

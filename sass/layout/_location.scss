@@ -4,7 +4,7 @@
 
     width: 100%;
     padding: $xs-space $page-padding;
-    margin: 0;
+    @include margin-reset;
 
     background-color: $neutral-medium;
 

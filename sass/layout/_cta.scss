@@ -7,7 +7,7 @@
 
     h2 {
         text-align: center;
-        margin: 0;
+        @include margin-reset;
         margin-bottom: $xs-space;
     }
 
@@ -15,7 +15,7 @@
     p {
         font-size: $m-font-size;
         text-align: center;
-        margin: 0;
+        @include margin-reset;
         margin-bottom: $m-space;
     }
 }

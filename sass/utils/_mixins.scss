@@ -1,0 +1,14 @@
+@mixin link-reset($text-color: black) {
+    color: $text-color;
+    text-decoration: none;
+}
+
+@mixin margin-reset {
+    margin: 0;
+}
+
+@mixin list-reset {
+    list-style-type: none;
+    padding: 0;
+    @include margin-reset;
+}
