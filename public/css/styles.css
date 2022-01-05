@@ -371,11 +371,23 @@ header h1 {
 }
 header a {
   padding: 20px;
-  font-size: 1.125em;
+  font-size: 1.125rem;
   position: absolute;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+}
+
+.location {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 16px 20px;
+  margin: 0;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 16px;
 }
 
 /*# sourceMappingURL=styles.css.map */

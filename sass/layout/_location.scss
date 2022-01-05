@@ -1,0 +1,13 @@
+.location {
+    font-size: $base-font-size;
+    font-weight: bold;
+    padding: $small-space $page-padding;
+    margin: 0;
+
+    background-color: $neutral-medium;
+
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: $small-space;
+}

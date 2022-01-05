@@ -3,12 +3,15 @@ $title-font-family: 'Shrikhand', cursive;
 $text-font-family: 'Roboto', sans-serif;
 
 /* Font sizes */
-$m-font-size: 1.125em;
+$base-font-size: 1rem;
+$m-font-size: 1.125rem;
 
 /* Colors */
 $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
+$neutral-medium: #eaeaea;
 
 /* Sizes */
 $page-padding: 20px;
+$small-space: 16px;
