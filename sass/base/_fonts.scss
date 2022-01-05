@@ -2,8 +2,14 @@ body {
     font-family: $text-font-family;
 }
 
+
 h1 {
     font-family: $title-font-family;
-    font-size: 2em;
+    font-size: $xxl-font-size;
     margin: 0;
+}
+
+
+h2 {
+    font-size: $xl-font-size;
 }

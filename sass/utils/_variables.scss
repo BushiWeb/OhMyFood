@@ -5,13 +5,21 @@ $text-font-family: 'Roboto', sans-serif;
 /* Font sizes */
 $base-font-size: 1rem;
 $m-font-size: 1.125rem;
+$xl-font-size: 1.5rem;
+$xxl-font-size: 2rem;
 
 /* Colors */
 $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
-$neutral-medium: #eaeaea;
+$neutral-medium: #EAEAEA;
+$neutral-light: #F6F6F6;
 
 /* Sizes */
 $page-padding: 20px;
-$small-space: 16px;
+$xs-space: 16px;
+$s-space: 24px;
+$m-space: 32px;
+$l-space: 40px;
+$xl-space: 48px;
+$xxl-space: 54px;

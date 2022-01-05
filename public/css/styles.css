@@ -353,8 +353,12 @@ body {
 
 h1 {
   font-family: "Shrikhand", cursive;
-  font-size: 2em;
+  font-size: 2rem;
   margin: 0;
+}
+
+h2 {
+  font-size: 1.5rem;
 }
 
 /* Import layout */
@@ -381,13 +385,31 @@ header a {
 .location {
   font-size: 1rem;
   font-weight: bold;
+  width: 100%;
   padding: 16px 20px;
   margin: 0;
-  background-color: #eaeaea;
+  background-color: #EAEAEA;
   display: flex;
   justify-content: center;
   align-items: baseline;
   gap: 16px;
+}
+
+.cta {
+  width: 100%;
+  padding: 40px 20px 54px;
+  background-color: #F6F6F6;
+}
+.cta h2 {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 16px;
+}
+.cta p {
+  font-size: 1.125rem;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 32px;
 }
 
 /*# sourceMappingURL=styles.css.map */

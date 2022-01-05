@@ -1,0 +1,21 @@
+.cta {
+    width: 100%;
+    padding: $l-space $page-padding $xxl-space;
+
+    background-color: $neutral-light;
+
+
+    h2 {
+        text-align: center;
+        margin: 0;
+        margin-bottom: $xs-space;
+    }
+
+
+    p {
+        font-size: $m-font-size;
+        text-align: center;
+        margin: 0;
+        margin-bottom: $m-space;
+    }
+}
