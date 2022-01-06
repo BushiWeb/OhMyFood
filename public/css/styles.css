@@ -375,6 +375,44 @@ h2 {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1), 0px 12px 24px 0px rgba(0, 0, 0, 0.1);
 }
 
+.restaurant-card {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1), 0px 12px 24px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 172px auto auto;
+  grid-template-areas: "img img" "title fav" "location fav";
+}
+.restaurant-card img {
+  border-radius: 12px 12px 0 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding-bottom: 16px;
+  grid-area: img;
+}
+.restaurant-card h3 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: bold;
+  padding-left: 16px;
+  grid-area: title;
+}
+.restaurant-card h3 a {
+  color: black;
+  text-decoration: none;
+}
+.restaurant-card p {
+  margin: 0;
+  font-size: 1rem;
+  padding-left: 16px;
+  padding-bottom: 16px;
+  grid-area: location;
+}
+.restaurant-card .button {
+  grid-area: fav;
+}
+
 /* Import layout */
 header {
   width: 100%;

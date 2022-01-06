@@ -1,0 +1,54 @@
+.restaurant-card {
+    @include light-shadow();
+
+    border-radius:$xxs-size;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 172px auto auto;
+    grid-template-areas:
+        "img img"
+        "title fav"
+        "location fav";
+
+
+    img {
+        border-radius: $xxs-size $xxs-size 0 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        padding-bottom: $xs-space;
+
+        grid-area: img;
+    }
+
+    h3 {
+        @include margin-reset();
+
+        font-size: $m-font-size;
+        font-weight: bold;
+
+        padding-left: $xs-space;
+
+        grid-area: title;
+
+        a {
+            @include link-reset();
+        }
+    }
+
+    p {
+        @include margin-reset();
+        font-size: $base-font-size;
+
+        padding-left: $xs-space;
+        padding-bottom: $xs-space;
+
+        grid-area: location;
+    }
+
+    .button {
+        grid-area: fav;
+    }
+}
