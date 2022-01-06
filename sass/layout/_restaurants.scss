@@ -1,0 +1,20 @@
+.restaurants {
+    width: 100%;
+    padding: $xxl-space $page-padding $xxxl-space;
+
+    background-color: $neutral-light;
+
+    h2 {
+        @include margin-reset;
+        margin-bottom: $s-space;
+    }
+
+
+    ul {
+        @include list-reset;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: $s-space;
+    }
+}
