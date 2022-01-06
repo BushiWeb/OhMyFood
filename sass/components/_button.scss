@@ -21,5 +21,30 @@
         color: black;
         font-size: $xl-font-size;
         font-weight: normal;
+        box-shadow: none;
+        background: none;
+
+        position: relative;
+
+        &::after {
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f004";
+            background-image: linear-gradient(172deg,transparent 0%, transparent 50%, rgba(255,121,218,1) 50%, rgba(147,86,220,1) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-size: auto 200%;
+            background-position: 0 100%;
+            color: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: $xl-font-size;
+        }
     }
 }
