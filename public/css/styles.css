@@ -390,7 +390,7 @@ h2 {
   border-radius: 12px;
   display: grid;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 172px auto auto;
+  grid-template-rows: 46vw auto auto;
   grid-template-areas: "img img" "title fav" "location fav";
   justify-items: start;
   align-items: start;
