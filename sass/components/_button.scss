@@ -9,4 +9,5 @@
     border-radius: calc($xs-space * 2 + $base-font-size);
 
     background-image: linear-gradient(172deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+    @include light-shadow();
 }
