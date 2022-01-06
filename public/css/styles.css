@@ -392,6 +392,8 @@ h2 {
   grid-template-columns: 1fr auto;
   grid-template-rows: 172px auto auto;
   grid-template-areas: "img img" "title fav" "location fav";
+  justify-items: start;
+  align-items: start;
 }
 .restaurant-card img {
   border-radius: 12px 12px 0 0;
