@@ -566,4 +566,39 @@ header a {
   gap: 24px;
 }
 
+footer {
+  width: 100%;
+  padding: 24px 20px 32px 20px;
+  background-color: #353535;
+  color: white;
+}
+footer h2 {
+  font-family: "Shrikhand", cursive;
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 24px;
+}
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+}
+footer ul a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  text-decoration: none;
+}
+footer .footer__icon {
+  font-size: 0.75rem;
+}
+
 /*# sourceMappingURL=styles.css.map */
