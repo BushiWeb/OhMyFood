@@ -4,7 +4,6 @@
 
     background-color: white;
 
-
     h2 {
         @include margin-reset;
         margin-bottom: $m-space;
@@ -17,6 +16,9 @@
         flex-direction: column;
         align-items: flex-end;
         gap: $s-space;
+
+        /* Reset list counter to display */
+        counter-reset: step-counter;
     }
 
 
@@ -37,7 +39,36 @@
         align-items: center;
         gap: $s-space;
 
-        /* Styles de la dernière étape */
+        /* For the number placement */
+        position: relative;
+
+        /* Increment counter */
+        counter-increment: step-counter;
+
+
+        &__step-icon {
+            color: $neutral-dark;
+        }
+
+
+        /* Step number */
+        &::before {
+            content: counter(step-counter);
+            @include centered-icon();
+
+            font-size: $s-font-size;
+            font-weight: normal;
+
+            color: white;
+            background-color: $primary-color;
+
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Last step styling */
         &:last-child {
             background-color: color.scale($primary-color, $alpha: -90%);
 
@@ -45,10 +76,5 @@
                 color: $primary-color;
             }
         }
-    }
-
-
-    &__step-icon {
-        color: $neutral-dark;
     }
 }

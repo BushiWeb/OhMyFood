@@ -12,3 +12,11 @@
     padding: 0;
     @include margin-reset;
 }
+
+@mixin centered-icon($size: $s-space, $radius: 50%) {
+    width: $size;
+    height: $size;
+    line-height: $size;
+    border-radius: $radius;
+    text-align: center;
+}
