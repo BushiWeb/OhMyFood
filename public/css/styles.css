@@ -355,6 +355,7 @@ body {
 h1 {
   font-family: "Shrikhand", cursive;
   font-size: 2rem;
+  font-weight: normal;
   margin: 0;
 }
 
