@@ -13,6 +13,9 @@
     justify-items: start;
     align-items: start;
 
+    /* To make the title link cover the entire card */
+    @include position($type: relative);
+
 
     &__img {
         border-radius: $xxs-size $xxs-size 0 0;
@@ -32,9 +35,16 @@
         padding-bottom: $xxxs-size;
 
         grid-area: title;
+    }
 
-        a {
-            @include link-reset();
+    &__link {
+        @include link-reset();
+
+        /* Make the whole card clicable */
+        &::after {
+            content: "";
+            @include position($top: 0, $bottom: 0, $left: 0, $right: 0);
+            border-radius:$xxs-size;
         }
     }
 

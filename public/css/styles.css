@@ -419,6 +419,12 @@ h1 {
   grid-template-areas: "img img" "title fav" "location fav";
   justify-items: start;
   align-items: start;
+  /* To make the title link cover the entire card */
+  position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
 }
 .restaurant-card__img {
   border-radius: 12px 12px 0 0;
@@ -441,9 +447,19 @@ h1 {
   padding-bottom: 8px;
   grid-area: title;
 }
-.restaurant-card__title a {
+.restaurant-card__link {
   color: inherit;
   text-decoration: none;
+  /* Make the whole card clicable */
+}
+.restaurant-card__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 12px;
 }
 .restaurant-card__location {
   margin: 0;
