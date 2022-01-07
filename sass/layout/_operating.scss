@@ -25,8 +25,7 @@
 
 
     &__step-card {
-        font-size: $base-font-size;
-        font-weight: bold;
+        @include text-style($weight: bold);
 
         background-color: $neutral-light;
         @include light-shadow();
@@ -48,12 +47,9 @@
         /* Step number */
         &::before {
             content: counter(step-counter);
+            @include text-style($size: $s-font-size, $color: white);
             @include centered-icon();
 
-            font-size: $s-font-size;
-            font-weight: normal;
-
-            color: white;
             background-color: $primary-color;
 
             position: absolute;

@@ -1,5 +1,5 @@
 /* Rest link styles to remove underlining and default color */
-@mixin link-reset($text-color: black) {
+@mixin link-reset($text-color: inherit) {
     color: $text-color;
     text-decoration: none;
 }
@@ -26,6 +26,21 @@
     line-height: $size;
     border-radius: $radius;
     text-align: center;
+}
+
+
+/* Style text */
+@mixin text-style($color: inherit, $size: $base-font-size, $weight: normal, $align: left, $family: $text-font-family, $variant: normal, $style: normal) {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    text-align: $align;
+    font-family: $family;
+    font-variant: $variant;
+    font-style: $style;
+}
+@mixin h2-style($color: inherit, $size: $xl-font-size, $weight: bold, $align: left, $family: $text-font-family, $variant: normal, $style: normal) {
+    @include text-style($color, $size, $weight, $align, $family, $variant, $style);
 }
 
 

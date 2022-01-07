@@ -27,11 +27,10 @@
 
     &__title {
         @include margin-reset();
-
-        font-size: $m-font-size;
-        font-weight: bold;
+        @include text-style($size: $m-font-size, $weight: bold);
 
         padding-left: $xs-space;
+        padding-bottom: $xxxs-size;
 
         grid-area: title;
 
@@ -42,7 +41,7 @@
 
     &__location {
         @include margin-reset();
-        font-size: $base-font-size;
+        @include text-style();
 
         padding-left: $xs-space;
         padding-bottom: $xs-space;
@@ -50,7 +49,7 @@
         grid-area: location;
     }
 
-    .button {
+    .btn {
         grid-area: fav;
     }
 }

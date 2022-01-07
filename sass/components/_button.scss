@@ -1,9 +1,6 @@
 .btn {
-    @include link-reset(white);
-
-    font-size: $base-font-size;
-    font-weight: bold;
-    text-align: center;
+    @include link-reset();
+    @include text-style($weight: bold, $align: center, $color: white);
 
     padding: $xs-space $m-space;
     border-radius: calc($xs-space * 2 + $base-font-size);
@@ -18,8 +15,6 @@
         padding-right: $s-space;
         border-radius: 0;
 
-        color: black;
-        font-size: $xl-font-size;
-        font-weight: normal;
+        @include text-style($size: $xl-font-size);
     }
 }

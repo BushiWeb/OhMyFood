@@ -1,6 +1,5 @@
 .location {
-    font-size: $base-font-size;
-    font-weight: bold;
+    @include text-style($weight: bold);
 
     width: 100%;
     padding: $xs-space $page-padding;

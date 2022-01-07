@@ -4,13 +4,6 @@ body {
 
 
 h1 {
-    font-family: $title-font-family;
-    font-size: $xxl-font-size;
-    font-weight: normal;
+    @include text-style($family: $title-font-family, $size: $xxl-font-size, $weight: normal);
     @include margin-reset;
-}
-
-
-h2 {
-    font-size: $xl-font-size;
 }

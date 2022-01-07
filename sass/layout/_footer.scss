@@ -3,13 +3,10 @@
     padding: $s-space $page-padding $m-space $page-padding;
 
     background-color: $neutral-darker;
-    color: white;
+    @include text-style($color: white);
 
     &__title {
-        font-family: $title-font-family;
-        font-size: $m-font-size;
-        font-weight: normal;
-
+        @include h2-style($family: $title-font-family, $size: $m-font-size, $weight: normal);
         @include margin-reset();
         margin-bottom: $s-space;
     }
@@ -20,7 +17,7 @@
 
         a {
             @include flexbox($align-items: center, $column-gap: $xxs-size);
-            @include link-reset(white);
+            @include link-reset();
 
             i {
                 font-size: $s-font-size;

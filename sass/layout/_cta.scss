@@ -8,15 +8,14 @@
 
 
     &__title {
-        text-align: center;
+        @include h2-style($align: center);
         @include margin-reset;
         margin-bottom: $xs-space;
     }
 
 
     &__intro {
-        font-size: $m-font-size;
-        text-align: center;
+        @include text-style($size: $m-font-size, $align: center);
         @include margin-reset;
         margin-bottom: $m-space;
     }
