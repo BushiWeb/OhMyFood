@@ -431,7 +431,7 @@ h2 {
   width: 100%;
   padding: 20px;
   padding-bottom: 10px;
-  background-color: white;
+  background-color: #FFFFFF;
   box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.2), 0px 4px 16px 4px rgba(0, 0, 0, 0.1);
   position: relative;
 }
@@ -455,9 +455,11 @@ h2 {
   margin: 0;
   background-color: #EAEAEA;
   display: flex;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: baseline;
-  gap: 16px;
+  align-content: flex-start;
+  gap: 0 16px;
 }
 
 .cta {
@@ -465,8 +467,11 @@ h2 {
   padding: 40px 20px 54px;
   background-color: #F6F6F6;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
   align-items: center;
+  align-content: flex-start;
+  gap: 0 0;
 }
 .cta__title {
   text-align: center;
@@ -483,7 +488,7 @@ h2 {
 .operating {
   width: 100%;
   padding: 54px 20px 62px;
-  background-color: white;
+  background-color: #FFFFFF;
 }
 .operating__title {
   margin: 0;
@@ -494,9 +499,11 @@ h2 {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
   align-items: flex-end;
-  gap: 24px;
+  align-content: flex-start;
+  gap: 24px 0;
   /* Reset list counter to display */
   counter-reset: step-counter;
 }
@@ -515,9 +522,11 @@ h2 {
   padding-left: 32px;
   /* $s-space + half of the ::before pseudo-element */
   display: flex;
+  flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-  gap: 24px;
+  align-content: flex-start;
+  gap: 0 24px;
   /* For the number placement */
   position: relative;
   /* Increment counter */
@@ -562,9 +571,11 @@ h2 {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
   align-items: stretch;
-  gap: 24px;
+  align-content: flex-start;
+  gap: 24px 0;
 }
 
 .page-footer {
@@ -585,16 +596,19 @@ h2 {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 8px;
+  align-content: flex-start;
+  gap: 8px 0;
 }
 .page-footer__link-list a {
   display: flex;
+  flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-  gap: 12px;
+  align-content: flex-start;
+  gap: 0 12px;
   color: white;
   text-decoration: none;
 }

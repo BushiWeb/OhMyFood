@@ -8,8 +8,5 @@
 
     background-color: $neutral-medium;
 
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    gap: $xs-space;
+    @include flexbox($justify-content: center, $column-gap: $xs-space);
 }

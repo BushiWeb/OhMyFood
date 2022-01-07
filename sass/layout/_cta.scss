@@ -4,9 +4,7 @@
 
     background-color: $neutral-light;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flexbox($direction: column, $align-items: center);
 
 
     &__title {

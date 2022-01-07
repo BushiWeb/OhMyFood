@@ -16,17 +16,10 @@
 
     &__link-list {
         @include list-reset();
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        gap: $xxxs-size;
+        @include flexbox($direction: column, $align-items: flex-start, $row-gap: $xxxs-size);
 
         a {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: $xxs-size;
+            @include flexbox($align-items: center, $column-gap: $xxs-size);
             @include link-reset(white);
 
             i {

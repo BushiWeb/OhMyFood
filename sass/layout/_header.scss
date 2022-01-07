@@ -3,7 +3,7 @@
     padding: $page-padding;
     padding-bottom: 10px;
 
-    background-color: white;
+    background-color: $neutral-base;
     @include dark-shadow();
 
     position: relative;

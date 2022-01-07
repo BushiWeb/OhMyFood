@@ -12,9 +12,6 @@
 
     &__list {
         @include list-reset;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: $s-space;
+        @include flexbox($direction: column, $align-items: stretch, $row-gap: $s-space);
     }
 }
