@@ -11,9 +11,78 @@
     &--fav {
         @include dimensions($size: min-content);
         padding: 0;
-        padding-right: $s-space;
+        margin-right: $s-space;
         border-radius: 0;
+        box-shadow: none;
+        background-image: none;
+        line-height: 1; /* To display the icons properly */
 
         @include text-style($size: $xl-font-size);
+
+        @include position($type: relative); /* To place the gradient heart */
+
+        /* Content transition */
+        i {
+            transition: opacity 0.3s ease-in;
+        }
+
+
+        /* Gradient heart */
+        &::after {
+            /* Including the heart */
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f004";
+
+            /* Heart color */
+            background-image: linear-gradient(172deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+
+            /* Positionning */
+            @include position($top: 0, $left: 0, $right: 0, $bottom: 0);
+
+            /* Hide */
+            transform-origin: bottom center;
+            transform: scale(0);
+            opacity: 0;
+
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+
+        /* Hover styles */
+        &:hover {
+            i {
+                opacity: 0;
+            }
+
+            &::after {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+
+
+        /* If animating the background:
+            background-image: linear-gradient(172deg,transparent 0%, transparent 50%, rgba(255,121,218,1) 50%, rgba(147,86,220,1) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-size: auto 200%;
+            background-position: 0 100%;
+            color: transparent;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: $xl-font-size;
+        */
     }
 }
