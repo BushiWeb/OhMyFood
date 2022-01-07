@@ -458,7 +458,7 @@ h1 {
   padding-bottom: 16px;
   grid-area: location;
 }
-.restaurant-card .btn {
+.restaurant-card__btn {
   grid-area: fav;
 }
 
