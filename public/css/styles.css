@@ -462,6 +462,71 @@ h1 {
   grid-area: fav;
 }
 
+.step-card {
+  color: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  font-variant: normal;
+  font-style: normal;
+  background-color: #F6F6F6;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1), 0px 12px 24px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
+  width: calc(100% - 12px);
+  height: 90px;
+  /* widht value given for the ::before pseudo-element */
+  padding-left: 32px;
+  /* $s-space + half of the ::before pseudo-element */
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 0 24px;
+  /* For the number placement */
+  position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  /* Increment counter */
+  counter-increment: step-counter;
+  /* Step number */
+  /* Last step styling */
+}
+.step-card::before {
+  content: counter(step-counter);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: normal;
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  font-variant: normal;
+  font-style: normal;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #9356DC;
+  position: absolute;
+  left: 0;
+  right: auto;
+  top: 50%;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+}
+.step-card:last-child {
+  background-color: rgba(147, 86, 220, 0.1);
+}
+.step-card:last-child .step-card__icon {
+  color: #9356DC;
+}
+.step-card__icon {
+  color: #7E7E7E;
+}
+
 /* Import layout */
 .page-header {
   width: 100%;
@@ -568,70 +633,6 @@ h1 {
   gap: 24px 0;
   /* Reset list counter to display */
   counter-reset: step-counter;
-}
-.operating__step-icon {
-  color: #7E7E7E;
-}
-.operating__step-card {
-  color: inherit;
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: left;
-  font-family: "Roboto", sans-serif;
-  font-variant: normal;
-  font-style: normal;
-  background-color: #F6F6F6;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1), 0px 12px 24px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 24px;
-  width: calc(100% - 12px);
-  height: 90px;
-  /* widht value given for the ::before pseudo-element */
-  padding-left: 32px;
-  /* $s-space + half of the ::before pseudo-element */
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: flex-start;
-  gap: 0 24px;
-  /* For the number placement */
-  position: relative;
-  left: auto;
-  right: auto;
-  top: auto;
-  bottom: auto;
-  /* Increment counter */
-  counter-increment: step-counter;
-  /* Step number */
-  /* Last step styling */
-}
-.operating__step-card::before {
-  content: counter(step-counter);
-  color: white;
-  font-size: 0.75rem;
-  font-weight: normal;
-  text-align: left;
-  font-family: "Roboto", sans-serif;
-  font-variant: normal;
-  font-style: normal;
-  width: 24px;
-  height: 24px;
-  line-height: 24px;
-  border-radius: 50%;
-  text-align: center;
-  background-color: #9356DC;
-  position: absolute;
-  left: 0;
-  right: auto;
-  top: 50%;
-  bottom: auto;
-  transform: translate(-50%, -50%);
-}
-.operating__step-card:last-child {
-  background-color: rgba(147, 86, 220, 0.1);
-}
-.operating__step-card:last-child .operating__step-icon {
-  color: #9356DC;
 }
 
 .restaurants {

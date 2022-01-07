@@ -1,0 +1,45 @@
+.step-card {
+    @include text-style($weight: bold);
+
+    background-color: $neutral-light;
+    @include shadow();
+
+    border-radius: $s-space;
+    @include dimensions($width: calc(100% - $s-space / 2), $height: 90px); /* widht value given for the ::before pseudo-element */
+    padding-left: $m-space; /* $s-space + half of the ::before pseudo-element */
+
+    @include flexbox($align-items: center, $column-gap: $s-space);
+
+    /* For the number placement */
+    @include position($type: relative);
+
+    /* Increment counter */
+    counter-increment: step-counter;
+
+
+    /* Step number */
+    &::before {
+        content: counter(step-counter);
+        @include text-style($size: $s-font-size, $color: white);
+        @include centered-icon();
+
+        background-color: $primary-color;
+
+        @include position($center: true, $left: 0, $top: 50%);
+    }
+
+
+    /* Last step styling */
+    &:last-child {
+        background-color: color.scale($primary-color, $alpha: -90%);
+
+        .step-card__icon {
+            color: $primary-color;
+        }
+    }
+
+
+    &__icon {
+        color: $neutral-dark;
+    }
+}
