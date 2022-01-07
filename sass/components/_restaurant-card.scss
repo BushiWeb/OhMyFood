@@ -16,8 +16,7 @@
 
     &__img {
         border-radius: $xxs-size $xxs-size 0 0;
-        width: 100%;
-        height: 100%;
+        @include dimensions($size: 100%);
         object-fit: cover;
 
         padding-bottom: $xs-space;

@@ -1,5 +1,5 @@
 .cta {
-    width: 100%;
+    @include dimensions-wide;
     padding: $l-space $page-padding $xxl-space;
 
     background-color: $neutral-light;
@@ -9,14 +9,12 @@
 
     &__title {
         @include h2-style($align: center);
-        @include margin-reset;
-        margin-bottom: $xs-space;
+        @include margin-bottom-only($xs-space);
     }
 
 
     &__intro {
         @include text-style($size: $m-font-size, $align: center);
-        @include margin-reset;
-        margin-bottom: $m-space;
+        @include margin-bottom-only;
     }
 }

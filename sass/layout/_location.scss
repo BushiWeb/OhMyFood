@@ -1,7 +1,6 @@
 .location {
     @include text-style($weight: bold);
-
-    width: 100%;
+    @include dimensions-wide;
     padding: $xs-space $page-padding;
     @include margin-reset;
 

@@ -9,8 +9,7 @@
     @include light-shadow();
 
     &--fav {
-        width: min-content;
-        height: min-content;
+        @include dimensions($size: min-content);
         padding: 0;
         padding-right: $s-space;
         border-radius: 0;

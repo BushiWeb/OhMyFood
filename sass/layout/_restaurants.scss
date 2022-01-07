@@ -1,12 +1,11 @@
 .restaurants {
-    width: 100%;
+    @include dimensions-wide;
     padding: $xxl-space $page-padding $xxxl-space;
 
     background-color: $neutral-light;
 
     &__title {
-        @include margin-reset;
-        margin-bottom: $s-space;
+        @include margin-bottom-only($s-space);
     }
 
 

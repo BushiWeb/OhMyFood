@@ -1,12 +1,11 @@
 .operating {
-    width: 100%;
+    @include dimensions-wide;
     padding: $xxl-space $page-padding $xxxl-space;
 
     background-color: $neutral-base;
 
     &__title {
-        @include margin-reset;
-        margin-bottom: $m-space;
+        @include margin-bottom-only;
     }
 
 
@@ -31,8 +30,7 @@
         @include light-shadow();
 
         border-radius: $s-space;
-        height: 90px;
-        width: calc(100% - $s-space / 2); /* Space for the ::before pseudo-element */
+        @include dimensions($width: calc(100% - $s-space / 2), $height: 90px); /* widht value given for the ::before pseudo-element */
         padding-left: $m-space; /* $s-space + half of the ::before pseudo-element */
 
         @include flexbox($align-items: center, $column-gap: $s-space);

@@ -1,5 +1,5 @@
 .page-footer {
-    width: 100%;
+    @include dimensions-wide;
     padding: $s-space $page-padding $m-space $page-padding;
 
     background-color: $neutral-darker;
@@ -7,8 +7,7 @@
 
     &__title {
         @include h2-style($family: $title-font-family, $size: $m-font-size, $weight: normal);
-        @include margin-reset();
-        margin-bottom: $s-space;
+        @include margin-bottom-only($s-space);
     }
 
     &__link-list {

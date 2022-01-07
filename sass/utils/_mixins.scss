@@ -5,10 +5,36 @@
 }
 
 
+/* Dimensions mixins */
 /* Remove margins */
 @mixin margin-reset {
     margin: 0;
 }
+
+/* Set margin-bottom up */
+@mixin margin-bottom-only($margin: $m-space) {
+    @include margin-reset();
+    margin-bottom: $margin;
+}
+
+/* Set width and height
+   Si $size est donné on a un carré.
+   Sinon, on donner les autres valeurs */
+@mixin dimensions($width: auto, $height: auto, $size: null) {
+    @if $size {
+        width: $size;
+        height: $size;
+    } @else {
+        width: $width;
+        height: $height;
+    }
+}
+
+/* Set element width to 100% */
+@mixin dimensions-wide($height: auto) {
+    @include dimensions($width: 100%, $height: $height);
+}
+
 
 
 /* Remover paddings, margins and bullets for lists */
@@ -21,8 +47,7 @@
 
 /* Style an icon container to be square and rounded, with the icon centerd verticaly and horizontaly */
 @mixin centered-icon($size: $s-space, $radius: 50%) {
-    width: $size;
-    height: $size;
+    @include dimensions($size: $size);
     line-height: $size;
     border-radius: $radius;
     text-align: center;

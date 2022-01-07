@@ -1,5 +1,5 @@
 .page-header {
-    width: 100%;
+    @include dimensions-wide;
     padding: $page-padding;
     padding-bottom: 10px;
 
