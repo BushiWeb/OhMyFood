@@ -61,4 +61,16 @@
     &__btn {
         grid-area: fav;
     }
+
+
+
+    /* Modifiers */
+    &--new::before {
+        content: "Nouveau";
+        @include text-style($weight: bold, $color: color.scale($tertiary-color, $lightness: -50%), $size: $s-font-size);
+        @include position($top: $xxs-size, $right: $xxs-size);
+        background-color: $tertiary-color;
+        padding: $xxxs-size $xxs-size;
+        border-radius: 3px;
+    }
 }
