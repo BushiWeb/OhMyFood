@@ -22,8 +22,6 @@
         @include dimensions($size: 100%);
         object-fit: cover;
 
-        padding-bottom: $xs-space;
-
         grid-area: img;
     }
 
@@ -31,8 +29,7 @@
         @include margin-reset();
         @include text-style($size: $m-font-size, $weight: bold);
 
-        padding-left: $xs-space;
-        padding-bottom: $xxxs-size;
+        padding: $xs-space 0 $xxxs-size $xs-space;
 
         grid-area: title;
     }
@@ -60,6 +57,8 @@
 
     &__btn {
         grid-area: fav;
+        padding: $xs-space;
+        margin-right: $xs-space;
     }
 
 

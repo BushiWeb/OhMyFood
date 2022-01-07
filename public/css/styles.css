@@ -398,8 +398,7 @@ h1 {
 .btn--fav {
   width: min-content;
   height: min-content;
-  padding: 0;
-  margin-right: 24px;
+  padding: 10px;
   border-radius: 0;
   box-shadow: none;
   background-image: none;
@@ -440,7 +439,6 @@ h1 {
 }
 .btn--fav::after {
   /* Including the heart */
-  display: inline-block;
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
@@ -459,6 +457,12 @@ h1 {
   right: 0;
   top: 0;
   bottom: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  gap: 0 0;
   /* Hide */
   transform-origin: bottom center;
   transform: scale(0);
@@ -495,7 +499,6 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  padding-bottom: 16px;
   grid-area: img;
 }
 .restaurant-card__title {
@@ -507,8 +510,7 @@ h1 {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
-  padding-left: 16px;
-  padding-bottom: 8px;
+  padding: 16px 0 8px 16px;
   grid-area: title;
 }
 .restaurant-card__link {
@@ -540,6 +542,8 @@ h1 {
 }
 .restaurant-card__btn {
   grid-area: fav;
+  padding: 16px;
+  margin-right: 16px;
 }
 .restaurant-card--new::before {
   content: "Nouveau";
