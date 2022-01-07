@@ -6,7 +6,7 @@
     background-color: $neutral-base;
     @include dark-shadow();
 
-    position: relative;
+    @include position($type: relative);
 
 
     &__title {
@@ -18,9 +18,6 @@
         padding: $page-padding;
         font-size: $m-font-size;
 
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
+        @include position($v-center: true, $left: 0, $top: 50%);
     }
 }

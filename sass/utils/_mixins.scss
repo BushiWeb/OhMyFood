@@ -36,6 +36,24 @@
 }
 
 
+/* Positionning mixin
+   $center, $h-center and $v-center allow to automatically center element in the container, on both axis */
+@mixin position($type: absolute, $top: auto, $left: auto, $right: auto, $bottom: auto, $h-center: false, $v-center: false, $center: false) {
+    position: $type;
+    left: $left;
+    right: $right;
+    top: $top;
+    bottom: $bottom;
+
+    @if $center {
+        transform: translate(-50%, -50%);
+    } @else if $h-center {
+        transform: translateX(-50%);
+    } @else if $v-center {
+        transform: translateY(-50%);
+    }
+}
+
 
 /* Remover paddings, margins and bullets for lists */
 @mixin list-reset {

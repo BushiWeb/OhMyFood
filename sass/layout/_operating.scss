@@ -36,7 +36,7 @@
         @include flexbox($align-items: center, $column-gap: $s-space);
 
         /* For the number placement */
-        position: relative;
+        @include position($type: relative);
 
         /* Increment counter */
         counter-increment: step-counter;
@@ -50,10 +50,7 @@
 
             background-color: $primary-color;
 
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translate(-50%, -50%);
+            @include position($center: true, $left: 0, $top: 50%);
         }
 
         /* Last step styling */

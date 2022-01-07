@@ -13,6 +13,8 @@
    Si $size est donné on a un carré.
    Sinon, on donner les autres valeurs */
 /* Set element width to 100% */
+/* Positionning mixin
+   $center, $h-center and $v-center allow to automatically center element in the container, on both axis */
 /* Remover paddings, margins and bullets for lists */
 /* Style an icon container to be square and rounded, with the icon centerd verticaly and horizontaly */
 /* Style text */
@@ -469,6 +471,10 @@ h1 {
   background-color: #FFFFFF;
   box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.2), 0px 4px 16px 4px rgba(0, 0, 0, 0.1);
   position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
 }
 .page-header__title {
   text-align: center;
@@ -477,8 +483,10 @@ h1 {
   padding: 20px;
   font-size: 1.125rem;
   position: absolute;
-  top: 50%;
   left: 0;
+  right: auto;
+  top: 50%;
+  bottom: auto;
   transform: translateY(-50%);
 }
 
@@ -588,6 +596,10 @@ h1 {
   gap: 0 24px;
   /* For the number placement */
   position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
   /* Increment counter */
   counter-increment: step-counter;
   /* Step number */
@@ -609,8 +621,10 @@ h1 {
   text-align: center;
   background-color: #9356DC;
   position: absolute;
-  top: 50%;
   left: 0;
+  right: auto;
+  top: 50%;
+  bottom: auto;
   transform: translate(-50%, -50%);
 }
 .operating__step-card:last-child {
