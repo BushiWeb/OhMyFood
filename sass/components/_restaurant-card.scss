@@ -1,5 +1,5 @@
 .restaurant-card {
-    @include light-shadow();
+    @include shadow();
 
     border-radius:$xxs-size;
 

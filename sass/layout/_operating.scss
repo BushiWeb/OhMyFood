@@ -27,7 +27,7 @@
         @include text-style($weight: bold);
 
         background-color: $neutral-light;
-        @include light-shadow();
+        @include shadow();
 
         border-radius: $s-space;
         @include dimensions($width: calc(100% - $s-space / 2), $height: 90px); /* widht value given for the ::before pseudo-element */
