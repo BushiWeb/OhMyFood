@@ -9,14 +9,14 @@
     align-items: center;
 
 
-    h2 {
+    &__title {
         text-align: center;
         @include margin-reset;
         margin-bottom: $xs-space;
     }
 
 
-    p {
+    &__intro {
         font-size: $m-font-size;
         text-align: center;
         @include margin-reset;

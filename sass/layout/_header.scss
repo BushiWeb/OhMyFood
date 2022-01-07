@@ -1,4 +1,4 @@
-header {
+.page-header {
     width: 100%;
     padding: $page-padding;
     padding-bottom: 10px;
@@ -9,12 +9,12 @@ header {
     position: relative;
 
 
-    h1 {
+    &__title {
         text-align: center;
     }
 
 
-    a {
+    &__back-link {
         padding: $page-padding;
         font-size: $m-font-size;
 

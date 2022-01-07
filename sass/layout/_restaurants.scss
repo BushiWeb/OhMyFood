@@ -4,13 +4,13 @@
 
     background-color: $neutral-light;
 
-    h2 {
+    &__title {
         @include margin-reset;
         margin-bottom: $s-space;
     }
 
 
-    ul {
+    &__list {
         @include list-reset;
         display: flex;
         flex-direction: column;

@@ -42,8 +42,8 @@
     <link rel="icon" type="image/png" href="public/images/brand/icon.png" />
 </head>
 <body>
-    <header>
-        <h1>ohmyfood</h1>
+    <header class="page-header">
+        <h1 class="page-header__title">ohmyfood</h1>
     </header>
 
     <!-- Search location -->
@@ -55,14 +55,14 @@
     <main>
         <!-- Call to action -->
         <section class="cta">
-            <h2>Réservez le menu qui vous convient</h2>
-            <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
-            <a href="#" class="button">Explorez nos restaurants</a>
+            <h2 class="cta__title">Réservez le menu qui vous convient</h2>
+            <p class="cta__intro">Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+            <a href="#" class="btn">Explorez nos restaurants</a>
         </section>
 
         <!-- How does it works -->
         <section class="operating">
-            <h2>Fonctionnement</h2>
+            <h2 class="operating__title">Fonctionnement</h2>
             <ol class="operating__steps">
                 <li class="operating__step-card"><i class="fas fa-mobile-alt operating__step-icon"></i>Choisissez un restaurant</li>
                 <li class="operating__step-card"><i class="fas fa-list-ul operating__step-icon"></i>Composez votre menu</li>
@@ -72,41 +72,41 @@
 
         <!-- Restaurants list -->
         <section class="restaurants">
-            <h2>Restaurants</h2>
-            <ul>
+            <h2 class="restaurants__title">Restaurants</h2>
+            <ul class="restaurants__list">
                 <li class="restaurant-card restaurant-card--new">
-                    <img src="public/images/restaurants/la_palette_du_gout.jpg" alt="Table de restaurant avec une assiette contenant une entrée de La pallette du goût">
-                    <h3><a href="restaurants_pages/la_palette_du_gout.html">La palette du goût</a></h3>
-                    <p>Ménilmontant</p>
-                    <a href="#" class="button button--fav"><i class="far fa-heart"></i></a>
+                    <img src="public/images/restaurants/la_palette_du_gout.jpg" alt="Table de restaurant avec une assiette contenant une entrée de La pallette du goût" class="restaurant-card__img">
+                    <h3 class="restaurant-card__title"><a href="restaurants_pages/la_palette_du_gout.html">La palette du goût</a></h3>
+                    <p class="restaurant-card__location">Ménilmontant</p>
+                    <a href="#" class="btn btn--fav"><i class="far fa-heart"></i></a>
                 </li>
                 <li class="restaurant-card restaurant-card--new">
-                    <img src="public/images/restaurants/la_note_enchantee.jpg" alt="Table de restaurant avec une assiette contenant un plat de La note enchantée">
-                    <h3><a href="restaurants_pages/la_note_enchantee.html">La note enchantée</a></h3>
-                    <p>Charonne</p>
-                    <a href="#" class="button button--fav"><i class="far fa-heart"></i></a>
+                    <img src="public/images/restaurants/la_note_enchantee.jpg" alt="Table de restaurant avec une assiette contenant un plat de La note enchantée" class="restaurant-card__img">
+                    <h3 class="restaurant-card__title"><a href="restaurants_pages/la_note_enchantee.html">La note enchantée</a></h3>
+                    <p class="restaurant-card__location">Charonne</p>
+                    <a href="#" class="btn btn--fav"><i class="far fa-heart"></i></a>
                 </li>
                 <li class="restaurant-card">
-                    <img src="public/images/restaurants/a_la_francaise.jpg" alt="Table de restaurant avec une assiette contenant un plat de À la française">
-                    <h3><a href="restaurants_pages/a_la_francaise.html">À la française</a></h3>
-                    <p>Cité Rouge</p>
-                    <a href="#" class="button button--fav"><i class="far fa-heart"></i></a>
+                    <img src="public/images/restaurants/a_la_francaise.jpg" alt="Table de restaurant avec une assiette contenant un plat de À la française" class="restaurant-card__img">
+                    <h3 class="restaurant-card__title"><a href="restaurants_pages/a_la_francaise.html">À la française</a></h3>
+                    <p class="restaurant-card__location">Cité Rouge</p>
+                    <a href="#" class="btn btn--fav"><i class="far fa-heart"></i></a>
                 </li>
                 <li class="restaurant-card">
-                    <img src="public/images/restaurants/le_delice_des_sens.jpg" alt="Table de restaurant avec une assiette contenant un plat Du délice des sens">
-                    <h3><a href="restaurants_pages/le_delice_des_sens.html">Le délice des sens</a></h3>
-                    <p>Folie-Méricourt</p>
-                    <a href="#" class="button button--fav"><i class="far fa-heart"></i></a>
+                    <img src="public/images/restaurants/le_delice_des_sens.jpg" alt="Table de restaurant avec une assiette contenant un plat Du délice des sens" class="restaurant-card__img">
+                    <h3 class="restaurant-card__title"><a href="restaurants_pages/le_delice_des_sens.html">Le délice des sens</a></h3>
+                    <p class="restaurant-card__location">Folie-Méricourt</p>
+                    <a href="#" class="btn btn--fav"><i class="far fa-heart"></i></a>
                 </li>
             </ul>
         </section>
     </main>
 
-    <footer>
-        <h2>ohmyfood</h2>
-        <ul>
-            <li><a href="#"><i class="fas fa-utensils footer__icon"></i>Proposer un restaurant</a></li>
-            <li><a href="#"><i class="fas fa-hands-helping footer__icon"></i>Devenir partenaire</a></li>
+    <footer class="page-footer">
+        <h2 class="page-footer__title">ohmyfood</h2>
+        <ul class="page-footer__link-list">
+            <li><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
+            <li><a href="#"><i class="fas fa-hands-helping"></i>Devenir partenaire</a></li>
             <li><a href="#">Mentions légales</a></li>
             <li><a href="#">Contact</a></li>
         </ul>

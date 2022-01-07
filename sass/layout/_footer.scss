@@ -1,11 +1,11 @@
-footer {
+.page-footer {
     width: 100%;
     padding: $s-space $page-padding $m-space $page-padding;
 
     background-color: $neutral-darker;
     color: white;
 
-    h2 {
+    &__title {
         font-family: $title-font-family;
         font-size: $m-font-size;
         font-weight: normal;
@@ -14,7 +14,7 @@ footer {
         margin-bottom: $s-space;
     }
 
-    ul {
+    &__link-list {
         @include list-reset();
         display: flex;
         flex-direction: column;
@@ -28,10 +28,11 @@ footer {
             align-items: center;
             gap: $xxs-size;
             @include link-reset(white);
+
+            i {
+                font-size: $s-font-size;
+            }
         }
     }
 
-    .footer__icon {
-        font-size: $s-font-size;
-    }
 }

@@ -4,7 +4,7 @@
 
     background-color: white;
 
-    h2 {
+    &__title {
         @include margin-reset;
         margin-bottom: $m-space;
     }

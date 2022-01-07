@@ -364,7 +364,7 @@ h2 {
 }
 
 /* Import components */
-.button {
+.btn {
   color: white;
   text-decoration: none;
   font-size: 1rem;
@@ -375,7 +375,7 @@ h2 {
   background-image: linear-gradient(172deg, #ff79da 0%, #9356dc 100%);
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1), 0px 12px 24px 0px rgba(0, 0, 0, 0.1);
 }
-.button--fav {
+.btn--fav {
   width: min-content;
   height: min-content;
   padding: 0;
@@ -396,7 +396,7 @@ h2 {
   justify-items: start;
   align-items: start;
 }
-.restaurant-card img {
+.restaurant-card__img {
   border-radius: 12px 12px 0 0;
   width: 100%;
   height: 100%;
@@ -404,18 +404,18 @@ h2 {
   padding-bottom: 16px;
   grid-area: img;
 }
-.restaurant-card h3 {
+.restaurant-card__title {
   margin: 0;
   font-size: 1.125rem;
   font-weight: bold;
   padding-left: 16px;
   grid-area: title;
 }
-.restaurant-card h3 a {
+.restaurant-card__title a {
   color: black;
   text-decoration: none;
 }
-.restaurant-card p {
+.restaurant-card__location {
   margin: 0;
   font-size: 1rem;
   padding-left: 16px;
@@ -427,7 +427,7 @@ h2 {
 }
 
 /* Import layout */
-header {
+.page-header {
   width: 100%;
   padding: 20px;
   padding-bottom: 10px;
@@ -435,10 +435,10 @@ header {
   box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.2), 0px 4px 16px 4px rgba(0, 0, 0, 0.1);
   position: relative;
 }
-header h1 {
+.page-header__title {
   text-align: center;
 }
-header a {
+.page-header__back-link {
   padding: 20px;
   font-size: 1.125rem;
   position: absolute;
@@ -468,12 +468,12 @@ header a {
   flex-direction: column;
   align-items: center;
 }
-.cta h2 {
+.cta__title {
   text-align: center;
   margin: 0;
   margin-bottom: 16px;
 }
-.cta p {
+.cta__intro {
   font-size: 1.125rem;
   text-align: center;
   margin: 0;
@@ -485,7 +485,7 @@ header a {
   padding: 54px 20px 62px;
   background-color: white;
 }
-.operating h2 {
+.operating__title {
   margin: 0;
   margin-bottom: 32px;
 }
@@ -553,11 +553,11 @@ header a {
   padding: 54px 20px 62px;
   background-color: #F6F6F6;
 }
-.restaurants h2 {
+.restaurants__title {
   margin: 0;
   margin-bottom: 24px;
 }
-.restaurants ul {
+.restaurants__list {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -567,20 +567,20 @@ header a {
   gap: 24px;
 }
 
-footer {
+.page-footer {
   width: 100%;
   padding: 24px 20px 32px 20px;
   background-color: #353535;
   color: white;
 }
-footer h2 {
+.page-footer__title {
   font-family: "Shrikhand", cursive;
   font-size: 1.125rem;
   font-weight: normal;
   margin: 0;
   margin-bottom: 24px;
 }
-footer ul {
+.page-footer__link-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -590,7 +590,7 @@ footer ul {
   align-items: flex-start;
   gap: 8px;
 }
-footer ul a {
+.page-footer__link-list a {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -598,7 +598,7 @@ footer ul a {
   color: white;
   text-decoration: none;
 }
-footer .footer__icon {
+.page-footer__link-list a i {
   font-size: 0.75rem;
 }
 
