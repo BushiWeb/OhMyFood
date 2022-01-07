@@ -4,7 +4,6 @@
     padding-bottom: 10px;
 
     background-color: $neutral-base;
-    @include shadow(true);
 
     @include position($type: relative);
 
@@ -19,5 +18,12 @@
         font-size: $m-font-size;
 
         @include position($v-center: true, $left: 0, $top: 50%);
+    }
+
+
+
+    /* Modifiers */
+    &--shadow {
+        @include shadow(true);
     }
 }
