@@ -435,7 +435,7 @@ h1 {
   */
 }
 .btn--fav i {
-  transition: opacity 0.3s ease-in;
+  transition: opacity 0.5s ease-in;
 }
 .btn--fav::after {
   /* Including the heart */
@@ -447,7 +447,9 @@ h1 {
   font-weight: 900;
   content: "\f004";
   /* Heart color */
-  background-image: linear-gradient(172deg, #ff79da 0%, #9356dc 100%);
+  background-image: linear-gradient(172deg, transparent 0%, transparent 50%, #ff79da 50%, #9356dc 100%);
+  background-size: auto 200%;
+  background-position: 0 0;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -463,18 +465,13 @@ h1 {
   align-items: center;
   align-content: flex-start;
   gap: 0 0;
-  /* Hide */
-  transform-origin: bottom center;
-  transform: scale(0);
-  opacity: 0;
-  transition: transform 0.3s, opacity 0.3s;
+  transition: background-position 1s;
 }
 .btn--fav:hover i {
   opacity: 0;
 }
 .btn--fav:hover::after {
-  transform: scale(1);
-  opacity: 1;
+  background-position: 0 100%;
 }
 
 .restaurant-card {
