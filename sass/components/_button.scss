@@ -5,25 +5,30 @@
     padding: $xs-space $m-space;
     border-radius: calc($xs-space * 2 + $base-font-size);
 
-    background-image: linear-gradient(172deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+    background-image: linear-gradient(172deg, $secondary-color 0%, $primary-color 100%);
     @include shadow();
 
+
+    /* Modifier */
     &--fav {
         @include dimensions($size: min-content);
+        @include text-style($size: $xl-font-size);
+        @include position($type: relative); /* To place the gradient heart */
         padding: 10px;
         border-radius: 0;
         box-shadow: none;
-        background-image: none;
         line-height: 1; /* To display the icons properly */
 
-        @include text-style($size: $xl-font-size);
+        /* Heart color */
+        background-image: linear-gradient(0,transparent 0%, transparent 50%, black 50%, black 100%);
+        background-size: auto 200%;
+        background-position: 0 0;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
 
-        @include position($type: relative); /* To place the gradient heart */
-
-        /* Content transition */
-        i {
-            transition: opacity 0.5s ease-in;
-        }
+        /* Transition to gradient */
+        transition: background-position 1s;
 
 
         /* Gradient heart */
@@ -38,7 +43,7 @@
             content: "\f004";
 
             /* Heart color */
-            background-image: linear-gradient(172deg,transparent 0%, transparent 50%, rgba(255,121,218,1) 50%, rgba(147,86,220,1) 100%);
+            background-image: linear-gradient(0,$secondary-color 0%, $primary-color 50%, transparent 50%, transparent 100%);
             background-size: auto 200%;
             background-position: 0 0;
             background-clip: text;
@@ -55,29 +60,11 @@
 
         /* Hover styles */
         &:hover {
-            i {
-                opacity: 0;
-            }
+            background-position: 0 100%;
 
             &::after {
                 background-position: 0 100%;
             }
         }
-
-
-
-        /* If animating the background:
-            background-image: linear-gradient(172deg,transparent 0%, transparent 50%, rgba(255,121,218,1) 50%, rgba(147,86,220,1) 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            background-size: auto 200%;
-            background-position: 0 100%;
-            color: transparent;
-
-            position: absolute;
-            top: 0;
-            left: 0;
-            font-size: $xl-font-size;
-        */
     }
 }
