@@ -1,0 +1,6 @@
+.menu-section {
+    &__title {
+        margin: 0 0 $page-padding $s-space;
+        @include text-style($size: $m-font-size);
+    }
+}

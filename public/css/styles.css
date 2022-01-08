@@ -636,6 +636,8 @@ h1 {
   text-align: center;
 }
 .page-header__back-link {
+  color: inherit;
+  text-decoration: none;
   padding: 20px;
   font-size: 1.125rem;
   position: absolute;
@@ -826,6 +828,17 @@ h1 {
   font-variant: normal;
   font-style: normal;
   margin: 0 20px;
+}
+
+.menu-section__title {
+  margin: 0 0 20px 24px;
+  color: inherit;
+  font-size: 1.125rem;
+  font-weight: normal;
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  font-variant: normal;
+  font-style: normal;
 }
 
 /*# sourceMappingURL=styles.css.map */
