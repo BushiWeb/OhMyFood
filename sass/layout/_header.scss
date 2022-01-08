@@ -14,6 +14,8 @@
 
 
     &__back-link {
+        @include link-reset;
+
         padding: $page-padding;
         font-size: $m-font-size;
 
