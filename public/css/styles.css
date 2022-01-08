@@ -802,6 +802,7 @@ h1 {
 
 .restaurant-menu {
   margin-top: 60vw;
+  padding-top: 32px;
   background-color: #FFFFFF;
   border-radius: 32px;
 }
@@ -815,6 +816,16 @@ h1 {
 }
 .restaurant-menu__image img {
   width: 100%;
+}
+.restaurant-menu__title {
+  color: inherit;
+  font-size: 1.5rem;
+  font-weight: normal;
+  text-align: left;
+  font-family: "Shrikhand", cursive;
+  font-variant: normal;
+  font-style: normal;
+  margin: 0 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */
