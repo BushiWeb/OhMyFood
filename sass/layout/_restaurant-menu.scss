@@ -1,5 +1,7 @@
 .restaurant-menu {
     margin-top: 60vw;
+    background-color: $neutral-base;
+    border-radius: $m-space;
 
     &__image {
         @include position($top: 0, $left: 0);

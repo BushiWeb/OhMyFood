@@ -802,6 +802,8 @@ h1 {
 
 .restaurant-menu {
   margin-top: 60vw;
+  background-color: #FFFFFF;
+  border-radius: 32px;
 }
 .restaurant-menu__image {
   position: absolute;
