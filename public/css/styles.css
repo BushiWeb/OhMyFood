@@ -618,6 +618,14 @@ h1 {
   color: #7E7E7E;
 }
 
+.dish-card {
+  width: 93%;
+  height: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1), 0px 12px 24px 0px rgba(0, 0, 0, 0.1);
+  background-color: #FFFFFF;
+  border-radius: 12px;
+}
+
 /* Import layout */
 .page-header {
   width: 100%;
@@ -805,7 +813,7 @@ h1 {
 .restaurant-menu {
   margin-top: 60vw;
   padding-top: 32px;
-  background-color: #FFFFFF;
+  background-color: #F6F6F6;
   border-radius: 32px;
 }
 .restaurant-menu__image {
@@ -847,6 +855,11 @@ h1 {
   width: 40px;
   margin-top: 8px;
   display: block;
+}
+.menu-section__dish-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

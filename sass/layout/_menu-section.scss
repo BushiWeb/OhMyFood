@@ -12,4 +12,9 @@
             display: block;
         }
     }
+
+
+    &__dish-list {
+        @include list-reset;
+    }
 }
