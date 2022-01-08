@@ -800,4 +800,19 @@ h1 {
   font-size: 0.75rem;
 }
 
+.restaurant-menu {
+  margin-top: 60vw;
+}
+.restaurant-menu__image {
+  position: absolute;
+  left: 0;
+  right: auto;
+  top: 0;
+  bottom: auto;
+  z-index: -1;
+}
+.restaurant-menu__image img {
+  width: 100%;
+}
+
 /*# sourceMappingURL=styles.css.map */
