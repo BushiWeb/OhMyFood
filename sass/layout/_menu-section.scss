@@ -2,5 +2,14 @@
     &__title {
         margin: 0 0 $page-padding $s-space;
         @include text-style($size: $m-font-size);
+
+        /* Create the underlining */
+        &::after {
+            content: "";
+            border-top: solid 3px $tertiary-color;
+            width: $l-space;
+            margin-top: $xxxs-size;
+            display: block;
+        }
     }
 }

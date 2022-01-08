@@ -839,6 +839,14 @@ h1 {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
+  /* Create the underlining */
+}
+.menu-section__title::after {
+  content: "";
+  border-top: solid 3px #99E2D0;
+  width: 40px;
+  margin-top: 8px;
+  display: block;
 }
 
 /*# sourceMappingURL=styles.css.map */
