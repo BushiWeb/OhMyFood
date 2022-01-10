@@ -10,11 +10,13 @@
     &__description {
         padding: $xxs-size;
         flex-grow: 1;
+        min-width: 0;
     }
 
     &__title {
         @include text-style($size: $m-font-size, $weight: bold);
         @include margin-reset;
+        @include ellipsis;
 
         a {
             @include link-reset;
@@ -24,6 +26,7 @@
     &__subtitle {
         @include text-style($size: $base-font-size);
         @include margin-reset;
+        @include ellipsis;
     }
 
     &__price {

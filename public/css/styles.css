@@ -20,6 +20,7 @@
 /* Style text */
 /* Create shadows of different intensities */
 /* Create flex container */
+/* Prevent overflow and add ellipsis */
 /* Import vendors */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -634,6 +635,7 @@ h1 {
 .dish-card__description {
   padding: 12px;
   flex-grow: 1;
+  min-width: 0;
 }
 .dish-card__title {
   color: inherit;
@@ -644,6 +646,9 @@ h1 {
   font-variant: normal;
   font-style: normal;
   margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .dish-card__title a {
   color: inherit;
@@ -658,6 +663,9 @@ h1 {
   font-variant: normal;
   font-style: normal;
   margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .dish-card__price {
   color: inherit;

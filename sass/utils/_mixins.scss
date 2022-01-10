@@ -106,3 +106,11 @@
     align-content: $align-content;
     gap: $row-gap $column-gap;
 }
+
+
+/* Prevent overflow and add ellipsis */
+@mixin ellipsis() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
