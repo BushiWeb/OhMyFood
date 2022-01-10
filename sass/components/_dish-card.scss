@@ -5,6 +5,33 @@
     background-color: $neutral-base;
     border-radius: $xxs-size;
 
+    &__description {
+        padding: $xxs-size;
+    }
 
+    &__title {
+        @include text-style($size: $m-font-size, $weight: bold);
+        @include margin-reset;
+
+        a {
+            @include link-reset;
+        }
+    }
+
+    &__subtitle {
+        @include text-style($size: $base-font-size);
+        @include margin-reset;
+    }
+
+    &__price {
+        @include text-style($size: $base-font-size, $weight: bold);
+        @include margin-reset;
+        padding: $xxs-size;
+    }
+
+    &__selection-icon {
+        background-color: $tertiary-color;
+        @include text-style($color: $neutral-base, $size: $m-font-size, $weight: bold);
+    }
 
 }
