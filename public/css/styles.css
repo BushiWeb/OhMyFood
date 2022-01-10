@@ -915,6 +915,12 @@ h1 {
   font-variant: normal;
   font-style: normal;
   margin: 0 20px 40px 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+  align-content: flex-start;
+  gap: 0 0;
 }
 .restaurant-menu__btn {
   align-self: center;

@@ -20,6 +20,7 @@
     &__title {
         @include text-style($family: $title-font-family, $size: $xl-font-size);
         margin: 0 $page-padding $l-space $page-padding;
+        @include flexbox($justify-content: space-between);
     }
 
 
