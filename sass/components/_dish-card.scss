@@ -31,17 +31,19 @@
 
     &__price {
         @include text-style($size: $base-font-size, $weight: bold);
-        @include margin-reset;
+        margin: 0 $xxs-size;
         padding: $xxs-size;
+        flex-shrink: 0;
     }
 
     &__selection-icon {
         background-color: $tertiary-color;
         border-radius: 0 $xxs-size $xxs-size 0;
         align-self: stretch;
-        @include dimensions($width: 16%);
+        padding: 0 $xs-space;
         @include text-style($color: $neutral-base, $size: $m-font-size, $weight: bold, $align: center);
         @include flexbox($justify-content: center, $align-items: center);
+        flex-shrink: 0;
     }
 
 }

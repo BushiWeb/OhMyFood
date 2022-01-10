@@ -675,15 +675,15 @@ h1 {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
-  margin: 0;
+  margin: 0 12px;
   padding: 12px;
+  flex-shrink: 0;
 }
 .dish-card__selection-icon {
   background-color: #99E2D0;
   border-radius: 0 12px 12px 0;
   align-self: stretch;
-  width: 16%;
-  height: auto;
+  padding: 0 16px;
   color: #FFFFFF;
   font-size: 1.125rem;
   font-weight: bold;
@@ -697,6 +697,7 @@ h1 {
   align-items: center;
   align-content: flex-start;
   gap: 0 0;
+  flex-shrink: 0;
 }
 
 /* Import layout */
