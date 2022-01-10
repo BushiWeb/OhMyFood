@@ -624,9 +624,16 @@ h1 {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1), 0px 12px 24px 0px rgba(0, 0, 0, 0.1);
   background-color: #FFFFFF;
   border-radius: 12px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  align-content: flex-start;
+  gap: 0 0;
 }
 .dish-card__description {
   padding: 12px;
+  flex-grow: 1;
 }
 .dish-card__title {
   color: inherit;
@@ -665,13 +672,23 @@ h1 {
 }
 .dish-card__selection-icon {
   background-color: #99E2D0;
+  border-radius: 0 12px 12px 0;
+  align-self: stretch;
+  width: 16%;
+  height: auto;
   color: #FFFFFF;
   font-size: 1.125rem;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  gap: 0 0;
 }
 
 /* Import layout */

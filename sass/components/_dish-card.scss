@@ -5,8 +5,11 @@
     background-color: $neutral-base;
     border-radius: $xxs-size;
 
+    @include flexbox($justify-content: space-between, $align-items: flex-end);
+
     &__description {
         padding: $xxs-size;
+        flex-grow: 1;
     }
 
     &__title {
@@ -31,7 +34,11 @@
 
     &__selection-icon {
         background-color: $tertiary-color;
-        @include text-style($color: $neutral-base, $size: $m-font-size, $weight: bold);
+        border-radius: 0 $xxs-size $xxs-size 0;
+        align-self: stretch;
+        @include dimensions($width: 16%);
+        @include text-style($color: $neutral-base, $size: $m-font-size, $weight: bold, $align: center);
+        @include flexbox($justify-content: center, $align-items: center);
     }
 
 }
