@@ -16,5 +16,8 @@
 
     &__dish-list {
         @include list-reset;
+        @include dimensions($width: 93%);
+        margin: auto;
+        @include flexbox($direction: column, $align-items: stretch, $row-gap: $xxs-size);
     }
 }

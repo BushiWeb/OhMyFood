@@ -1,5 +1,4 @@
 .dish-card {
-    @include dimensions($width: 93%);
     @include shadow();
 
     background-color: $neutral-base;
