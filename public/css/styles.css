@@ -755,7 +755,7 @@ h1 {
 .cta {
   width: 100%;
   height: auto;
-  padding: 40px 20px 54px;
+  padding: 40px 20px 56px;
   background-color: #F6F6F6;
   display: flex;
   flex-flow: column nowrap;
@@ -790,7 +790,7 @@ h1 {
 .operating {
   width: 100%;
   height: auto;
-  padding: 54px 20px 62px;
+  padding: 56px 20px 64px;
   background-color: #FFFFFF;
 }
 .operating__title {
@@ -814,7 +814,7 @@ h1 {
 .restaurants {
   width: 100%;
   height: auto;
-  padding: 54px 20px 62px;
+  padding: 56px 20px 64px;
   background-color: #F6F6F6;
 }
 .restaurants__title {
@@ -885,8 +885,15 @@ h1 {
 .restaurant-menu {
   margin-top: 60vw;
   padding-top: 32px;
+  padding-bottom: 72px;
   background-color: #F6F6F6;
   border-radius: 32px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 0 0;
 }
 .restaurant-menu__image {
   position: absolute;
@@ -907,11 +914,17 @@ h1 {
   font-family: "Shrikhand", cursive;
   font-variant: normal;
   font-style: normal;
-  margin: 0 20px;
+  margin: 0 20px 40px 20px;
+}
+.restaurant-menu__btn {
+  align-self: center;
 }
 
+.menu-section {
+  margin-bottom: 48px;
+}
 .menu-section__title {
-  margin: 0 0 20px 24px;
+  margin: 0 0 24px 20px;
   color: inherit;
   font-size: 1.125rem;
   font-weight: normal;

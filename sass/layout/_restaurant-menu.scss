@@ -1,8 +1,11 @@
 .restaurant-menu {
     margin-top: 60vw;
     padding-top: $m-space;
+    padding-bottom: $xxxxl-space;
     background-color: $neutral-light;
     border-radius: $m-space;
+
+    @include flexbox($direction: column, $align-items: stretch);
 
     &__image {
         @include position($top: 0, $left: 0);
@@ -16,6 +19,11 @@
 
     &__title {
         @include text-style($family: $title-font-family, $size: $xl-font-size);
-        margin: 0 $page-padding;
+        margin: 0 $page-padding $l-space $page-padding;
+    }
+
+
+    &__btn {
+        align-self: center;
     }
 }

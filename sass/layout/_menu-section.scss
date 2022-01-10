@@ -1,6 +1,8 @@
 .menu-section {
+    margin-bottom: $xl-space;
+
     &__title {
-        margin: 0 0 $page-padding $s-space;
+        margin: 0 0 $s-space $page-padding;
         @include text-style($size: $m-font-size);
 
         /* Create the underlining */
