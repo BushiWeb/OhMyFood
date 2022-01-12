@@ -3,17 +3,41 @@
 
     background-color: $neutral-light;
 
-    @include flexbox($direction: column, $align-items: center);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "title"
+        "intro"
+        "btn";
+    justify-items: center;
 
 
     &__title {
         @include h2-style($align: center);
         @include margin-bottom-only($xs-space);
+        grid-area: title;
     }
 
 
     &__intro {
         @include text-style($size: $m-font-size, $align: center);
         @include margin-bottom-only;
+        grid-area: intro;
+    }
+
+
+    &__btn {
+        grid-area: btn;
+        align-self: center;
+    }
+
+
+    @include desktop {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "title btn"
+            "intro btn";
     }
 }
