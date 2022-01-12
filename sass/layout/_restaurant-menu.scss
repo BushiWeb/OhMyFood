@@ -19,7 +19,7 @@
 
     &__title {
         @include text-style($family: $title-font-family, $size: $xl-font-size);
-        margin: 0 $page-padding $l-space $page-padding;
+        margin: 0 $mobile-page-padding $l-space $mobile-page-padding;
         @include flexbox($justify-content: space-between);
     }
 

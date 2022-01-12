@@ -709,7 +709,7 @@ h1 {
 .page-header {
   width: 100%;
   height: auto;
-  padding: 20px;
+  padding: 5.33vw;
   padding-bottom: 10px;
   background-color: #FFFFFF;
   position: relative;
@@ -725,7 +725,7 @@ h1 {
 .page-header__back-link {
   color: inherit;
   text-decoration: none;
-  padding: 20px;
+  padding: 5.33vw;
   font-size: 1.125rem;
   position: absolute;
   left: 0;
@@ -748,7 +748,7 @@ h1 {
   font-style: normal;
   width: 100%;
   height: auto;
-  padding: 16px 20px;
+  padding: 16px 5.33vw;
   margin: 0;
   background-color: #EAEAEA;
   display: flex;
@@ -791,7 +791,7 @@ h1 {
 }
 
 .cta {
-  padding: 40px 20px 56px;
+  padding: 40px 5.33vw 56px;
   background-color: #F6F6F6;
   display: grid;
   grid-template-columns: 1fr;
@@ -837,11 +837,12 @@ h1 {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     grid-template-areas: "title btn" "intro btn";
+    padding: 56px 10vw;
   }
 }
 
 .operating {
-  padding: 56px 20px 64px;
+  padding: 56px 5.33vw 64px;
   background-color: #FFFFFF;
 }
 .operating__title {
@@ -863,7 +864,7 @@ h1 {
 }
 
 .restaurants {
-  padding: 56px 20px 64px;
+  padding: 56px 5.33vw 64px;
   background-color: #F6F6F6;
 }
 .restaurants__title {
@@ -885,7 +886,7 @@ h1 {
 .page-footer {
   width: 100%;
   height: auto;
-  padding: 24px 20px 32px 20px;
+  padding: 24px 5.33vw 32px 5.33vw;
   background-color: #353535;
   color: white;
   font-size: 1rem;
@@ -963,7 +964,7 @@ h1 {
   font-family: "Shrikhand", cursive;
   font-variant: normal;
   font-style: normal;
-  margin: 0 20px 40px 20px;
+  margin: 0 5.33vw 40px 5.33vw;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -979,7 +980,7 @@ h1 {
   margin-bottom: 48px;
 }
 .menu-section__title {
-  margin: 0 0 24px 20px;
+  margin: 0 0 24px 5.33vw;
   color: inherit;
   font-size: 1.125rem;
   font-weight: normal;

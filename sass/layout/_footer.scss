@@ -1,6 +1,6 @@
 .page-footer {
     @include dimensions-wide;
-    padding: $s-space $page-padding $m-space $page-padding;
+    padding: $s-space $mobile-page-padding $m-space $mobile-page-padding;
 
     background-color: $neutral-darker;
     @include text-style($color: white);

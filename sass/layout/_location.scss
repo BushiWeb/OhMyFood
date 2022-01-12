@@ -1,7 +1,7 @@
 .location {
     @include text-style($weight: bold);
     @include dimensions-wide;
-    padding: $xs-space $page-padding;
+    padding: $xs-space $mobile-page-padding;
     @include margin-reset;
 
     background-color: $neutral-medium;

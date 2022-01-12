@@ -1,6 +1,6 @@
 .page-header {
     @include dimensions-wide;
-    padding: $page-padding;
+    padding: $mobile-page-padding;
     padding-bottom: 10px;
 
     background-color: $neutral-base;
@@ -16,7 +16,7 @@
     &__back-link {
         @include link-reset;
 
-        padding: $page-padding;
+        padding: $mobile-page-padding;
         font-size: $m-font-size;
 
         @include position($v-center: true, $left: 0, $top: 50%);
