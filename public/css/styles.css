@@ -875,6 +875,14 @@ h1 {
     margin: auto;
   }
 }
+@media (min-width: 992px) {
+  .operating {
+    padding: 56px 2.665vw 64px 5.33vw;
+  }
+  .operating__steps {
+    width: 100%;
+  }
+}
 
 .restaurants {
   padding: 56px 5.33vw 64px;

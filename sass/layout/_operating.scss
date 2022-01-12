@@ -25,4 +25,13 @@
             margin: auto;
         }
     }
+
+
+    @include desktop {
+        padding: $xxl-space calc($mobile-page-padding / 2) $xxxl-space $mobile-page-padding;
+
+        &__steps {
+            width: 100%;
+        }
+    }
 }
