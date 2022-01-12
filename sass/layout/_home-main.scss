@@ -1,3 +1,19 @@
 .home-main {
     @include flexbox($direction: column, $align-items: stretch);
+
+    @media (min-width: $desktop-breakpoint) {
+        @include flexbox($direction: row, $align-items: stretch, $wrap: wrap);
+
+        &__cta {
+            @include dimensions-wide();
+        }
+
+        &__restaurants {
+            @include dimensions($width: 65%);
+        }
+
+        &__operating {
+            @include dimensions($width: 35%);
+        }
+    }
 }

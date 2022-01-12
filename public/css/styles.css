@@ -761,6 +761,28 @@ h1 {
   align-content: flex-start;
   gap: 0 0;
 }
+@media (min-width: 992px) {
+  .home-main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    gap: 0 0;
+  }
+  .home-main__cta {
+    width: 100%;
+    height: auto;
+  }
+  .home-main__restaurants {
+    width: 65%;
+    height: auto;
+  }
+  .home-main__operating {
+    width: 35%;
+    height: auto;
+  }
+}
 
 .cta {
   padding: 40px 20px 56px;
