@@ -3,7 +3,7 @@
 
     background-color: $neutral-light;
 
-    @include grid(1fr, auto auto auto, "title""intro""btn", center);
+    @include grid(1fr, auto auto auto, "title""intro""btn", center, $justify-content: center);
 
 
     &__title {
@@ -32,7 +32,16 @@
 
 
     @include desktop {
-        @include grid-area(1fr 1fr, auto auto, "title btn""intro btn");
+        @include grid-area(repeat(2, auto), repeat(2, auto), "title btn""intro btn");
+        column-gap: $m-space;
         padding: $xxxxl-space $desktop-page-padding;
+
+        &__title {
+            margin: $xxxs-size 0;
+        }
+
+        &__intro {
+            margin: $xs-space 0;
+        }
     }
 }

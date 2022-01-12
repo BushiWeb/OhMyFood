@@ -798,7 +798,7 @@ h1 {
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
   grid-template-areas: "title" "intro" "btn";
-  justify-content: flex-start;
+  justify-content: center;
   justify-items: center;
   align-content: stretch;
   align-items: stretch;
@@ -840,10 +840,17 @@ h1 {
 }
 @media (min-width: 992px) {
   .cta {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
     grid-template-areas: "title btn" "intro btn";
+    column-gap: 32px;
     padding: 72px 5vw;
+  }
+  .cta__title {
+    margin: 8px 0;
+  }
+  .cta__intro {
+    margin: 16px 0;
   }
 }
 
