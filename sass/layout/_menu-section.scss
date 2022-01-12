@@ -1,5 +1,4 @@
 .menu-section {
-
     &__title {
         margin: 0 0 $s-space $mobile-page-padding;
         @include text-style($size: $m-font-size);
@@ -20,5 +19,16 @@
         @include dimensions($width: 93%);
         margin: auto;
         @include flexbox($direction: column, $align-items: stretch, $row-gap: $xxs-size);
+    }
+
+    @include tablet {
+        &__title {
+            @include margin-bottom-only($s-space);
+        }
+
+
+        &__dish-list {
+            @include dimensions-wide;
+        }
     }
 }

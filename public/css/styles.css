@@ -1086,6 +1086,7 @@ main {
 }
 .restaurant-menu__section {
   margin-bottom: 48px;
+  max-width: 500px;
   width: 100%;
 }
 @media (min-width: 768px) {
@@ -1141,6 +1142,16 @@ main {
   align-items: stretch;
   align-content: flex-start;
   gap: 12px 0;
+}
+@media (min-width: 768px) {
+  .menu-section__title {
+    margin: 0;
+    margin-bottom: 24px;
+  }
+  .menu-section__dish-list {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
