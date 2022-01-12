@@ -825,7 +825,7 @@ main {
 }
 @media (min-width: 768px) {
   .page-header {
-    padding-right: 20px 8vw 10px;
+    padding: 20px 8vw 10px;
   }
   .page-header__back-link {
     padding-left: 8vw;
