@@ -903,6 +903,29 @@ h1 {
   align-content: flex-start;
   gap: 24px 0;
 }
+@media (min-width: 768px) {
+  .restaurants {
+    padding: 56px 8vw 64px;
+  }
+  .restaurants__list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: flex-start;
+    gap: 32px 32px;
+  }
+  .restaurants__cards {
+    width: 45%;
+    flex-grow: 1;
+  }
+}
+@media (min-width: 992px) {
+  .restaurants {
+    padding: 56px 10vw 64px 5vw;
+    background-color: #FFFFFF;
+  }
+}
 
 .page-footer {
   width: 100%;

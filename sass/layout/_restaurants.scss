@@ -12,4 +12,27 @@
         @include list-reset;
         @include flexbox($direction: column, $align-items: stretch, $row-gap: $s-space);
     }
+
+
+    @include tablet {
+        padding: $xxl-space $tablet-page-padding $xxxl-space;
+        &__list {
+            @include flexbox($direction: row, $wrap: wrap, $justify-content: space-between, $align-items: stretch, $row-gap: $m-space, $column-gap: $m-space);
+        }
+
+        &__cards {
+            width: 45%;
+            flex-grow: 1;
+        }
+    }
+
+
+    @include desktop {
+        padding: $xxl-space $desktop-page-padding $xxxl-space calc($desktop-page-padding / 2);
+        background-color: $neutral-base;
+
+        &__list {
+            $gap: $l-space;
+        }
+    }
 }
