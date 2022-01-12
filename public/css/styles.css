@@ -709,8 +709,7 @@ h1 {
 .page-header {
   width: 100%;
   height: auto;
-  padding: 5.33vw;
-  padding-bottom: 10px;
+  padding: 20px 5.33vw 10px;
   background-color: #FFFFFF;
   position: relative;
   left: auto;
@@ -837,7 +836,7 @@ h1 {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     grid-template-areas: "title btn" "intro btn";
-    padding: 56px 10vw;
+    padding: 72px 10vw;
   }
 }
 

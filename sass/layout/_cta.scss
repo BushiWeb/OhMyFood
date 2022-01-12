@@ -28,6 +28,6 @@
 
     @include desktop {
         @include grid-area(1fr 1fr, auto auto, "title btn""intro btn");
-        padding: $xxl-space $desktop-page-padding;
+        padding: $xxxxl-space $desktop-page-padding;
     }
 }
