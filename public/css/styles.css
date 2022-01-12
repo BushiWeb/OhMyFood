@@ -1048,7 +1048,7 @@ main {
   padding-top: 32px;
   padding-bottom: 72px;
   background-color: #F6F6F6;
-  border-radius: 32px;
+  border-radius: 32px 32px 0 0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;

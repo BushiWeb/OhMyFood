@@ -3,7 +3,7 @@
     padding-top: $m-space;
     padding-bottom: $xxxxl-space;
     background-color: $neutral-light;
-    border-radius: $m-space;
+    border-radius: $m-space $m-space 0 0;
 
     @include flexbox($direction: column, $align-items: stretch);
 
