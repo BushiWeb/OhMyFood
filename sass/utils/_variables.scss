@@ -24,15 +24,15 @@ $mobile-page-padding: 5.33vw;
 $tablet-page-padding: 8vw;
 $desktop-page-padding: 5vw;
 $xxxs-size: 8px;
-$xxs-size: 12px;
-$xs-space: 16px;
-$s-space: 24px;
-$m-space: 32px;
-$l-space: 40px;
-$xl-space: 48px;
-$xxl-space: 56px;
-$xxxl-space: 64px;
-$xxxxl-space: 72px;
+$xxs-size: $xxxs-size * 1.5;
+$xs-space: $xxxs-size * 2;
+$s-space: $xxxs-size * 3;
+$m-space: $xxxs-size * 4;
+$l-space: $xxxs-size * 5;
+$xl-space: $xxxs-size * 6;
+$xxl-space: $xxxs-size * 7;
+$xxxl-space: $xxxs-size * 8;
+$xxxxl-space: $xxxs-size * 9;
 
 /* Breakpoints */
 $breakpoints: ("tablet": 768px, "desktop": 992px);
