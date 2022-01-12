@@ -21,6 +21,7 @@
 /* Style text */
 /* Create shadows of different intensities */
 /* Create flex container */
+/* Create grid container */
 /* Prevent overflow and add ellipsis */
 /* Mixins to create breakpoints */
 /* Import vendors */
@@ -476,8 +477,12 @@ h1 {
   grid-template-columns: 1fr auto;
   grid-template-rows: 46vw auto auto;
   grid-template-areas: "img img" "title fav" "location fav";
-  justify-items: start;
-  align-items: start;
+  justify-content: flex-start;
+  justify-items: flex-start;
+  align-content: stretch;
+  align-items: flex-start;
+  row-gap: 0;
+  column-gap: 0;
   /* To make the title link cover the entire card */
   position: relative;
   left: auto;
@@ -792,7 +797,12 @@ h1 {
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
   grid-template-areas: "title" "intro" "btn";
+  justify-content: flex-start;
   justify-items: center;
+  align-content: stretch;
+  align-items: stretch;
+  row-gap: 0;
+  column-gap: 0;
 }
 .cta__title {
   color: inherit;

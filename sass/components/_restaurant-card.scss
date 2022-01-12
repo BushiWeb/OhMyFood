@@ -3,15 +3,7 @@
 
     border-radius:$xxs-size;
 
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: 46vw auto auto;
-    grid-template-areas:
-        "img img"
-        "title fav"
-        "location fav";
-    justify-items: start;
-    align-items: start;
+    @include grid(1fr auto, 46vw auto auto, "img img""title fav""location fav", $align-items: flex-start);
 
     /* To make the title link cover the entire card */
     @include position($type: relative);
