@@ -647,17 +647,22 @@ main {
   background-color: #FFFFFF;
   border-radius: 12px;
   min-width: 300px;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: flex-end;
-  align-content: flex-start;
-  gap: 0 0;
+  display: grid;
+  grid-template-columns: 1fr repeat(2, auto);
+  grid-template-rows: auto;
+  grid-template-areas: "title price icon";
+  justify-content: flex-start;
+  justify-items: stretch;
+  align-content: stretch;
+  align-items: stretch;
+  row-gap: 0;
+  column-gap: 0;
 }
 .dish-card__description {
   padding: 12px 8px;
   flex-grow: 1;
   min-width: 0;
+  grid-area: title;
 }
 .dish-card__title {
   color: inherit;
@@ -700,6 +705,8 @@ main {
   margin: 0 12px 0 0;
   padding: 0 0 12px 0;
   flex-shrink: 0;
+  place-self: end;
+  grid-area: price;
 }
 .dish-card__selection-icon {
   background-color: #99E2D0;
@@ -720,23 +727,19 @@ main {
   align-content: flex-start;
   gap: 0 0;
   flex-shrink: 0;
+  grid-area: icon;
 }
 @media (min-width: 992px) {
   .dish-card {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-content: flex-start;
-    gap: 0 0;
-    padding: 16px;
-    min-width: 0;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "title icon" "price icon";
+    min-width: 230px;
+    max-width: 500px;
     width: 30%;
   }
   .dish-card__description {
-    padding: 0;
-    margin: 0;
-    margin-bottom: 16px;
+    padding: 16px;
   }
   .dish-card__title {
     white-space: normal;
@@ -745,6 +748,14 @@ main {
   }
   .dish-card__subtitle {
     white-space: normal;
+  }
+  .dish-card__price {
+    place-self: end start;
+    padding: 0 0 16px 16px;
+    margin: 0;
+  }
+  .dish-card__selection-icon {
+    justify-self: end;
   }
 }
 
@@ -1183,10 +1194,10 @@ main {
   .menu-section__dish-list {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: stretch;
     align-content: stretch;
-    gap: 32px 0;
+    gap: 32px 32px;
   }
 }
 

@@ -25,7 +25,7 @@
     @include desktop {
 
         &__dish-list {
-            @include flexbox($direction: row, $justify-content: space-between, $align-items: stretch, $align-content: stretch, $wrap: wrap, $row-gap: $m-space);
+            @include flexbox($direction: row, $justify-content: flex-start, $align-items: stretch, $align-content: stretch, $wrap: wrap, $row-gap: $m-space, $column-gap: $m-space);
         }
     }
 }

@@ -5,12 +5,13 @@
     border-radius: $xxs-size;
     min-width: 300px;
 
-    @include flexbox($justify-content: space-between, $align-items: flex-end);
+    @include grid($template-columns: 1fr repeat(2, auto), $template-rows: auto, $areas: "title price icon", $justify-items: stretch, $align-items: stretch);
 
     &__description {
         padding: $xxs-size $xxxs-size;
         flex-grow: 1;
         min-width: 0;
+        grid-area: title
     }
 
     &__title {
@@ -34,6 +35,9 @@
         margin: 0 $xxs-size 0 0;
         padding: 0 0 $xxs-size 0;
         flex-shrink: 0;
+
+        place-self: end;
+        grid-area: price;
     }
 
     &__selection-icon {
@@ -44,18 +48,19 @@
         @include text-style($color: $neutral-base, $size: $m-font-size, $weight: bold, $align: center);
         @include flexbox($justify-content: center, $align-items: center);
         flex-shrink: 0;
+
+        grid-area: icon;
     }
 
 
     @include desktop {
-        @include flexbox($direction: column, $align-items: flex-start);
-        padding: $xs-space;
-        min-width: 0;
+        @include grid-area($template-columns: 1fr auto, $template-rows: repeat(2, auto), $areas: "title icon""price icon");
+        min-width: 230px;
+        max-width: 500px;
         width: 30%;
 
         &__description {
-            padding: 0;
-            @include margin-bottom-only($xs-space);
+            padding: $xs-space;
         }
 
         &__title {
@@ -65,6 +70,16 @@
 
         &__subtitle {
             white-space: normal;
+        }
+
+        &__price {
+            place-self: end start;
+            padding: 0 0 $xs-space $xs-space;
+            margin: 0
+        }
+
+        &__selection-icon {
+            justify-self: end;
         }
     }
 
