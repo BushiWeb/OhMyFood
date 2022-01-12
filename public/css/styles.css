@@ -584,7 +584,7 @@ main {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
-  background-color: #F6F6F6;
+  background-color: whitesmoke;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1), 0px 12px 24px 0px rgba(0, 0, 0, 0.1);
   border-radius: 24px;
   width: calc(100% - 12px);
@@ -639,7 +639,7 @@ main {
   color: #9356DC;
 }
 .step-card__icon {
-  color: #7E7E7E;
+  color: #7d7d7d;
 }
 
 .dish-card {
@@ -820,7 +820,7 @@ main {
   height: auto;
   padding: 16px 5.33vw;
   margin: 0;
-  background-color: #EAEAEA;
+  background-color: #ebebeb;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -862,7 +862,7 @@ main {
 
 .cta {
   padding: 40px 5.33vw 56px;
-  background-color: #F6F6F6;
+  background-color: whitesmoke;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
@@ -964,7 +964,7 @@ main {
 
 .restaurants {
   padding: 56px 5.33vw 64px;
-  background-color: #F6F6F6;
+  background-color: whitesmoke;
 }
 .restaurants__title {
   margin: 0;
@@ -1009,7 +1009,7 @@ main {
   width: 100%;
   height: auto;
   padding: 24px 5.33vw 32px 5.33vw;
-  background-color: #353535;
+  background-color: #363636;
   color: white;
   font-size: 1rem;
   font-weight: normal;
@@ -1084,7 +1084,7 @@ main {
 .restaurant-menu {
   margin-top: min(60vw, 40vh);
   padding: 32px 5.33vw 72px;
-  background-color: #F6F6F6;
+  background-color: whitesmoke;
   border-radius: 32px 32px 0 0;
   display: flex;
   flex-flow: column nowrap;

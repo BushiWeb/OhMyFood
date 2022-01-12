@@ -13,11 +13,11 @@ $xxl-font-size: 2rem;
 $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
-$neutral-darker: #353535;
-$neutral-dark: #7E7E7E;
-$neutral-medium: #EAEAEA;
-$neutral-light: #F6F6F6;
 $neutral-base: #FFFFFF;
+$neutral-light: color.scale($neutral-base, $lightness: -4%);
+$neutral-medium: color.scale($neutral-base, $lightness: -8%);
+$neutral-dark: color.scale($neutral-base, $lightness: -51%);
+$neutral-darker: color.scale($neutral-base, $lightness: -79%);
 
 /* Sizes */
 $mobile-page-padding: 5.33vw;
