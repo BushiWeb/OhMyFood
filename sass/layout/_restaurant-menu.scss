@@ -1,5 +1,6 @@
 .restaurant-menu {
-    margin-top: 60vw;
+    margin-top: min(60vw, 40vh);
+
     padding-top: $m-space;
     padding-bottom: $xxxxl-space;
     background-color: $neutral-light;

@@ -1044,7 +1044,7 @@ main {
 }
 
 .restaurant-menu {
-  margin-top: 60vw;
+  margin-top: min(60vw, 40vh);
   padding-top: 32px;
   padding-bottom: 72px;
   background-color: #F6F6F6;
