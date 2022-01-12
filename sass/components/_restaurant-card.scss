@@ -3,7 +3,7 @@
 
     border-radius:$xxs-size;
 
-    @include grid(1fr auto, 46vw auto auto, "img img""title fav""location fav", $align-items: flex-start);
+    @include grid(1fr auto, auto auto auto, "img img""title fav""location fav", $align-items: flex-start);
 
     /* To make the title link cover the entire card */
     @include position($type: relative);
@@ -11,7 +11,8 @@
 
     &__img {
         border-radius: $xxs-size $xxs-size 0 0;
-        @include dimensions($size: 100%);
+        @include dimensions($width: 100%);
+        aspect-ratio: 2/1;
         object-fit: cover;
 
         grid-area: img;
