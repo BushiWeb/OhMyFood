@@ -24,4 +24,30 @@
         }
     }
 
+
+    @include tablet {
+        padding: $m-space $tablet-page-padding $xl-space $tablet-page-padding;
+
+        &__link-list {
+            @include flexbox($direction: row, $wrap: wrap, $row-gap: $xxs-size);
+
+            li {
+                width: 50%;
+            }
+        }
+    }
+
+
+    @include desktop {
+        padding: $m-space $desktop-page-padding $xl-space $desktop-page-padding;
+
+        &__link-list {
+            flex-wrap: nowrap;
+
+            li {
+                width: 25%;
+            }
+        }
+    }
+
 }
