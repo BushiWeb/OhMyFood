@@ -12,7 +12,7 @@
 }
 
 /* Set margin-bottom up */
-@mixin margin-bottom-only($margin: $m-space) {
+@mixin margin-bottom-only($margin: $space-400x) {
     @include margin-reset();
     margin-bottom: $margin;
 }
@@ -64,7 +64,7 @@
 
 
 /* Style an icon container to be square and rounded, with the icon centerd verticaly and horizontaly */
-@mixin centered-icon($size: $s-space, $radius: 50%) {
+@mixin centered-icon($size: $space-300x, $radius: 50%) {
     @include dimensions($size: $size);
     line-height: $size;
     border-radius: $radius;

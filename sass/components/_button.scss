@@ -2,8 +2,8 @@
     @include link-reset();
     @include text-style($weight: bold, $align: center, $color: white);
 
-    padding: $xs-space $m-space;
-    border-radius: calc($xs-space * 2 + $base-font-size);
+    padding: $space-200x $space-400x;
+    border-radius: calc($space-200x * 2 + $base-font-size);
 
     background-image: linear-gradient(172deg, $secondary-color 0%, $primary-color 100%);
     @include shadow();

@@ -23,16 +23,16 @@ $neutral-darker: color.scale($neutral-base, $lightness: -79%);
 $mobile-page-padding: 5.33vw;
 $tablet-page-padding: 8vw;
 $desktop-page-padding: 5vw;
-$xxxs-size: 8px;
-$xxs-size: $xxxs-size * 1.5;
-$xs-space: $xxxs-size * 2;
-$s-space: $xxxs-size * 3;
-$m-space: $xxxs-size * 4;
-$l-space: $xxxs-size * 5;
-$xl-space: $xxxs-size * 6;
-$xxl-space: $xxxs-size * 7;
-$xxxl-space: $xxxs-size * 8;
-$xxxxl-space: $xxxs-size * 9;
+$space-base: 8px;
+$space-150x: $space-base * 1.5;
+$space-200x: $space-base * 2;
+$space-300x: $space-base * 3;
+$space-400x: $space-base * 4;
+$space-500x: $space-base * 5;
+$space-600x: $space-base * 6;
+$space-700x: $space-base * 7;
+$space-800x: $space-base * 8;
+$space-900x: $space-base * 9;
 
 /* Breakpoints */
 $breakpoints: ("tablet": 768px, "desktop": 992px);

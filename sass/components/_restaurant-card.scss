@@ -1,7 +1,7 @@
 .restaurant-card {
     @include shadow();
 
-    border-radius:$xxs-size;
+    border-radius:$space-150x;
 
     @include grid(1fr auto, auto auto auto, "img img""title fav""location fav", $align-items: flex-start);
 
@@ -10,7 +10,7 @@
 
 
     &__img {
-        border-radius: $xxs-size $xxs-size 0 0;
+        border-radius: $space-150x $space-150x 0 0;
         @include dimensions($width: 100%);
         aspect-ratio: 2/1;
         object-fit: cover;
@@ -22,7 +22,7 @@
         @include margin-reset();
         @include text-style($size: $m-font-size, $weight: bold);
 
-        padding: $xs-space 0 $xxxs-size $xs-space;
+        padding: $space-200x 0 $space-base $space-200x;
 
         grid-area: title;
     }
@@ -34,7 +34,7 @@
         &::after {
             content: "";
             @include position($top: 0, $bottom: 0, $left: 0, $right: 0);
-            border-radius:$xxs-size;
+            border-radius:$space-150x;
         }
     }
 
@@ -42,16 +42,16 @@
         @include margin-reset();
         @include text-style();
 
-        padding-left: $xs-space;
-        padding-bottom: $xs-space;
+        padding-left: $space-200x;
+        padding-bottom: $space-200x;
 
         grid-area: location;
     }
 
     &__btn {
         grid-area: fav;
-        padding: $xs-space;
-        margin-right: $xs-space;
+        padding: $space-200x;
+        margin-right: $space-200x;
     }
 
 
@@ -60,9 +60,9 @@
     &--new::before {
         content: "Nouveau";
         @include text-style($weight: bold, $color: color.scale($tertiary-color, $lightness: -50%), $size: $s-font-size);
-        @include position($top: $xxs-size, $right: $xxs-size);
+        @include position($top: $space-150x, $right: $space-150x);
         background-color: $tertiary-color;
-        padding: $xxxs-size $xxs-size;
+        padding: $space-base $space-150x;
         border-radius: 3px;
     }
 }

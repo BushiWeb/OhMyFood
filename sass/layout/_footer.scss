@@ -1,21 +1,21 @@
 .page-footer {
     @include dimensions-wide;
-    padding: $s-space $mobile-page-padding $m-space $mobile-page-padding;
+    padding: $space-300x $mobile-page-padding $space-400x $mobile-page-padding;
 
     background-color: $neutral-darker;
     @include text-style($color: white);
 
     &__title {
         @include h2-style($family: $title-font-family, $size: $m-font-size, $weight: normal);
-        @include margin-bottom-only($s-space);
+        @include margin-bottom-only($space-300x);
     }
 
     &__link-list {
         @include list-reset();
-        @include flexbox($direction: column, $align-items: flex-start, $row-gap: $xxxs-size);
+        @include flexbox($direction: column, $align-items: flex-start, $row-gap: $space-base);
 
         a {
-            @include flexbox($align-items: center, $column-gap: $xxs-size);
+            @include flexbox($align-items: center, $column-gap: $space-150x);
             @include link-reset();
 
             i {
@@ -26,10 +26,10 @@
 
 
     @include tablet {
-        padding: $m-space $tablet-page-padding $xl-space $tablet-page-padding;
+        padding: $space-400x $tablet-page-padding $space-600x $tablet-page-padding;
 
         &__link-list {
-            @include flexbox($direction: row, $wrap: wrap, $row-gap: $xxs-size);
+            @include flexbox($direction: row, $wrap: wrap, $row-gap: $space-150x);
 
             li {
                 width: 50%;
@@ -39,7 +39,7 @@
 
 
     @include desktop {
-        padding: $m-space $desktop-page-padding $xl-space $desktop-page-padding;
+        padding: $space-400x $desktop-page-padding $space-600x $desktop-page-padding;
 
         &__link-list {
             flex-wrap: nowrap;

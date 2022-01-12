@@ -2,13 +2,13 @@
     @include shadow();
 
     background-color: $neutral-base;
-    border-radius: $xxs-size;
+    border-radius: $space-150x;
     min-width: 300px;
 
     @include grid($template-columns: 1fr repeat(2, auto), $template-rows: auto, $areas: "title price icon", $justify-items: stretch, $align-items: stretch);
 
     &__description {
-        padding: $xxs-size $xxxs-size;
+        padding: $space-150x $space-base;
         flex-grow: 1;
         min-width: 0;
         grid-area: title
@@ -32,8 +32,8 @@
 
     &__price {
         @include text-style($size: $base-font-size, $weight: bold);
-        margin: 0 $xxs-size 0 0;
-        padding: 0 0 $xxs-size 0;
+        margin: 0 $space-150x 0 0;
+        padding: 0 0 $space-150x 0;
         flex-shrink: 0;
 
         place-self: end;
@@ -42,9 +42,9 @@
 
     &__selection-icon {
         background-color: $tertiary-color;
-        border-radius: 0 $xxs-size $xxs-size 0;
+        border-radius: 0 $space-150x $space-150x 0;
         align-self: stretch;
-        padding: 0 $xs-space;
+        padding: 0 $space-200x;
         @include text-style($color: $neutral-base, $size: $m-font-size, $weight: bold, $align: center);
         @include flexbox($justify-content: center, $align-items: center);
         flex-shrink: 0;
@@ -60,12 +60,12 @@
         width: 30%;
 
         &__description {
-            padding: $xs-space;
+            padding: $space-200x;
         }
 
         &__title {
             white-space: normal;
-            @include margin-bottom-only($xxxs-size);
+            @include margin-bottom-only($space-base);
         }
 
         &__subtitle {
@@ -74,7 +74,7 @@
 
         &__price {
             place-self: end start;
-            padding: 0 0 $xs-space $xs-space;
+            padding: 0 0 $space-200x $space-200x;
             margin: 0
         }
 

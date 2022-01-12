@@ -1,10 +1,10 @@
 .location {
     @include text-style($weight: bold);
     @include dimensions-wide;
-    padding: $xs-space $mobile-page-padding;
+    padding: $space-200x $mobile-page-padding;
     @include margin-reset;
 
     background-color: $neutral-medium;
 
-    @include flexbox($justify-content: center, $column-gap: $xs-space);
+    @include flexbox($justify-content: center, $column-gap: $space-200x);
 }

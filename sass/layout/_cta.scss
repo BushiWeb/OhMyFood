@@ -1,5 +1,5 @@
 .cta {
-    padding: $l-space $mobile-page-padding $xxl-space;
+    padding: $space-500x $mobile-page-padding $space-700x;
 
     background-color: $neutral-light;
 
@@ -8,7 +8,7 @@
 
     &__title {
         @include h2-style($align: center);
-        @include margin-bottom-only($xs-space);
+        @include margin-bottom-only($space-200x);
         grid-area: title;
     }
 
@@ -27,21 +27,21 @@
 
 
     @include tablet {
-        padding: $xxl-space $tablet-page-padding $xxl-space;
+        padding: $space-700x $tablet-page-padding $space-700x;
     }
 
 
     @include desktop {
         @include grid-area(repeat(2, auto), repeat(2, auto), "title btn""intro btn");
-        column-gap: $m-space;
-        padding: $xxxxl-space $desktop-page-padding;
+        column-gap: $space-400x;
+        padding: $space-900x $desktop-page-padding;
 
         &__title {
-            margin: $xxxs-size 0;
+            margin: $space-base 0;
         }
 
         &__intro {
-            margin: $xs-space 0;
+            margin: $space-200x 0;
         }
     }
 }

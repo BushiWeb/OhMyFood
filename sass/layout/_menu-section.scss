@@ -1,14 +1,14 @@
 .menu-section {
     &__title {
-        @include margin-bottom-only($s-space);
+        @include margin-bottom-only($space-300x);
         @include text-style($size: $m-font-size);
 
         /* Create the underlining */
         &::after {
             content: "";
             border-top: solid 3px $tertiary-color;
-            width: $l-space;
-            margin-top: $xxxs-size;
+            width: $space-500x;
+            margin-top: $space-base;
             display: block;
         }
     }
@@ -17,7 +17,7 @@
     &__dish-list {
         @include list-reset;
         @include dimensions-wide;
-        @include flexbox($direction: column, $align-items: stretch, $row-gap: $xxs-size);
+        @include flexbox($direction: column, $align-items: stretch, $row-gap: $space-150x);
     }
 
 
@@ -25,7 +25,7 @@
     @include desktop {
 
         &__dish-list {
-            @include flexbox($direction: row, $justify-content: flex-start, $align-items: stretch, $align-content: stretch, $wrap: wrap, $row-gap: $m-space, $column-gap: $m-space);
+            @include flexbox($direction: row, $justify-content: flex-start, $align-items: stretch, $align-content: stretch, $wrap: wrap, $row-gap: $space-400x, $column-gap: $space-400x);
         }
     }
 }

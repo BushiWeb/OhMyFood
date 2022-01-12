@@ -1,5 +1,5 @@
 .operating {
-    padding: $xxl-space $mobile-page-padding $xxxl-space;
+    padding: $space-700x $mobile-page-padding $space-800x;
 
     background-color: $neutral-base;
 
@@ -10,7 +10,7 @@
 
     &__steps {
         @include list-reset;
-        @include flexbox($direction: column, $align-items: flex-end, $row-gap: $s-space);
+        @include flexbox($direction: column, $align-items: flex-end, $row-gap: $space-300x);
 
         /* Reset list counter to display */
         counter-reset: step-counter;
@@ -18,7 +18,7 @@
 
 
     @include tablet {
-        padding: $xxl-space $tablet-page-padding $xxxl-space;
+        padding: $space-700x $tablet-page-padding $space-800x;
 
         &__steps {
             width: 80%;
@@ -28,7 +28,7 @@
 
 
     @include desktop {
-        padding: $xxl-space calc($mobile-page-padding / 2) $xxxl-space $mobile-page-padding;
+        padding: $space-700x calc($mobile-page-padding / 2) $space-800x $mobile-page-padding;
 
         &__steps {
             width: 100%;
