@@ -1096,13 +1096,15 @@ main {
 .restaurant-menu__image {
   position: absolute;
   left: 0;
-  right: auto;
+  right: 0;
   top: 0;
-  bottom: auto;
+  bottom: 0;
   z-index: -1;
 }
 .restaurant-menu__image img {
   width: 100%;
+  max-height: 100%;
+  object-fit: cover;
 }
 .restaurant-menu__title {
   color: inherit;
