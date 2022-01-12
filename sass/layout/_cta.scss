@@ -26,6 +26,11 @@
     }
 
 
+    @include tablet {
+        padding: $xxl-space $tablet-page-padding $xxl-space;
+    }
+
+
     @include desktop {
         @include grid-area(1fr 1fr, auto auto, "title btn""intro btn");
         padding: $xxxxl-space $desktop-page-padding;
