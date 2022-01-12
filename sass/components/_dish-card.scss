@@ -7,7 +7,7 @@
     @include flexbox($justify-content: space-between, $align-items: flex-end);
 
     &__description {
-        padding: $xxs-size;
+        padding: $xxs-size $xxxs-size;
         flex-grow: 1;
         min-width: 0;
     }
@@ -30,8 +30,8 @@
 
     &__price {
         @include text-style($size: $base-font-size, $weight: bold);
-        margin: 0 $xxs-size;
-        padding: $xxs-size;
+        margin: 0 $xxs-size 0 0;
+        padding: 0 0 $xxs-size 0;
         flex-shrink: 0;
     }
 

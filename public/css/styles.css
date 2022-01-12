@@ -654,7 +654,7 @@ main {
   gap: 0 0;
 }
 .dish-card__description {
-  padding: 12px;
+  padding: 12px 8px;
   flex-grow: 1;
   min-width: 0;
 }
@@ -696,8 +696,8 @@ main {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
-  margin: 0 12px;
-  padding: 12px;
+  margin: 0 12px 0 0;
+  padding: 0 0 12px 0;
   flex-shrink: 0;
 }
 .dish-card__selection-icon {
