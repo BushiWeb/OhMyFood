@@ -1,7 +1,7 @@
 .home-main {
     @include flexbox($direction: column, $align-items: stretch);
 
-    @media (min-width: $desktop-breakpoint) {
+    @include desktop {
         @include flexbox($direction: row, $align-items: stretch, $wrap: wrap);
 
         &__cta {

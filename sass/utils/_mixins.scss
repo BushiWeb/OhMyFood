@@ -114,3 +114,17 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+
+/* Mixins to create breakpoints */
+@mixin tablet {
+    @media (min-width: map.get($breakpoints, "tablet")) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: map.get($breakpoints, "desktop")) {
+        @content;
+    }
+}

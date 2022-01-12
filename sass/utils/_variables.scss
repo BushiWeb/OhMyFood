@@ -33,5 +33,4 @@ $xxxl-space: 64px;
 $xxxxl-space: 72px;
 
 /* Breakpoints */
-$tablet-breakpoint: 768px;
-$desktop-breakpoint: 992px;
+$breakpoints: ("tablet": 768px, "desktop": 992px);
