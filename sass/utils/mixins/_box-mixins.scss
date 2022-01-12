@@ -1,0 +1,65 @@
+/********************************************************************
+    Dimensions
+ ********************************************************************/
+
+/* Sets width and height
+   If $size is given, creates a square.
+   Else, sets up width and height indepedently */
+@mixin dimensions($width: auto, $height: auto, $size: null) {
+    @if $size {
+        width: $size;
+        height: $size;
+    } @else {
+        width: $width;
+        height: $height;
+    }
+}
+
+
+/* Sets element width to 100% */
+@mixin dimensions-wide($height: auto) {
+    @include dimensions($width: 100%, $height: $height);
+}
+
+
+/* Styles an icon container to be square and rounded, with the icon centered verticaly and horizontaly */
+@mixin centered-icon($size: $space-300x, $radius: 50%) {
+    @include dimensions($size: $size);
+    line-height: $size;
+    border-radius: $radius;
+    text-align: center;
+}
+
+
+
+
+/********************************************************************
+    Margins
+ ********************************************************************/
+
+/* Removes margins */
+@mixin margin-reset {
+    margin: 0;
+}
+
+/* Sets up margin-bottom */
+@mixin margin-bottom-only($margin: $space-400x){
+    @include margin-reset();
+    margin-bottom: $margin;
+}
+
+
+
+
+/********************************************************************
+    Shadows
+ ********************************************************************/
+
+/* Creates shadows of different intensities */
+@mixin shadow($dark: false) {
+    @if $dark {
+        box-shadow: 0px 2px 8px 2px rgba(0,0,0,0.2), 0px 4px 16px 4px rgba(0,0,0,0.1);
+    } @else {
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1), 0px 12px 24px 0px rgba(0,0,0,0.1);
+    }
+}

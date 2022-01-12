@@ -1,0 +1,25 @@
+/********************************************************************
+    Grid
+ ********************************************************************/
+
+/* Creates grid container */
+@mixin grid($template-columns: auto, $template-rows: auto, $areas: none, $justify-items: flex-start, $align-items: stretch, $justify-content: flex-start, $align-content: stretch, $column-gap: 0, $row-gap: 0) {
+    display: grid;
+    grid-template-columns: $template-columns;
+    grid-template-rows: $template-rows;
+    grid-template-areas: $areas;
+    justify-content: $justify-content;
+    justify-items: $justify-items;
+    align-content: $align-content;
+    align-items: $align-items;
+    row-gap: $row-gap;
+    column-gap: $column-gap;
+}
+
+
+/* Modifies grid areas */
+@mixin grid-area($template-columns: auto, $template-rows: auto, $areas: none) {
+    grid-template-columns: $template-columns;
+    grid-template-rows: $template-rows;
+    grid-template-areas: $areas;
+}

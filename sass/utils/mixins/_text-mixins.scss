@@ -1,0 +1,34 @@
+/********************************************************************
+    Fonts
+ ********************************************************************/
+
+/* Styles text */
+@mixin text-style($color: inherit, $size: $base-font-size, $weight: normal, $align: left, $family: $text-font-family, $variant: normal, $style: normal) {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    text-align: $align;
+    font-family: $family;
+    font-variant: $variant;
+    font-style: $style;
+}
+
+
+/* Regular styles for h2 headers */
+@mixin h2-style($color: inherit, $size: $xl-font-size, $weight: bold, $align: left, $family: $text-font-family, $variant: normal, $style: normal) {
+    @include text-style($color, $size, $weight, $align, $family, $variant, $style);
+}
+
+
+
+
+/********************************************************************
+    Text display
+ ********************************************************************/
+
+/* Prevents overflow and adds ellipsis */
+@mixin ellipsis() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

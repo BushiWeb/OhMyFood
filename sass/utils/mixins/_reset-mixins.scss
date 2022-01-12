@@ -1,0 +1,17 @@
+/********************************************************************
+    Reset
+ ********************************************************************/
+
+/* Resets link styles to remove underlining and default color */
+@mixin link-reset($text-color: inherit) {
+    color: $text-color;
+    text-decoration: none;
+}
+
+
+/* Removes lists paddings, margins and bullets */
+@mixin list-reset {
+    list-style-type: none;
+    padding: 0;
+    @include margin-reset;
+}
