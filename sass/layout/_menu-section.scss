@@ -17,7 +17,15 @@
     &__dish-list {
         @include list-reset;
         @include dimensions-wide;
-        margin: auto;
         @include flexbox($direction: column, $align-items: stretch, $row-gap: $xxs-size);
+    }
+
+
+
+    @include desktop {
+
+        &__dish-list {
+            @include flexbox($direction: row, $justify-content: space-between, $align-items: stretch, $align-content: stretch, $wrap: wrap, $row-gap: $m-space);
+        }
     }
 }

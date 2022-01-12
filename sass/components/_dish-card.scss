@@ -3,6 +3,7 @@
 
     background-color: $neutral-base;
     border-radius: $xxs-size;
+    min-width: 300px;
 
     @include flexbox($justify-content: space-between, $align-items: flex-end);
 
@@ -43,6 +44,28 @@
         @include text-style($color: $neutral-base, $size: $m-font-size, $weight: bold, $align: center);
         @include flexbox($justify-content: center, $align-items: center);
         flex-shrink: 0;
+    }
+
+
+    @include desktop {
+        @include flexbox($direction: column, $align-items: flex-start);
+        padding: $xs-space;
+        min-width: 0;
+        width: 30%;
+
+        &__description {
+            padding: 0;
+            @include margin-bottom-only($xs-space);
+        }
+
+        &__title {
+            white-space: normal;
+            @include margin-bottom-only($xxxs-size);
+        }
+
+        &__subtitle {
+            white-space: normal;
+        }
     }
 
 }

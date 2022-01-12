@@ -646,6 +646,7 @@ main {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1), 0px 12px 24px 0px rgba(0, 0, 0, 0.1);
   background-color: #FFFFFF;
   border-radius: 12px;
+  min-width: 300px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -719,6 +720,32 @@ main {
   align-content: flex-start;
   gap: 0 0;
   flex-shrink: 0;
+}
+@media (min-width: 992px) {
+  .dish-card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 0 0;
+    padding: 16px;
+    min-width: 0;
+    width: 30%;
+  }
+  .dish-card__description {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+  .dish-card__title {
+    white-space: normal;
+    margin: 0;
+    margin-bottom: 8px;
+  }
+  .dish-card__subtitle {
+    white-space: normal;
+  }
 }
 
 /* Import layout */
@@ -1104,14 +1131,11 @@ main {
   .restaurant-menu__title {
     justify-content: flex-start;
     column-gap: 32px;
+    margin: 0;
+    margin-bottom: 56px;
   }
-  .restaurant-menu__menu {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: baseline;
-    align-content: flex-start;
-    gap: 0 32px;
+  .restaurant-menu__section {
+    padding: 0 8vw;
   }
 }
 @media (min-width: 992px) {
@@ -1119,7 +1143,7 @@ main {
     padding: 32px 5vw 72px;
   }
   .restaurant-menu__section {
-    flex-grow: 1;
+    margin-bottom: 64px;
   }
 }
 
@@ -1148,13 +1172,22 @@ main {
   margin: 0;
   width: 100%;
   height: auto;
-  margin: auto;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: stretch;
   align-content: flex-start;
   gap: 12px 0;
+}
+@media (min-width: 992px) {
+  .menu-section__dish-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: stretch;
+    gap: 32px 0;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

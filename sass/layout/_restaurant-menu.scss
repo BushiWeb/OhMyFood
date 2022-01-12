@@ -45,10 +45,11 @@
         &__title {
             justify-content: flex-start;
             column-gap: $m-space;
+            @include margin-bottom-only($xxl-space);
         }
 
-        &__menu {
-            @include flexbox($wrap: wrap, $column-gap: $m-space);
+        &__section {
+            padding: 0 $tablet-page-padding;
         }
     }
 
@@ -57,7 +58,7 @@
         padding: $m-space $desktop-page-padding $xxxxl-space;
 
         &__section {
-            flex-grow: 1;
+            margin-bottom: $xxxl-space;
         }
     }
 }
