@@ -861,6 +861,15 @@ h1 {
   /* Reset list counter to display */
   counter-reset: step-counter;
 }
+@media (min-width: 768px) {
+  .operating {
+    padding: 56px 8vw 64px;
+  }
+  .operating__steps {
+    width: 80%;
+    margin: auto;
+  }
+}
 
 .restaurants {
   padding: 56px 5.33vw 64px;

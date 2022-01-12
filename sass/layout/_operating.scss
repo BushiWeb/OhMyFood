@@ -15,4 +15,14 @@
         /* Reset list counter to display */
         counter-reset: step-counter;
     }
+
+
+    @include tablet {
+        padding: $xxl-space $tablet-page-padding $xxxl-space;
+
+        &__steps {
+            width: 80%;
+            margin: auto;
+        }
+    }
 }
