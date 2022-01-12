@@ -7,6 +7,7 @@
     border-radius: $s-space;
     @include dimensions($width: calc(100% - $s-space / 2), $height: 90px); /* widht value given for the ::before pseudo-element */
     padding-left: $m-space; /* $s-space + half of the ::before pseudo-element */
+    padding-right: $s-space;
 
     @include flexbox($align-items: center, $column-gap: $s-space);
 

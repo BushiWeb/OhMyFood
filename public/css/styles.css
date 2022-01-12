@@ -577,6 +577,7 @@ h1 {
   /* widht value given for the ::before pseudo-element */
   padding-left: 32px;
   /* $s-space + half of the ::before pseudo-element */
+  padding-right: 24px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
