@@ -753,9 +753,16 @@ h1 {
   gap: 0 16px;
 }
 
+.home-main {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 0 0;
+}
+
 .cta {
-  width: 100%;
-  height: auto;
   padding: 40px 20px 56px;
   background-color: #F6F6F6;
   display: flex;
@@ -789,8 +796,6 @@ h1 {
 }
 
 .operating {
-  width: 100%;
-  height: auto;
   padding: 56px 20px 64px;
   background-color: #FFFFFF;
 }
@@ -813,8 +818,6 @@ h1 {
 }
 
 .restaurants {
-  width: 100%;
-  height: auto;
   padding: 56px 20px 64px;
   background-color: #F6F6F6;
 }
