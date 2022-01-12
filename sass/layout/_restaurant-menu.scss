@@ -6,7 +6,7 @@
     background-color: $neutral-light;
     border-radius: $m-space $m-space 0 0;
 
-    @include flexbox($direction: column, $align-items: stretch);
+    @include flexbox($direction: row, $wrap: wrap, $justify-content: center);
 
     &__image {
         @include position($top: 0, $left: 0);
@@ -22,10 +22,35 @@
         @include text-style($family: $title-font-family, $size: $xl-font-size);
         margin: 0 $mobile-page-padding $l-space $mobile-page-padding;
         @include flexbox($justify-content: space-between);
+        width: 100%;
     }
 
 
-    &__btn {
-        align-self: center;
+    &__section {
+        margin-bottom: $xl-space;
+        width: 100%;
+    }
+
+
+    @include tablet {
+        padding: $m-space $tablet-page-padding $xxxxl-space;
+
+        &__title {
+            margin: 0 0 $l-space;
+            justify-content: flex-start;
+            column-gap: $m-space;
+        }
+    }
+
+
+    @include desktop {
+        padding: $m-space $desktop-page-padding $xxxxl-space;
+        column-gap: $m-space;
+
+        &__section {
+            margin: 0 0 $xl-space;
+            width: 30%;
+            flex-grow: 1;
+        }
     }
 }
