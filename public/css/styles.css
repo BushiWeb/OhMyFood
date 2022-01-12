@@ -843,7 +843,7 @@ h1 {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     grid-template-areas: "title btn" "intro btn";
-    padding: 72px 10vw;
+    padding: 72px 5vw;
   }
 }
 
@@ -924,7 +924,7 @@ h1 {
 }
 @media (min-width: 992px) {
   .restaurants {
-    padding: 56px 10vw 64px 5vw;
+    padding: 56px 5vw 64px 2.5vw;
     background-color: #FFFFFF;
   }
 }
