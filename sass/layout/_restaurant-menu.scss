@@ -1,12 +1,11 @@
 .restaurant-menu {
     margin-top: min(60vw, 40vh);
 
-    padding-top: $m-space;
-    padding-bottom: $xxxxl-space;
+    padding: $m-space $mobile-page-padding $xxxxl-space;
     background-color: $neutral-light;
     border-radius: $m-space $m-space 0 0;
 
-    @include flexbox($direction: column, $align-items: center);
+    @include flexbox($direction: column, $align-items: stretch);
 
     &__image {
         @include position($top: 0, $left: 0);
@@ -20,22 +19,23 @@
 
     &__title {
         @include text-style($family: $title-font-family, $size: $xl-font-size);
-        margin: 0 $mobile-page-padding $l-space $mobile-page-padding;
+        @include margin-bottom-only($l-space);
         @include flexbox($justify-content: space-between);
-        align-self: stretch;
     }
 
 
     &__menu {
-        width: 100%;
-        @include flexbox(column, $align-items: center);
+        @include flexbox(column, $align-items: stretch);
     }
 
 
     &__section {
         margin-bottom: $xl-space;
-        max-width: 375px;
-        width: 100%;
+    }
+
+
+    &__btn {
+        align-self: center;
     }
 
 
@@ -43,7 +43,6 @@
         padding: $m-space $tablet-page-padding $xxxxl-space;
 
         &__title {
-            margin: 0 0 $l-space;
             justify-content: flex-start;
             column-gap: $m-space;
         }
@@ -58,7 +57,6 @@
         padding: $m-space $desktop-page-padding $xxxxl-space;
 
         &__section {
-            margin: 0 0 $xl-space;
             flex-grow: 1;
         }
     }

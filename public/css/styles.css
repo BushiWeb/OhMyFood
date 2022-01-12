@@ -1045,14 +1045,13 @@ main {
 
 .restaurant-menu {
   margin-top: min(60vw, 40vh);
-  padding-top: 32px;
-  padding-bottom: 72px;
+  padding: 32px 5.33vw 72px;
   background-color: #F6F6F6;
   border-radius: 32px 32px 0 0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch;
   align-content: flex-start;
   gap: 0 0;
 }
@@ -1075,35 +1074,34 @@ main {
   font-family: "Shrikhand", cursive;
   font-variant: normal;
   font-style: normal;
-  margin: 0 5.33vw 40px 5.33vw;
+  margin: 0;
+  margin-bottom: 40px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: baseline;
   align-content: flex-start;
   gap: 0 0;
-  align-self: stretch;
 }
 .restaurant-menu__menu {
-  width: 100%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch;
   align-content: flex-start;
   gap: 0 0;
 }
 .restaurant-menu__section {
   margin-bottom: 48px;
-  max-width: 375px;
-  width: 100%;
+}
+.restaurant-menu__btn {
+  align-self: center;
 }
 @media (min-width: 768px) {
   .restaurant-menu {
     padding: 32px 8vw 72px;
   }
   .restaurant-menu__title {
-    margin: 0 0 40px;
     justify-content: flex-start;
     column-gap: 32px;
   }
@@ -1121,13 +1119,13 @@ main {
     padding: 32px 5vw 72px;
   }
   .restaurant-menu__section {
-    margin: 0 0 48px;
     flex-grow: 1;
   }
 }
 
 .menu-section__title {
-  margin: 0 0 24px 5.33vw;
+  margin: 0;
+  margin-bottom: 24px;
   color: inherit;
   font-size: 1.125rem;
   font-weight: normal;
@@ -1148,7 +1146,7 @@ main {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  width: 93%;
+  width: 100%;
   height: auto;
   margin: auto;
   display: flex;
@@ -1157,16 +1155,6 @@ main {
   align-items: stretch;
   align-content: flex-start;
   gap: 12px 0;
-}
-@media (min-width: 768px) {
-  .menu-section__title {
-    margin: 0;
-    margin-bottom: 24px;
-  }
-  .menu-section__dish-list {
-    width: 100%;
-    height: auto;
-  }
 }
 
 /*# sourceMappingURL=styles.css.map */
