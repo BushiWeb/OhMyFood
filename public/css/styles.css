@@ -1003,7 +1003,14 @@ main {
   z-index: 100;
   background-color: #FFFFFF;
   perspective: 1000px;
-  perspective-origin: top left;
+}
+.loading-spinner__cube {
+  position: fixed;
+  left: 50%;
+  right: auto;
+  top: 50%;
+  bottom: auto;
+  transform-style: preserve-3d;
 }
 .loading-spinner__cube-face {
   /* Cube face position */
@@ -1021,10 +1028,10 @@ main {
   align-content: flex-start;
   gap: 0 0;
   /* Cube face initial orientation */
-  transform-origin: center center -25vmin;
+  transform-origin: center center -12.5vmin;
 }
 .loading-spinner__cube-face img {
-  width: 100%;
+  width: 90%;
 }
 .loading-spinner__cube-face i {
   font-size: 20vmin;

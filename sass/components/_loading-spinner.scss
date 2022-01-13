@@ -13,7 +13,13 @@
 
 
     perspective: 1000px;
-    perspective-origin: top left;
+
+
+    &__cube {
+        @include position(fixed, 50%, 50%);
+        transform-style: preserve-3d;
+    }
+
 
     &__cube-face {
         /* Cube face position */
@@ -22,7 +28,7 @@
         @include flexbox($justify-content: center, $align-items: center);
 
         img {
-            width: 100%;
+            width: 90%;
         }
 
         i {
@@ -31,7 +37,7 @@
 
 
         /* Cube face initial orientation */
-        transform-origin: center center -25vmin;
+        transform-origin: center center -12.5vmin;
 
         &:nth-child(1) {
             transform: translate(-50%, -50%);
