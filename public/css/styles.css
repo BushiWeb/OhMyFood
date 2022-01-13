@@ -64,6 +64,7 @@
     Effects
  ********************************************************************/
 /* Button hover */
+/* Fade-up */
 /* Import vendors */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -445,9 +446,22 @@ main {
   flex-grow: 1;
 }
 
+/* All the keyframes used in the website */
+/* The element will rotate 1 full turn */
 @keyframes rotation {
   to {
     transform: rotate(1turn);
+  }
+}
+/* The element will appear with a fading effect while rising */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 /* Import components */
@@ -1340,6 +1354,9 @@ main {
   align-content: flex-start;
   gap: 0 0;
   /*******************************************************
+      Cards animations
+  ********************************************************/
+  /*******************************************************
       Breakpoints
   ********************************************************/
 }
@@ -1389,6 +1406,33 @@ main {
 }
 .restaurant-menu__btn {
   align-self: center;
+}
+.restaurant-menu .dish-card:nth-of-type(1) {
+  animation: fade-up 750ms ease-out 150ms both;
+}
+.restaurant-menu .dish-card:nth-of-type(2) {
+  animation: fade-up 750ms ease-out 300ms both;
+}
+.restaurant-menu .dish-card:nth-of-type(3) {
+  animation: fade-up 750ms ease-out 450ms both;
+}
+.restaurant-menu .dish-card:nth-of-type(4) {
+  animation: fade-up 750ms ease-out 600ms both;
+}
+.restaurant-menu .dish-card:nth-of-type(5) {
+  animation: fade-up 750ms ease-out 750ms both;
+}
+.restaurant-menu .dish-card:nth-of-type(6) {
+  animation: fade-up 750ms ease-out 900ms both;
+}
+.restaurant-menu .dish-card:nth-of-type(7) {
+  animation: fade-up 750ms ease-out 1050ms both;
+}
+.restaurant-menu .dish-card:nth-of-type(8) {
+  animation: fade-up 750ms ease-out 1200ms both;
+}
+.restaurant-menu .dish-card:nth-of-type(9) {
+  animation: fade-up 750ms ease-out 1350ms both;
 }
 @media (min-width: 768px) {
   .restaurant-menu {

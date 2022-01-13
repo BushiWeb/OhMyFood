@@ -1,5 +1,22 @@
+/* All the keyframes used in the website */
+
+/* The element will rotate 1 full turn */
 @keyframes rotation {
     to {
         transform: rotate(1turn);
+    }
+}
+
+
+/* The element will appear with a fading effect while rising */
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY($space-400x);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
     }
 }
