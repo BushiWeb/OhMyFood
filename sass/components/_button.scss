@@ -23,8 +23,7 @@
         Animations
     ********************************************************/
 
-    &:hover {
-        @include shadow($dark: true);
+    @include button-hover {
         background-image: linear-gradient(172deg, color.scale($secondary-color, $lightness: 15%) 0%, color.scale($primary-color, $lightness: 15%) 100%);
     }
 
