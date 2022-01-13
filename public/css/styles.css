@@ -1030,6 +1030,8 @@ main {
         * An icon on each face
         * The cube rotate in a loop
 ********************************************************************************/
+/* Variables, used only in this class */
+/* Styles */
 .loading-spinner {
   /* Loader position */
   position: fixed;

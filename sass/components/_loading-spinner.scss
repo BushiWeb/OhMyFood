@@ -5,6 +5,11 @@
         * The cube rotate in a loop
 ********************************************************************************/
 
+/* Variables, used only in this class */
+$cube-size: 25vmin;
+$screen-time: 3s;
+
+/* Styles */
 .loading-spinner {
     /* Loader position */
     @include position(fixed, 0, 0, 0, 0);
@@ -14,7 +19,7 @@
 
 
     /* Animation: fade-out after 3s */
-    animation: fade-out 500ms 3s backwards;
+    animation: fade-out 500ms $screen-time backwards;
 
 
     perspective: 1000px;
@@ -23,14 +28,14 @@
     &__cube {
         @include position(fixed, 50%, 50%);
         transform-style: preserve-3d;
-        transform-origin: center center -12.5vmin;
-        animation: cube-rotation 3s 3;
+        transform-origin: center center math.div(-$cube-size, 2);
+        animation: cube-rotation $screen-time 3;
     }
 
 
     &__cube-face {
         /* Cube face position */
-        @include dimensions($size: 25vmin);
+        @include dimensions($size: $cube-size);
         @include position(fixed, 50%, 50%);
         @include flexbox($justify-content: center, $align-items: center);
         backface-visibility: hidden;
@@ -40,12 +45,12 @@
         }
 
         i {
-            font-size: 20vmin;
+            font-size: $cube-size * 0.8;
         }
 
 
         /* Cube face initial orientation */
-        transform-origin: center center -12.5vmin;
+        transform-origin: center center math.div(-$cube-size, 2);
 
         &:nth-child(1) {
             transform: translate(-50%, -50%);
