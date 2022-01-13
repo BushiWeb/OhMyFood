@@ -1053,6 +1053,7 @@ main {
   align-items: center;
   align-content: flex-start;
   gap: 0 0;
+  backface-visibility: hidden;
   /* Cube face initial orientation */
   transform-origin: center center -12.5vmin;
 }
@@ -1064,27 +1065,21 @@ main {
 }
 .loading-spinner__cube-face:nth-child(1) {
   transform: translate(-50%, -50%);
-  background-color: white;
 }
 .loading-spinner__cube-face:nth-child(2) {
   transform: translate(-50%, -50%) rotateX(90deg);
-  background-color: blue;
 }
 .loading-spinner__cube-face:nth-child(3) {
   transform: translate(-50%, -50%) rotateX(90deg) rotateY(-90deg);
-  background-color: orange;
 }
 .loading-spinner__cube-face:nth-child(4) {
   transform: translate(-50%, -50%) rotateY(180deg) rotateX(-90deg);
-  background-color: green;
 }
 .loading-spinner__cube-face:nth-child(5) {
   transform: translate(-50%, -50%) rotateY(180deg);
-  background-color: yellow;
 }
 .loading-spinner__cube-face:nth-child(6) {
   transform: translate(-50%, -50%) rotateY(90deg);
-  background-color: red;
 }
 
 /* Import layout */
