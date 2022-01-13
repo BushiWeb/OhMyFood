@@ -2,6 +2,7 @@
     Dish card component
         * Shadow
         * Icon appears on the right on hover
+        * Stronger shadow on hover
 ********************************************************************************/
 
 /* Variables, specific to that component */
@@ -75,6 +76,16 @@ $border-radius: $space-150x;
         padding: 0 $space-200x;
         align-self: stretch;
         grid-area: icon;
+    }
+
+
+
+    /*******************************************************
+        Animations
+    ********************************************************/
+
+    &:hover {
+        @include shadow($dark: true);
     }
 
 

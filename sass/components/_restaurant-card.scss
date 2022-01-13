@@ -1,6 +1,7 @@
 /********************************************************************************
     Restaurant card component
         * Shadow
+        * Stronger shadow on hover
     New modifier
         * "Nouveau" badge in the top-right corner
 ********************************************************************************/
@@ -62,6 +63,16 @@ $border-radius: $space-150x;
         grid-area: fav;
         padding: $space-200x;
         margin-right: $space-200x;
+    }
+
+
+
+    /*******************************************************
+        Animations
+    ********************************************************/
+
+    &:hover {
+        @include shadow($dark: true);
     }
 
 
