@@ -14,7 +14,7 @@
 
 /* Fade-up */
 @mixin fade-up-entry($delay: 150ms, $element-nb: 10) {
-    @for $i from 1 to $element-nb {
+    @for $i from 1 through $element-nb {
         &:nth-of-type(#{$i}) {
             animation: fade-up 750ms ease-out $delay * $i both;
         }

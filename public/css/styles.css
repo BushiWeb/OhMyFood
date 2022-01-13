@@ -843,6 +843,9 @@ main {
 .dish-card:nth-of-type(9) {
   animation: fade-up 750ms ease-out 1350ms both;
 }
+.dish-card:nth-of-type(10) {
+  animation: fade-up 750ms ease-out 1500ms both;
+}
 .dish-card:hover {
   padding-right: 50px;
 }
@@ -991,6 +994,7 @@ main {
         * The cube rotate in a loop
 ********************************************************************************/
 .loading-spinner {
+  /* Loader position */
   position: fixed;
   left: 0;
   right: 0;
@@ -998,8 +1002,11 @@ main {
   bottom: 0;
   z-index: 100;
   background-color: #FFFFFF;
+  perspective: 1000px;
+  perspective-origin: top left;
 }
 .loading-spinner__cube-face {
+  /* Cube face position */
   width: 25vmin;
   height: 25vmin;
   position: fixed;
@@ -1007,19 +1014,44 @@ main {
   right: auto;
   top: 50%;
   bottom: auto;
-  transform: translate(-50%, -50%);
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   align-content: flex-start;
   gap: 0 0;
+  /* Cube face initial orientation */
+  transform-origin: center center -25vmin;
 }
 .loading-spinner__cube-face img {
   width: 100%;
 }
 .loading-spinner__cube-face i {
   font-size: 20vmin;
+}
+.loading-spinner__cube-face:nth-child(1) {
+  transform: translate(-50%, -50%);
+  background-color: white;
+}
+.loading-spinner__cube-face:nth-child(2) {
+  transform: translate(-50%, -50%) rotateX(90deg);
+  background-color: blue;
+}
+.loading-spinner__cube-face:nth-child(3) {
+  transform: translate(-50%, -50%) rotateY(90deg);
+  background-color: orange;
+}
+.loading-spinner__cube-face:nth-child(4) {
+  transform: translate(-50%, -50%) rotateX(-90deg);
+  background-color: green;
+}
+.loading-spinner__cube-face:nth-child(5) {
+  transform: translate(-50%, -50%) rotateY(180deg);
+  background-color: yellow;
+}
+.loading-spinner__cube-face:nth-child(6) {
+  transform: translate(-50%, -50%) rotateY(-90deg);
+  background-color: red;
 }
 
 /* Import layout */
