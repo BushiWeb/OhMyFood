@@ -14,6 +14,7 @@ $border-radius: $space-150x;
     background-color: $neutral-base;
     border-radius: $border-radius;
     min-width: 300px;
+    overflow: hidden;
 
 
     /* Grid layout, to adapt the layout for the desktop version */
@@ -73,9 +74,11 @@ $border-radius: $space-150x;
         @include flexbox($justify-content: center, $align-items: center);
         background-color: $tertiary-color;
         border-radius: 0 $border-radius $border-radius 0; /* Only left borders */
-        padding: 0 $space-200x;
+        width: 0;
+        overflow: hidden;
         align-self: stretch;
         grid-area: icon;
+        transition: width 500ms;
     }
 
 
@@ -85,6 +88,13 @@ $border-radius: $space-150x;
     ********************************************************/
 
     @include button-hover;
+
+
+    &:hover {
+        .dish-card__selection-icon {
+            width: 50px;
+        }
+    }
 
 
 

@@ -677,6 +677,7 @@ main {
   background-color: #FFFFFF;
   border-radius: 12px;
   min-width: 300px;
+  overflow: hidden;
   /* Grid layout, to adapt the layout for the desktop version */
   display: grid;
   grid-template-columns: 1fr repeat(2, auto);
@@ -783,12 +784,17 @@ main {
   background-color: #99E2D0;
   border-radius: 0 12px 12px 0;
   /* Only left borders */
-  padding: 0 16px;
+  width: 0;
+  overflow: hidden;
   align-self: stretch;
   grid-area: icon;
+  transition: width 500ms;
 }
 .dish-card:hover {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3), 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+}
+.dish-card:hover .dish-card__selection-icon {
+  width: 50px;
 }
 @media (min-width: 992px) {
   .dish-card {
