@@ -683,23 +683,23 @@ main {
   border-radius: 12px;
   min-width: 300px;
   overflow: hidden;
-  /* Grid layout, to adapt the layout for the desktop version */
-  display: grid;
-  grid-template-columns: 1fr repeat(2, auto);
-  grid-template-rows: auto;
-  grid-template-areas: "title price icon";
+  /* Flexbox */
+  display: flex;
+  flex-flow: row nowrap;
   justify-content: flex-start;
-  justify-items: stretch;
-  align-content: stretch;
   align-items: stretch;
-  row-gap: 0;
-  column-gap: 0;
-  /* To make the title link cover the entire card */
+  align-content: flex-start;
+  gap: 0 0;
+  transition: grid-template-columns 500ms;
+  /* To place the title link and the selection icon */
   position: relative;
   left: auto;
   right: auto;
   top: auto;
   bottom: auto;
+  /* Margin right transition, to give enough place for the selection icon */
+  padding-right: 0;
+  transition: padding-right 500ms;
   /*******************************************************
       Animations
   ********************************************************/
@@ -711,7 +711,6 @@ main {
   padding: 12px 8px;
   flex-grow: 1;
   min-width: 0;
-  grid-area: title;
 }
 .dish-card__title {
   color: inherit;
@@ -768,8 +767,7 @@ main {
   padding: 0;
   margin-right: 12px;
   padding-bottom: 12px;
-  place-self: end;
-  grid-area: price;
+  align-self: flex-end;
 }
 .dish-card__selection-icon {
   color: #FFFFFF;
@@ -786,19 +784,26 @@ main {
   align-items: center;
   align-content: flex-start;
   gap: 0 0;
+  position: absolute;
+  left: auto;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  height: auto;
   background-color: #99E2D0;
   border-radius: 0 12px 12px 0;
   /* Only left borders */
-  padding: 0 16px;
   overflow: hidden;
-  align-self: stretch;
-  grid-area: icon;
   /* Sets up transition on hover */
   transform: translateX(100%);
   transition: transform 500ms;
 }
 .dish-card:hover {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3), 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+}
+.dish-card:hover {
+  padding-right: 50px;
 }
 .dish-card:hover .dish-card__selection-icon {
   transform: none;
@@ -809,16 +814,18 @@ main {
 }
 @media (min-width: 992px) {
   .dish-card {
-    grid-template-columns: 1fr auto;
-    grid-template-rows: repeat(2, auto);
-    grid-template-areas: "title icon" "price icon";
     width: 30%;
     height: auto;
+    padding: 0;
+    flex-direction: column;
     min-width: 230px;
     max-width: 500px;
+    /*******************************************************/
+    /* Animations */
   }
   .dish-card__description {
     padding: 16px;
+    padding-bottom: 8px;
   }
   .dish-card__title {
     white-space: normal;
@@ -831,12 +838,29 @@ main {
     /* Remove ellipsis because we have a vertical layout, and it is okay for the title to wrap in that case */
   }
   .dish-card__price {
-    margin: 0;
-    padding: 0 0 16px 16px;
-    place-self: end start;
+    margin-top: 50px;
+    margin-bottom: 0;
+    transition: margin 500ms;
   }
   .dish-card__selection-icon {
-    justify-self: end;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 0;
+    width: auto;
+    height: 50px;
+    border-radius: 0 0 12px 12px;
+    /* Only bottom borders */
+    /* Sets up transition on hover */
+    transform: translateY(100%);
+  }
+  .dish-card:hover {
+    padding-right: 0;
+  }
+  .dish-card:hover .dish-card__price {
+    margin-top: 0;
+    margin-bottom: 50px;
   }
 }
 

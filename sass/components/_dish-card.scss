@@ -17,19 +17,24 @@ $border-radius: $space-150x;
     overflow: hidden;
 
 
-    /* Grid layout, to adapt the layout for the desktop version */
-    @include grid($template-columns: 1fr repeat(2, auto), $template-rows: auto, $areas: "title price icon", $justify-items: stretch, $align-items: stretch);
+    /* Flexbox */
+    @include flexbox($align-items: stretch);
+    transition: grid-template-columns 500ms;
 
 
-    /* To make the title link cover the entire card */
+    /* To place the title link and the selection icon */
     @include position($type: relative);
+
+
+    /* Margin right transition, to give enough place for the selection icon */
+    padding-right: 0;
+    transition: padding-right 500ms;
 
 
     &__description {
         padding: $space-150x $space-base;
         flex-grow: 1;
         min-width: 0;
-        grid-area: title;
     }
 
 
@@ -64,20 +69,18 @@ $border-radius: $space-150x;
         @include padding-reset;
         margin-right: $space-150x;
         padding-bottom: $space-150x;
-        place-self: end;
-        grid-area: price;
+        align-self: flex-end;
     }
 
 
     &__selection-icon {
         @include text-style($color: $neutral-base, $size: $m-font-size, $weight: bold, $align: center);
         @include flexbox($justify-content: center, $align-items: center);
+        @include position($top: 0, $bottom: 0, $right: 0);
+        @include dimensions($width: 50px);
         background-color: $tertiary-color;
         border-radius: 0 $border-radius $border-radius 0; /* Only left borders */
-        padding: 0 $space-200x;
         overflow: hidden;
-        align-self: stretch;
-        grid-area: icon;
 
         /* Sets up transition on hover */
         transform: translateX(100%);
@@ -94,6 +97,8 @@ $border-radius: $space-150x;
 
 
     &:hover {
+        padding-right: 50px;
+
         .dish-card__selection-icon {
             transform: none;
 
@@ -111,14 +116,17 @@ $border-radius: $space-150x;
     ********************************************************/
 
     @include desktop {
-        @include grid-area($template-columns: 1fr auto, $template-rows: repeat(2, auto), $areas: "title icon""price icon");
         @include dimensions($width: 30%);
+        @include padding-reset;
+        flex-direction: column;
         min-width: 230px;
         max-width: 500px;
 
 
+
         &__description {
             padding: $space-200x;
+            padding-bottom: $space-base;
         }
 
 
@@ -134,14 +142,33 @@ $border-radius: $space-150x;
 
 
         &__price {
-            @include margin-reset;
-            padding: 0 0 $space-200x $space-200x;
-            place-self: end start;
+            margin-top: 50px;
+            margin-bottom: 0;
+            transition: margin 500ms;
         }
 
 
         &__selection-icon {
-            justify-self: end;
+            @include position($left: 0, $bottom: 0, $right: 0);
+            @include dimensions($height: 50px);
+            border-radius: 0 0 $border-radius $border-radius; /* Only bottom borders */
+
+            /* Sets up transition on hover */
+            transform: translateY(100%);
+        }
+
+
+
+        /*******************************************************/
+        /* Animations */
+
+        &:hover {
+            padding-right: 0;
+
+            .dish-card__price {
+                margin-top: 0;
+                margin-bottom: 50px;
+            }
         }
     }
 
