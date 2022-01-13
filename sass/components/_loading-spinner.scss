@@ -1,0 +1,12 @@
+/********************************************************************************
+    Loading-spinner component
+        * The spinner has a cube effect
+        * An icon on each face
+        * The cube rotate in a loop
+********************************************************************************/
+
+.loading-spinner {
+    @include position(fixed, 0, 0, 0, 0);
+    z-index: 100;
+    background-color: $neutral-base;
+}

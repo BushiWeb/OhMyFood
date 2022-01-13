@@ -984,6 +984,22 @@ main {
   background-position: 0 100%;
 }
 
+/********************************************************************************
+    Loading-spinner component
+        * The spinner has a cube effect
+        * An icon on each face
+        * The cube rotate in a loop
+********************************************************************************/
+.loading-spinner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: #FFFFFF;
+}
+
 /* Import layout */
 /********************************************************************************
     Header
