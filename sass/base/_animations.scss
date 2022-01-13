@@ -52,3 +52,19 @@
         transform: rotateX(-90deg) rotate(90deg) rotate(90deg) rotateX(90deg) rotateY(90deg) rotateY(90deg);
     }
 }
+
+
+/* Fade out animation */
+@keyframes fade-out {
+    from {
+        display: block;
+        opacity: 1;
+        transform: none;
+    }
+
+    to {
+        opacity: 0;
+        display: none;
+        transform: none;
+    }
+}

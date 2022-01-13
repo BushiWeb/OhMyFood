@@ -488,6 +488,19 @@ main {
     transform: rotateX(-90deg) rotate(90deg) rotate(90deg) rotateX(90deg) rotateY(90deg) rotateY(90deg);
   }
 }
+/* Fade out animation */
+@keyframes fade-out {
+  from {
+    display: block;
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    display: none;
+    transform: none;
+  }
+}
 /* Import components */
 /********************************************************************************
     Button component
@@ -1026,6 +1039,9 @@ main {
   bottom: 0;
   z-index: 100;
   background-color: #FFFFFF;
+  transform: translate(200%);
+  /* Animation: fade-out after 3s */
+  animation: fade-out 500ms 3s backwards;
   perspective: 1000px;
 }
 .loading-spinner__cube {
@@ -1036,7 +1052,7 @@ main {
   bottom: auto;
   transform-style: preserve-3d;
   transform-origin: center center -12.5vmin;
-  animation: cube-rotation 3s infinite;
+  animation: cube-rotation 3s 3;
 }
 .loading-spinner__cube-face {
   /* Cube face position */
