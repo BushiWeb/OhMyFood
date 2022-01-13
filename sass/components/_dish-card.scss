@@ -7,6 +7,8 @@
 
 /* Variables, specific to that component */
 $border-radius: $space-150x;
+$transition-timing: 500ms;
+$selection-icon-size: 50px;
 
 /* Styles */
 .dish-card {
@@ -19,7 +21,7 @@ $border-radius: $space-150x;
 
     /* Flexbox */
     @include flexbox($align-items: stretch);
-    transition: grid-template-columns 500ms;
+    transition: grid-template-columns $transition-timing;
 
 
     /* To place the title link and the selection icon */
@@ -28,7 +30,7 @@ $border-radius: $space-150x;
 
     /* Margin right transition, to give enough place for the selection icon */
     padding-right: 0;
-    transition: padding-right 500ms;
+    transition: padding-right $transition-timing;
 
 
     &__description {
@@ -77,14 +79,14 @@ $border-radius: $space-150x;
         @include text-style($color: $neutral-base, $size: $m-font-size, $weight: bold, $align: center);
         @include flexbox($justify-content: center, $align-items: center);
         @include position($top: 0, $bottom: 0, $right: 0);
-        @include dimensions($width: 50px);
+        @include dimensions($width: $selection-icon-size);
         background-color: $tertiary-color;
         border-radius: 0 $border-radius $border-radius 0; /* Only left borders */
         overflow: hidden;
 
         /* Sets up transition on hover */
         transform: translateX(100%);
-        transition: transform 500ms;
+        transition: transform $transition-timing;
     }
 
 
@@ -97,14 +99,14 @@ $border-radius: $space-150x;
 
 
     &:hover {
-        padding-right: 50px;
+        padding-right: $selection-icon-size;
 
         .dish-card__selection-icon {
             transform: none;
 
             i {
                 transform: rotate(0turn);
-                animation: rotation 500ms;
+                animation: rotation $transition-timing;
             }
         }
     }
@@ -142,15 +144,15 @@ $border-radius: $space-150x;
 
 
         &__price {
-            margin-top: 50px;
+            margin-top: $selection-icon-size;
             margin-bottom: 0;
-            transition: margin 500ms;
+            transition: margin $transition-timing;
         }
 
 
         &__selection-icon {
             @include position($left: 0, $bottom: 0, $right: 0);
-            @include dimensions($height: 50px);
+            @include dimensions($height: $selection-icon-size);
             border-radius: 0 0 $border-radius $border-radius; /* Only bottom borders */
 
             /* Sets up transition on hover */
@@ -167,7 +169,7 @@ $border-radius: $space-150x;
 
             .dish-card__price {
                 margin-top: 0;
-                margin-bottom: 50px;
+                margin-bottom: $selection-icon-size;
             }
         }
     }
