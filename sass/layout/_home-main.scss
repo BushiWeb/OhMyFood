@@ -1,5 +1,15 @@
+/********************************************************************************
+    Main element from the home page
+********************************************************************************/
+
 .home-main {
     @include flexbox($direction: column, $align-items: stretch);
+
+
+
+    /*******************************************************
+        Breakpoints
+    ********************************************************/
 
     @include desktop {
         @include flexbox($direction: row, $align-items: stretch, $wrap: wrap);

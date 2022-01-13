@@ -1,7 +1,11 @@
+/********************************************************************************
+    Restaurants list bloc
+********************************************************************************/
+
 .restaurants {
     padding: $space-700x $mobile-page-padding $space-800x;
-
     background-color: $neutral-light;
+
 
     &__title {
         @include margin-bottom-only($space-300x);
@@ -10,25 +14,33 @@
 
     &__list {
         @include list-reset;
+
         @include flexbox($direction: column, $align-items: stretch, $row-gap: $space-300x);
     }
 
 
+
+    /*******************************************************
+        Breakpoints
+    ********************************************************/
+
     @include tablet {
         padding: $space-700x $tablet-page-padding $space-800x;
+
         &__list {
             @include flexbox($direction: row, $wrap: wrap, $justify-content: space-between, $align-items: stretch, $row-gap: $space-400x, $column-gap: $space-400x);
         }
 
         &__cards {
-            width: 45%;
+            @include dimensions($width: 45%);
             flex-grow: 1;
         }
     }
 
 
+
     @include desktop {
-        padding: $space-700x $desktop-page-padding $space-800x calc($desktop-page-padding / 2);
+        padding: $space-700x $desktop-page-padding $space-800x 0;
         background-color: $neutral-base;
 
         &__list {

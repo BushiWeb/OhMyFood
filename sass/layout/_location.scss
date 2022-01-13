@@ -1,10 +1,14 @@
+/********************************************************************************
+    Location block
+********************************************************************************/
+
 .location {
     @include text-style($weight: bold);
     @include dimensions-wide;
-    padding: $space-200x $mobile-page-padding;
     @include margin-reset;
-
+    padding: $space-200x $mobile-page-padding;
     background-color: $neutral-medium;
+
 
     @include flexbox($justify-content: center, $column-gap: $space-200x);
 }

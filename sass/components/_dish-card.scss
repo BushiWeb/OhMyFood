@@ -1,18 +1,31 @@
+/********************************************************************************
+    Dish card component
+        * Shadow
+        * Icon appears on the right on hover
+********************************************************************************/
+
+/* Variables, specific to that component */
+$border-radius: $space-150x;
+
+/* Styles */
 .dish-card {
     @include shadow();
-
     background-color: $neutral-base;
-    border-radius: $space-150x;
+    border-radius: $border-radius;
     min-width: 300px;
 
+
+    /* Grid layout, to adapt the layout for the desktop version */
     @include grid($template-columns: 1fr repeat(2, auto), $template-rows: auto, $areas: "title price icon", $justify-items: stretch, $align-items: stretch);
+
 
     &__description {
         padding: $space-150x $space-base;
         flex-grow: 1;
         min-width: 0;
-        grid-area: title
+        grid-area: title;
     }
+
 
     &__title {
         @include text-style($size: $m-font-size, $weight: bold);
@@ -24,59 +37,70 @@
         }
     }
 
+
     &__subtitle {
         @include text-style($size: $base-font-size);
         @include margin-reset;
         @include ellipsis;
     }
 
+
     &__price {
         @include text-style($size: $base-font-size, $weight: bold);
-        margin: 0 $space-150x 0 0;
-        padding: 0 0 $space-150x 0;
-        flex-shrink: 0;
-
+        @include margin-reset;
+        @include padding-reset;
+        margin-right: $space-150x;
+        padding-bottom: $space-150x;
         place-self: end;
         grid-area: price;
     }
 
+
     &__selection-icon {
-        background-color: $tertiary-color;
-        border-radius: 0 $space-150x $space-150x 0;
-        align-self: stretch;
-        padding: 0 $space-200x;
         @include text-style($color: $neutral-base, $size: $m-font-size, $weight: bold, $align: center);
         @include flexbox($justify-content: center, $align-items: center);
-        flex-shrink: 0;
-
+        background-color: $tertiary-color;
+        border-radius: 0 $border-radius $border-radius 0; /* Only left borders */
+        padding: 0 $space-200x;
+        align-self: stretch;
         grid-area: icon;
     }
 
 
+
+    /*******************************************************
+        Breakpoints
+    ********************************************************/
+
     @include desktop {
         @include grid-area($template-columns: 1fr auto, $template-rows: repeat(2, auto), $areas: "title icon""price icon");
+        @include dimensions($width: 30%);
         min-width: 230px;
         max-width: 500px;
-        width: 30%;
+
 
         &__description {
             padding: $space-200x;
         }
 
+
         &__title {
-            white-space: normal;
+            white-space: normal; /* Remove ellipsis because we have a vertical layout, and it is okay for the title to wrap in that case */
             @include margin-bottom-only($space-base);
         }
 
+
         &__subtitle {
-            white-space: normal;
+            white-space: normal; /* Remove ellipsis because we have a vertical layout, and it is okay for the title to wrap in that case */
         }
 
+
         &__price {
-            place-self: end start;
+            @include margin-reset;
             padding: 0 0 $space-200x $space-200x;
-            margin: 0
+            place-self: end start;
         }
+
 
         &__selection-icon {
             justify-self: end;

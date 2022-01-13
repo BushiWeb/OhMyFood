@@ -1,3 +1,8 @@
+/*
+    On desktop the content is to short for the footer to reach the bottom of the page. Thus it floats, and leaves a white band beneath it.
+    Flexbox is used to solve this problem, allowing the main content to stretch and "push" the footer down.
+*/
+
 body {
     @include flexbox(column, $align-items: stretch);
     min-height: 100vh;

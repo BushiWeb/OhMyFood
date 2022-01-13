@@ -1,14 +1,19 @@
+/********************************************************************************
+    Footer block
+********************************************************************************/
+
 .page-footer {
     @include dimensions-wide;
-    padding: $space-300x $mobile-page-padding $space-400x $mobile-page-padding;
-
-    background-color: $neutral-darker;
     @include text-style($color: white);
+    padding: $space-300x $mobile-page-padding $space-400x;
+    background-color: $neutral-darker;
+
 
     &__title {
         @include h2-style($family: $title-font-family, $size: $m-font-size, $weight: normal);
         @include margin-bottom-only($space-300x);
     }
+
 
     &__link-list {
         @include list-reset();
@@ -25,27 +30,33 @@
     }
 
 
+
+    /*******************************************************
+        Breakpoints
+    ********************************************************/
+
     @include tablet {
-        padding: $space-400x $tablet-page-padding $space-600x $tablet-page-padding;
+        padding: $space-400x $tablet-page-padding $space-600x;
+
 
         &__link-list {
             @include flexbox($direction: row, $wrap: wrap, $row-gap: $space-150x);
 
             li {
-                width: 50%;
+                @include dimensions($width: 50%);
             }
         }
     }
 
 
     @include desktop {
-        padding: $space-400x $desktop-page-padding $space-600x $desktop-page-padding;
+        padding: $space-400x $desktop-page-padding $space-600x;
 
         &__link-list {
             flex-wrap: nowrap;
 
             li {
-                width: 25%;
+                @include dimensions($width: 25%);
             }
         }
     }

@@ -1,21 +1,33 @@
+/********************************************************************************
+    Step card component
+        * Shadow
+        * Counter in a buble on the left side. Increments automatically
+********************************************************************************/
+
 .step-card {
     @include text-style($weight: bold);
-
-    background-color: $neutral-light;
     @include shadow();
-
+    @include dimensions($width: calc(100% - $space-300x / 2), $height: 90px); /* Widht value given for the ::before pseudo-element */
+    background-color: $neutral-light;
     border-radius: $space-300x;
-    @include dimensions($width: calc(100% - $space-300x / 2), $height: 90px); /* widht value given for the ::before pseudo-element */
     padding-left: $space-400x; /* $space-300x + half of the ::before pseudo-element */
     padding-right: $space-300x;
 
+
     @include flexbox($align-items: center, $column-gap: $space-300x);
+
 
     /* For the number placement */
     @include position($type: relative);
 
+
     /* Increment counter */
     counter-increment: step-counter;
+
+
+    &__icon {
+        color: $neutral-dark;
+    }
 
 
     /* Step number */
@@ -23,24 +35,16 @@
         content: counter(step-counter);
         @include text-style($size: $s-font-size, $color: white);
         @include centered-icon();
-
-        background-color: $primary-color;
-
         @include position($center: true, $left: 0, $top: 50%);
+        background-color: $primary-color;
     }
 
 
     /* Last step styling */
     &:last-child {
         background-color: color.scale($primary-color, $alpha: -90%);
-
         .step-card__icon {
             color: $primary-color;
         }
-    }
-
-
-    &__icon {
-        color: $neutral-dark;
     }
 }

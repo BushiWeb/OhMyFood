@@ -1,10 +1,15 @@
+/********************************************************************************
+    Header
+        * Back arrow to go back to the home page
+    Shadow modifier
+        * Shadow
+********************************************************************************/
+
 .page-header {
     @include dimensions-wide;
+    @include position($type: relative); /* For the arrow placement */
     padding: 20px $mobile-page-padding 10px;
-
     background-color: $neutral-base;
-
-    @include position($type: relative);
 
 
     &__title {
@@ -14,25 +19,32 @@
 
     &__back-link {
         @include link-reset;
-
+        @include position($v-center: true, $left: 0, $top: 50%);
         padding: 20px;
         padding-left: $mobile-page-padding;
         font-size: $m-font-size;
-
-        @include position($v-center: true, $left: 0, $top: 50%);
     }
 
 
 
-    /* Modifiers */
+    /*******************************************************
+        Modifiers
+    ********************************************************/
+
+    /* Shadow. Adds shadow underneath the header */
     &--shadow {
         @include shadow(true);
     }
 
 
 
+    /*******************************************************
+        Breakpoints
+    ********************************************************/
+
     @include tablet {
         padding: 20px $tablet-page-padding 10px;
+
 
         &__back-link {
             padding-left: $tablet-page-padding;
@@ -40,8 +52,10 @@
     }
 
 
+
     @include desktop {
         padding: 20px $desktop-page-padding 10px;
+
 
         &__back-link {
             padding-left: $desktop-page-padding;

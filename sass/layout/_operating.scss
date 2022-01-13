@@ -1,7 +1,11 @@
+/********************************************************************************
+    Operating block
+********************************************************************************/
+
 .operating {
     padding: $space-700x $mobile-page-padding $space-800x;
-
     background-color: $neutral-base;
+
 
     &__title {
         @include margin-bottom-only;
@@ -17,21 +21,26 @@
     }
 
 
+
+    /*******************************************************
+        Breakpoints
+    ********************************************************/
+
     @include tablet {
         padding: $space-700x $tablet-page-padding $space-800x;
 
         &__steps {
-            width: 80%;
+            @include dimensions($width: 80%);
             margin: auto;
         }
     }
 
 
     @include desktop {
-        padding: $space-700x calc($mobile-page-padding / 2) $space-800x $mobile-page-padding;
+        padding: $space-700x $mobile-page-padding $space-800x $mobile-page-padding;
 
         &__steps {
-            width: 100%;
+            @include dimensions-wide;
         }
     }
 }

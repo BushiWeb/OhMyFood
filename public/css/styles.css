@@ -20,6 +20,10 @@
 /* Removes margins */
 /* Sets up margin-bottom */
 /********************************************************************
+    Paddings
+ ********************************************************************/
+/* Removes paddings */
+/********************************************************************
     Shadows
  ********************************************************************/
 /* Creates shadows of different intensities */
@@ -400,6 +404,9 @@ template {
   box-sizing: border-box;
 }
 
+/*
+    Basic font rules
+*/
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -412,9 +419,14 @@ h1 {
   font-family: "Shrikhand", cursive;
   font-variant: normal;
   font-style: normal;
+  line-height: initial;
   margin: 0;
 }
 
+/*
+    On desktop the content is to short for the footer to reach the bottom of the page. Thus it floats, and leaves a white band beneath it.
+    Flexbox is used to solve this problem, allowing the main content to stretch and "push" the footer down.
+*/
 body {
   display: flex;
   flex-flow: column nowrap;
@@ -430,6 +442,15 @@ main {
 }
 
 /* Import components */
+/********************************************************************************
+    Button component
+        * Gradient background
+        * Rounded corners
+        * Shadow
+    Favorite modifier
+        * Heart shape
+        * Fills up on hover
+********************************************************************************/
 .btn {
   color: inherit;
   text-decoration: none;
@@ -440,11 +461,16 @@ main {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
-  padding: 16px 32px;
-  border-radius: calc(32px + 1rem);
-  background-image: linear-gradient(172deg, #FF79DA 0%, #9356DC 100%);
+  line-height: 1.15;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1), 0px 12px 24px 0px rgba(0, 0, 0, 0.1);
-  /* Modifier */
+  padding: 16px 32px;
+  border-radius: calc(32px + 1.15rem);
+  /* Calculate the button height using the padding and the line-height */
+  background-image: linear-gradient(172deg, #FF79DA 0%, #9356DC 100%);
+  /*******************************************************
+      Modifiers
+  ********************************************************/
+  /* Fav button. Heart shaped button that gradualy fills up on hover. */
 }
 .btn--fav {
   width: min-content;
@@ -456,6 +482,7 @@ main {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
+  line-height: 1;
   position: relative;
   left: auto;
   right: auto;
@@ -463,18 +490,19 @@ main {
   bottom: auto;
   /* To place the gradient heart */
   padding: 10px;
+  /* Increase target size for accessibility */
   border-radius: 0;
   box-shadow: none;
-  line-height: 1;
-  /* To display the icons properly */
   /* Heart color */
+  /*
+      The background gradient half-transparent / half-black is cliped onto the icon and only the black part appears. During the transition, the transparent will replace the black color.
+  */
   background-image: linear-gradient(0, transparent 0%, transparent 50%, black 50%, black 100%);
   background-size: auto 200%;
   background-position: 0 0;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  /* Transition to gradient */
   transition: background-position 1s;
   /* Gradient heart */
   /* Hover styles */
@@ -489,12 +517,16 @@ main {
   font-weight: 900;
   content: "\f004";
   /* Heart color */
+  /*
+  The background gradient half-transparent / half-gradient is cliped onto the icon and only the transparent part appears. During the transition, the gradient will replace the transparency.
+  */
   background-image: linear-gradient(0, #FF79DA 0%, #9356DC 50%, transparent 50%, transparent 100%);
   background-size: auto 200%;
   background-position: 0 0;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  transition: background-position 1s;
   /* Positionning */
   position: absolute;
   left: 0;
@@ -507,7 +539,6 @@ main {
   align-items: center;
   align-content: flex-start;
   gap: 0 0;
-  transition: background-position 1s;
 }
 .btn--fav:hover {
   background-position: 0 100%;
@@ -516,6 +547,14 @@ main {
   background-position: 0 100%;
 }
 
+/********************************************************************************
+    Restaurant card component
+        * Shadow
+    New modifier
+        * "Nouveau" badge in the top-right corner
+********************************************************************************/
+/* Variables, specific to that component */
+/* Styles */
 .restaurant-card {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1), 0px 12px 24px 0px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
@@ -535,13 +574,17 @@ main {
   right: auto;
   top: auto;
   bottom: auto;
-  /* Modifiers */
+  /*******************************************************
+      Modifiers
+  ********************************************************/
+  /* New modifier, ta add the "Nouveau" badge */
 }
 .restaurant-card__img {
-  border-radius: 12px 12px 0 0;
   width: 100%;
   height: auto;
+  border-radius: 12px 12px 0 0;
   aspect-ratio: 2/1;
+  /* Keeps the image at the same aspect-ratio, whatever the viewport width is. Thus, keeps the restaurant-card correctly proportionned */
   object-fit: cover;
   grid-area: img;
 }
@@ -554,6 +597,7 @@ main {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
+  line-height: initial;
   padding: 16px 0 8px 16px;
   grid-area: title;
 }
@@ -580,8 +624,8 @@ main {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
-  padding-left: 16px;
-  padding-bottom: 16px;
+  line-height: initial;
+  padding: 0 0 16px 16px;
   grid-area: location;
 }
 .restaurant-card__btn {
@@ -598,6 +642,7 @@ main {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
+  line-height: initial;
   position: absolute;
   left: auto;
   right: 12px;
@@ -608,6 +653,11 @@ main {
   border-radius: 3px;
 }
 
+/********************************************************************************
+    Step card component
+        * Shadow
+        * Counter in a buble on the left side. Increments automatically
+********************************************************************************/
 .step-card {
   color: inherit;
   font-size: 1rem;
@@ -616,12 +666,13 @@ main {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
-  background-color: whitesmoke;
+  line-height: initial;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1), 0px 12px 24px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 24px;
   width: calc(100% - 12px);
   height: 90px;
-  /* widht value given for the ::before pseudo-element */
+  /* Widht value given for the ::before pseudo-element */
+  background-color: whitesmoke;
+  border-radius: 24px;
   padding-left: 32px;
   /* $space-300x + half of the ::before pseudo-element */
   padding-right: 24px;
@@ -642,6 +693,9 @@ main {
   /* Step number */
   /* Last step styling */
 }
+.step-card__icon {
+  color: #7d7d7d;
+}
 .step-card::before {
   content: counter(step-counter);
   color: white;
@@ -651,18 +705,19 @@ main {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
+  line-height: initial;
   width: 24px;
   height: 24px;
   line-height: 24px;
   border-radius: 50%;
   text-align: center;
-  background-color: #9356DC;
   position: absolute;
   left: 0;
   right: auto;
   top: 50%;
   bottom: auto;
   transform: translate(-50%, -50%);
+  background-color: #9356DC;
 }
 .step-card:last-child {
   background-color: rgba(147, 86, 220, 0.1);
@@ -670,15 +725,20 @@ main {
 .step-card:last-child .step-card__icon {
   color: #9356DC;
 }
-.step-card__icon {
-  color: #7d7d7d;
-}
 
+/********************************************************************************
+    Dish card component
+        * Shadow
+        * Icon appears on the right on hover
+********************************************************************************/
+/* Variables, specific to that component */
+/* Styles */
 .dish-card {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1), 0px 12px 24px 0px rgba(0, 0, 0, 0.1);
   background-color: #FFFFFF;
   border-radius: 12px;
   min-width: 300px;
+  /* Grid layout, to adapt the layout for the desktop version */
   display: grid;
   grid-template-columns: 1fr repeat(2, auto);
   grid-template-rows: auto;
@@ -689,6 +749,9 @@ main {
   align-items: stretch;
   row-gap: 0;
   column-gap: 0;
+  /*******************************************************
+      Breakpoints
+  ********************************************************/
 }
 .dish-card__description {
   padding: 12px 8px;
@@ -704,6 +767,7 @@ main {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
+  line-height: initial;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -721,6 +785,7 @@ main {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
+  line-height: initial;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -734,17 +799,15 @@ main {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
-  margin: 0 12px 0 0;
-  padding: 0 0 12px 0;
-  flex-shrink: 0;
+  line-height: initial;
+  margin: 0;
+  padding: 0;
+  margin-right: 12px;
+  padding-bottom: 12px;
   place-self: end;
   grid-area: price;
 }
 .dish-card__selection-icon {
-  background-color: #99E2D0;
-  border-radius: 0 12px 12px 0;
-  align-self: stretch;
-  padding: 0 16px;
   color: #FFFFFF;
   font-size: 1.125rem;
   font-weight: bold;
@@ -752,13 +815,18 @@ main {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
+  line-height: initial;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   align-content: flex-start;
   gap: 0 0;
-  flex-shrink: 0;
+  background-color: #99E2D0;
+  border-radius: 0 12px 12px 0;
+  /* Only left borders */
+  padding: 0 16px;
+  align-self: stretch;
   grid-area: icon;
 }
 @media (min-width: 992px) {
@@ -766,25 +834,28 @@ main {
     grid-template-columns: 1fr auto;
     grid-template-rows: repeat(2, auto);
     grid-template-areas: "title icon" "price icon";
+    width: 30%;
+    height: auto;
     min-width: 230px;
     max-width: 500px;
-    width: 30%;
   }
   .dish-card__description {
     padding: 16px;
   }
   .dish-card__title {
     white-space: normal;
+    /* Remove ellipsis because we have a vertical layout, and it is okay for the title to wrap in that case */
     margin: 0;
     margin-bottom: 8px;
   }
   .dish-card__subtitle {
     white-space: normal;
+    /* Remove ellipsis because we have a vertical layout, and it is okay for the title to wrap in that case */
   }
   .dish-card__price {
-    place-self: end start;
-    padding: 0 0 16px 16px;
     margin: 0;
+    padding: 0 0 16px 16px;
+    place-self: end start;
   }
   .dish-card__selection-icon {
     justify-self: end;
@@ -792,17 +863,30 @@ main {
 }
 
 /* Import layout */
+/********************************************************************************
+    Header
+        * Back arrow to go back to the home page
+    Shadow modifier
+        * Shadow
+********************************************************************************/
 .page-header {
   width: 100%;
   height: auto;
-  padding: 20px 5.33vw 10px;
-  background-color: #FFFFFF;
   position: relative;
   left: auto;
   right: auto;
   top: auto;
   bottom: auto;
-  /* Modifiers */
+  /* For the arrow placement */
+  padding: 20px 5.33vw 10px;
+  background-color: #FFFFFF;
+  /*******************************************************
+      Modifiers
+  ********************************************************/
+  /* Shadow. Adds shadow underneath the header */
+  /*******************************************************
+      Breakpoints
+  ********************************************************/
 }
 .page-header__title {
   text-align: center;
@@ -810,15 +894,15 @@ main {
 .page-header__back-link {
   color: inherit;
   text-decoration: none;
-  padding: 20px;
-  padding-left: 5.33vw;
-  font-size: 1.125rem;
   position: absolute;
   left: 0;
   right: auto;
   top: 50%;
   bottom: auto;
   transform: translateY(-50%);
+  padding: 20px;
+  padding-left: 5.33vw;
+  font-size: 1.125rem;
 }
 .page-header--shadow {
   box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.2), 0px 4px 16px 4px rgba(0, 0, 0, 0.1);
@@ -840,6 +924,9 @@ main {
   }
 }
 
+/********************************************************************************
+    Location block
+********************************************************************************/
 .location {
   color: inherit;
   font-size: 1rem;
@@ -848,10 +935,11 @@ main {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
+  line-height: initial;
   width: 100%;
   height: auto;
-  padding: 16px 5.33vw;
   margin: 0;
+  padding: 16px 5.33vw;
   background-color: #ebebeb;
   display: flex;
   flex-flow: row nowrap;
@@ -861,6 +949,9 @@ main {
   gap: 0 16px;
 }
 
+/********************************************************************************
+    Main element from the home page
+********************************************************************************/
 .home-main {
   display: flex;
   flex-flow: column nowrap;
@@ -868,6 +959,9 @@ main {
   align-items: stretch;
   align-content: flex-start;
   gap: 0 0;
+  /*******************************************************
+      Breakpoints
+  ********************************************************/
 }
 @media (min-width: 992px) {
   .home-main {
@@ -892,9 +986,13 @@ main {
   }
 }
 
+/********************************************************************************
+    Call to action block
+********************************************************************************/
 .cta {
   padding: 40px 5.33vw 56px;
   background-color: whitesmoke;
+  /* Grid layout, to adapt the layout for the desktop version */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
@@ -905,6 +1003,9 @@ main {
   align-items: stretch;
   row-gap: 0;
   column-gap: 0;
+  /*******************************************************
+      Breakpoints
+  ********************************************************/
 }
 .cta__title {
   color: inherit;
@@ -914,6 +1015,7 @@ main {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
+  line-height: initial;
   margin: 0;
   margin-bottom: 16px;
   grid-area: title;
@@ -926,6 +1028,7 @@ main {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
+  line-height: initial;
   margin: 0;
   margin-bottom: 32px;
   grid-area: intro;
@@ -955,9 +1058,15 @@ main {
   }
 }
 
+/********************************************************************************
+    Operating block
+********************************************************************************/
 .operating {
   padding: 56px 5.33vw 64px;
   background-color: #FFFFFF;
+  /*******************************************************
+      Breakpoints
+  ********************************************************/
 }
 .operating__title {
   margin: 0;
@@ -982,21 +1091,29 @@ main {
   }
   .operating__steps {
     width: 80%;
+    height: auto;
     margin: auto;
   }
 }
 @media (min-width: 992px) {
   .operating {
-    padding: 56px 2.665vw 64px 5.33vw;
+    padding: 56px 5.33vw 64px 5.33vw;
   }
   .operating__steps {
     width: 100%;
+    height: auto;
   }
 }
 
+/********************************************************************************
+    Restaurants list bloc
+********************************************************************************/
 .restaurants {
   padding: 56px 5.33vw 64px;
   background-color: whitesmoke;
+  /*******************************************************
+      Breakpoints
+  ********************************************************/
 }
 .restaurants__title {
   margin: 0;
@@ -1027,21 +1144,23 @@ main {
   }
   .restaurants__cards {
     width: 45%;
+    height: auto;
     flex-grow: 1;
   }
 }
 @media (min-width: 992px) {
   .restaurants {
-    padding: 56px 5vw 64px 2.5vw;
+    padding: 56px 5vw 64px 0;
     background-color: #FFFFFF;
   }
 }
 
+/********************************************************************************
+    Footer block
+********************************************************************************/
 .page-footer {
   width: 100%;
   height: auto;
-  padding: 24px 5.33vw 32px 5.33vw;
-  background-color: #363636;
   color: white;
   font-size: 1rem;
   font-weight: normal;
@@ -1049,6 +1168,12 @@ main {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
+  line-height: initial;
+  padding: 24px 5.33vw 32px;
+  background-color: #363636;
+  /*******************************************************
+      Breakpoints
+  ********************************************************/
 }
 .page-footer__title {
   color: inherit;
@@ -1058,6 +1183,7 @@ main {
   font-family: "Shrikhand", cursive;
   font-variant: normal;
   font-style: normal;
+  line-height: initial;
   margin: 0;
   margin-bottom: 24px;
 }
@@ -1087,7 +1213,7 @@ main {
 }
 @media (min-width: 768px) {
   .page-footer {
-    padding: 32px 8vw 48px 8vw;
+    padding: 32px 8vw 48px;
   }
   .page-footer__link-list {
     display: flex;
@@ -1099,22 +1225,30 @@ main {
   }
   .page-footer__link-list li {
     width: 50%;
+    height: auto;
   }
 }
 @media (min-width: 992px) {
   .page-footer {
-    padding: 32px 5vw 48px 5vw;
+    padding: 32px 5vw 48px;
   }
   .page-footer__link-list {
     flex-wrap: nowrap;
   }
   .page-footer__link-list li {
     width: 25%;
+    height: auto;
   }
 }
 
+/********************************************************************************
+    Restaurant menu bloc, main element of the menu pages
+        * The image is clipped at the back of the page and shows
+          throught the margin
+********************************************************************************/
 .restaurant-menu {
   margin-top: min(60vw, 40vh);
+  /* Large top margin to left the image show throught. Use the function min to control the height */
   padding: 32px 5.33vw 72px;
   background-color: whitesmoke;
   border-radius: 32px 32px 0 0;
@@ -1124,6 +1258,9 @@ main {
   align-items: stretch;
   align-content: flex-start;
   gap: 0 0;
+  /*******************************************************
+      Breakpoints
+  ********************************************************/
 }
 .restaurant-menu__image {
   position: absolute;
@@ -1134,7 +1271,9 @@ main {
   z-index: -1;
 }
 .restaurant-menu__image img {
+  /* Protects from the image getting to big and overflowing */
   width: 100%;
+  height: auto;
   max-height: 100%;
   object-fit: cover;
 }
@@ -1146,6 +1285,7 @@ main {
   font-family: "Shrikhand", cursive;
   font-variant: normal;
   font-style: normal;
+  line-height: initial;
   margin: 0;
   margin-bottom: 40px;
   display: flex;
@@ -1174,10 +1314,10 @@ main {
     padding: 32px 8vw 72px;
   }
   .restaurant-menu__title {
-    justify-content: flex-start;
-    column-gap: 32px;
     margin: 0;
     margin-bottom: 56px;
+    justify-content: flex-start;
+    column-gap: 32px;
   }
   .restaurant-menu__section {
     padding: 0 8vw;
@@ -1192,6 +1332,16 @@ main {
   }
 }
 
+/********************************************************************************
+    Menu section block
+        * Title
+        * List of dishes
+********************************************************************************/
+.menu-section {
+  /*******************************************************
+      Breakpoints
+  ********************************************************/
+}
 .menu-section__title {
   margin: 0;
   margin-bottom: 24px;
@@ -1202,14 +1352,16 @@ main {
   font-family: "Roboto", sans-serif;
   font-variant: normal;
   font-style: normal;
-  /* Create the underlining */
+  line-height: initial;
+  /* Creates the underlining */
 }
 .menu-section__title::after {
   content: "";
+  display: block;
   border-top: solid 3px #99E2D0;
   width: 40px;
+  height: auto;
   margin-top: 8px;
-  display: block;
 }
 .menu-section__dish-list {
   list-style-type: none;

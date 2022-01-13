@@ -1,8 +1,13 @@
+/********************************************************************************
+    Call to action block
+********************************************************************************/
+
 .cta {
     padding: $space-500x $mobile-page-padding $space-700x;
-
     background-color: $neutral-light;
 
+
+    /* Grid layout, to adapt the layout for the desktop version */
     @include grid(1fr, auto auto auto, "title""intro""btn", center, $justify-content: center);
 
 
@@ -31,14 +36,21 @@
     }
 
 
+
+    /*******************************************************
+        Breakpoints
+    ********************************************************/
+
     @include desktop {
         @include grid-area(repeat(2, auto), repeat(2, auto), "title btn""intro btn");
         column-gap: $space-400x;
         padding: $space-900x $desktop-page-padding;
 
+
         &__title {
             margin: $space-base 0;
         }
+
 
         &__intro {
             margin: $space-200x 0;

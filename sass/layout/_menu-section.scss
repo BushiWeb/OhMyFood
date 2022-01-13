@@ -1,15 +1,22 @@
+/********************************************************************************
+    Menu section block
+        * Title
+        * List of dishes
+********************************************************************************/
+
 .menu-section {
     &__title {
         @include margin-bottom-only($space-300x);
         @include text-style($size: $m-font-size);
 
-        /* Create the underlining */
+
+        /* Creates the underlining */
         &::after {
             content: "";
-            border-top: solid 3px $tertiary-color;
-            width: $space-500x;
-            margin-top: $space-base;
             display: block;
+            border-top: solid 3px $tertiary-color;
+            @include dimensions($width: $space-500x);
+            margin-top: $space-base;
         }
     }
 
@@ -17,13 +24,17 @@
     &__dish-list {
         @include list-reset;
         @include dimensions-wide;
+
         @include flexbox($direction: column, $align-items: stretch, $row-gap: $space-150x);
     }
 
 
 
-    @include desktop {
+    /*******************************************************
+        Breakpoints
+    ********************************************************/
 
+    @include desktop {
         &__dish-list {
             @include flexbox($direction: row, $justify-content: flex-start, $align-items: stretch, $align-content: stretch, $wrap: wrap, $row-gap: $space-400x, $column-gap: $space-400x);
         }

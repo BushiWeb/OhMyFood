@@ -1,31 +1,42 @@
+/********************************************************************************
+    Restaurant card component
+        * Shadow
+    New modifier
+        * "Nouveau" badge in the top-right corner
+********************************************************************************/
+
+/* Variables, specific to that component */
+$border-radius: $space-150x;
+
+/* Styles */
 .restaurant-card {
     @include shadow();
+    border-radius:$border-radius;
 
-    border-radius:$space-150x;
 
     @include grid(1fr auto, auto auto auto, "img img""title fav""location fav", $align-items: flex-start);
+
 
     /* To make the title link cover the entire card */
     @include position($type: relative);
 
 
     &__img {
-        border-radius: $space-150x $space-150x 0 0;
         @include dimensions($width: 100%);
-        aspect-ratio: 2/1;
+        border-radius: $border-radius $border-radius 0 0;
+        aspect-ratio: 2/1; /* Keeps the image at the same aspect-ratio, whatever the viewport width is. Thus, keeps the restaurant-card correctly proportionned */
         object-fit: cover;
-
         grid-area: img;
     }
+
 
     &__title {
         @include margin-reset();
         @include text-style($size: $m-font-size, $weight: bold);
-
         padding: $space-200x 0 $space-base $space-200x;
-
         grid-area: title;
     }
+
 
     &__link {
         @include link-reset();
@@ -34,19 +45,18 @@
         &::after {
             content: "";
             @include position($top: 0, $bottom: 0, $left: 0, $right: 0);
-            border-radius:$space-150x;
+            border-radius:$border-radius;
         }
     }
+
 
     &__location {
         @include margin-reset();
         @include text-style();
-
-        padding-left: $space-200x;
-        padding-bottom: $space-200x;
-
+        padding:  0 0 $space-200x $space-200x;
         grid-area: location;
     }
+
 
     &__btn {
         grid-area: fav;
@@ -56,7 +66,11 @@
 
 
 
-    /* Modifiers */
+    /*******************************************************
+        Modifiers
+    ********************************************************/
+
+    /* New modifier, ta add the "Nouveau" badge */
     &--new::before {
         content: "Nouveau";
         @include text-style($weight: bold, $color: color.scale($tertiary-color, $lightness: -50%), $size: $s-font-size);
