@@ -98,6 +98,9 @@ $selection-icon-size: 50px;
     @include button-hover;
 
 
+    @include fade-up-entry;
+
+
     &:hover {
         padding-right: $selection-icon-size;
 

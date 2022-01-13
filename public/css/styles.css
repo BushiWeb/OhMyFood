@@ -816,6 +816,33 @@ main {
 .dish-card:hover {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3), 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
 }
+.dish-card:nth-of-type(1) {
+  animation: fade-up 750ms ease-out 150ms both;
+}
+.dish-card:nth-of-type(2) {
+  animation: fade-up 750ms ease-out 300ms both;
+}
+.dish-card:nth-of-type(3) {
+  animation: fade-up 750ms ease-out 450ms both;
+}
+.dish-card:nth-of-type(4) {
+  animation: fade-up 750ms ease-out 600ms both;
+}
+.dish-card:nth-of-type(5) {
+  animation: fade-up 750ms ease-out 750ms both;
+}
+.dish-card:nth-of-type(6) {
+  animation: fade-up 750ms ease-out 900ms both;
+}
+.dish-card:nth-of-type(7) {
+  animation: fade-up 750ms ease-out 1050ms both;
+}
+.dish-card:nth-of-type(8) {
+  animation: fade-up 750ms ease-out 1200ms both;
+}
+.dish-card:nth-of-type(9) {
+  animation: fade-up 750ms ease-out 1350ms both;
+}
 .dish-card:hover {
   padding-right: 50px;
 }
@@ -1354,9 +1381,6 @@ main {
   align-content: flex-start;
   gap: 0 0;
   /*******************************************************
-      Cards animations
-  ********************************************************/
-  /*******************************************************
       Breakpoints
   ********************************************************/
 }
@@ -1406,33 +1430,6 @@ main {
 }
 .restaurant-menu__btn {
   align-self: center;
-}
-.restaurant-menu .dish-card:nth-of-type(1) {
-  animation: fade-up 750ms ease-out 150ms both;
-}
-.restaurant-menu .dish-card:nth-of-type(2) {
-  animation: fade-up 750ms ease-out 300ms both;
-}
-.restaurant-menu .dish-card:nth-of-type(3) {
-  animation: fade-up 750ms ease-out 450ms both;
-}
-.restaurant-menu .dish-card:nth-of-type(4) {
-  animation: fade-up 750ms ease-out 600ms both;
-}
-.restaurant-menu .dish-card:nth-of-type(5) {
-  animation: fade-up 750ms ease-out 750ms both;
-}
-.restaurant-menu .dish-card:nth-of-type(6) {
-  animation: fade-up 750ms ease-out 900ms both;
-}
-.restaurant-menu .dish-card:nth-of-type(7) {
-  animation: fade-up 750ms ease-out 1050ms both;
-}
-.restaurant-menu .dish-card:nth-of-type(8) {
-  animation: fade-up 750ms ease-out 1200ms both;
-}
-.restaurant-menu .dish-card:nth-of-type(9) {
-  animation: fade-up 750ms ease-out 1350ms both;
 }
 @media (min-width: 768px) {
   .restaurant-menu {
