@@ -1,15 +1,18 @@
 .btn {
     @include link-reset();
-    @include text-style($weight: bold, $align: center, $color: white);
-
-    padding: $space-200x $space-400x;
-    border-radius: calc($space-200x * 2 + $base-font-size);
-
-    background-image: linear-gradient(172deg, $secondary-color 0%, $primary-color 100%);
+    @include text-style($weight: bold, $align: center, $color: white, $line-height: 1.15);
     @include shadow();
+    padding: $space-200x $space-400x;
+    border-radius: calc($space-200x * 2 + $base-font-size * 1.15);
+    background-image: linear-gradient(172deg, $secondary-color 0%, $primary-color 100%);
 
 
-    /* Modifier */
+
+    /*******************************************************
+        Modifier
+    ********************************************************/
+
+    /* fav button. Heart shaped button that gradualy fills up on hover. */
     &--fav {
         @include dimensions($size: min-content);
         @include text-style($size: $xl-font-size);

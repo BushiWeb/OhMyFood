@@ -3,7 +3,7 @@
  ********************************************************************/
 
 /* Styles text */
-@mixin text-style($color: inherit, $size: $base-font-size, $weight: normal, $align: left, $family: $text-font-family, $variant: normal, $style: normal) {
+@mixin text-style($color: inherit, $size: $base-font-size, $weight: normal, $align: left, $family: $text-font-family, $variant: normal, $style: normal, $line-height: initial) {
     color: $color;
     font-size: $size;
     font-weight: $weight;
@@ -11,12 +11,13 @@
     font-family: $family;
     font-variant: $variant;
     font-style: $style;
+    line-height: $line-height;
 }
 
 
 /* Regular styles for h2 headers */
-@mixin h2-style($color: inherit, $size: $xl-font-size, $weight: bold, $align: left, $family: $text-font-family, $variant: normal, $style: normal) {
-    @include text-style($color, $size, $weight, $align, $family, $variant, $style);
+@mixin h2-style($color: inherit, $size: $xl-font-size, $weight: bold, $align: left, $family: $text-font-family, $variant: normal, $style: normal, $line-height: initial) {
+    @include text-style($color, $size, $weight, $align, $family, $variant, $style, $line-height);
 }
 
 
