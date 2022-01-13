@@ -80,6 +80,12 @@ $border-radius: $space-150x;
         grid-area: icon;
         transform: translateX(100%);
         transition: transform 500ms;
+
+        i {
+            transform: rotate(0turn);
+            animation: rotation 500ms;
+            animation-play-state: paused;
+        }
     }
 
 
@@ -94,6 +100,10 @@ $border-radius: $space-150x;
     &:hover {
         .dish-card__selection-icon {
             transform: none;
+
+            i {
+                animation-play-state: running;
+            }
         }
     }
 
