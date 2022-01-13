@@ -9,4 +9,18 @@
     @include position(fixed, 0, 0, 0, 0);
     z-index: 100;
     background-color: $neutral-base;
+
+    &__cube-face {
+        @include dimensions($size: 25vmin);
+        @include position(fixed, 50%, 50%, $center: true);
+        @include flexbox($justify-content: center, $align-items: center);
+
+        img {
+            width: 100%;
+        }
+
+        i {
+            font-size: 20vmin;
+        }
+    }
 }
