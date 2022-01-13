@@ -74,11 +74,12 @@ $border-radius: $space-150x;
         @include flexbox($justify-content: center, $align-items: center);
         background-color: $tertiary-color;
         border-radius: 0 $border-radius $border-radius 0; /* Only left borders */
-        width: 0;
+        padding: 0 $space-200x;
         overflow: hidden;
         align-self: stretch;
         grid-area: icon;
-        transition: width 500ms;
+        transform: translateX(100%);
+        transition: transform 500ms;
     }
 
 
@@ -92,7 +93,7 @@ $border-radius: $space-150x;
 
     &:hover {
         .dish-card__selection-icon {
-            width: 50px;
+            transform: none;
         }
     }
 
