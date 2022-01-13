@@ -793,13 +793,9 @@ main {
   overflow: hidden;
   align-self: stretch;
   grid-area: icon;
+  /* Sets up transition on hover */
   transform: translateX(100%);
   transition: transform 500ms;
-}
-.dish-card__selection-icon i {
-  transform: rotate(0turn);
-  animation: rotation 500ms;
-  animation-play-state: paused;
 }
 .dish-card:hover {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3), 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
@@ -808,7 +804,8 @@ main {
   transform: none;
 }
 .dish-card:hover .dish-card__selection-icon i {
-  animation-play-state: running;
+  transform: rotate(0turn);
+  animation: rotation 500ms;
 }
 @media (min-width: 992px) {
   .dish-card {
