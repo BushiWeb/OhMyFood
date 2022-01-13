@@ -1,0 +1,65 @@
+/********************************************************************************
+    Fav button component
+        * Heart shape
+        * Fills up on hover
+********************************************************************************/
+
+.fav-btn {
+    @include dimensions($size: min-content);
+    @include text-style($size: $xl-font-size, $line-height: 1);
+    @include position($type: relative); /* To place the gradient heart */
+    padding: 10px; /* Increase target size for accessibility */
+    border: none;
+
+    /* Heart color */
+    /*
+        The background gradient half-transparent / half-black is cliped onto the icon and only the black part appears. During the transition, the transparent will replace the black color.
+    */
+    background-image: linear-gradient(0,transparent 0%, transparent 50%, black 50%, black 100%);
+    background-size: auto 200%;
+    background-position: 0 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: background-position 1s;
+
+
+    /* Gradient heart */
+    &::after {
+        /* Including the heart */
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f004";
+
+        /* Heart color */
+        /*
+        The background gradient half-transparent / half-gradient is cliped onto the icon and only the transparent part appears. During the transition, the gradient will replace the transparency.
+        */
+        background-image: linear-gradient(0,$secondary-color 0%, $primary-color 50%, transparent 50%, transparent 100%);
+        background-size: auto 200%;
+        background-position: 0 0;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        transition: background-position 1s;
+
+        /* Positionning */
+        @include position($top: 0, $left: 0, $right: 0, $bottom: 0);
+        @include flexbox($justify-content: center, $align-items: center);
+
+    }
+
+
+    /* Hover styles */
+    &:hover {
+        background-position: 0 100%;
+
+        &::after {
+            background-position: 0 100%;
+        }
+    }
+}

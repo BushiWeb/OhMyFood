@@ -452,9 +452,6 @@ main {
         * Rounded corners
         * Shadow
         * Stronger shadow and lighter color on hover
-    Favorite modifier
-        * Heart shape
-        * Fills up on hover
 ********************************************************************************/
 .btn {
   color: inherit;
@@ -475,88 +472,10 @@ main {
   /*******************************************************
       Animations
   ********************************************************/
-  /*******************************************************
-      Modifiers
-  ********************************************************/
-  /* Fav button. Heart shaped button that gradualy fills up on hover. */
 }
 .btn:hover {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3), 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
   background-image: linear-gradient(172deg, #ff8de0 0%, #a36fe1 100%);
-}
-.btn--fav {
-  width: min-content;
-  height: min-content;
-  color: inherit;
-  font-size: 1.5rem;
-  font-weight: normal;
-  text-align: left;
-  font-family: "Roboto", sans-serif;
-  font-variant: normal;
-  font-style: normal;
-  line-height: 1;
-  position: relative;
-  left: auto;
-  right: auto;
-  top: auto;
-  bottom: auto;
-  /* To place the gradient heart */
-  padding: 10px;
-  /* Increase target size for accessibility */
-  border-radius: 0;
-  box-shadow: none;
-  /* Heart color */
-  /*
-      The background gradient half-transparent / half-black is cliped onto the icon and only the black part appears. During the transition, the transparent will replace the black color.
-  */
-  background-image: linear-gradient(0, transparent 0%, transparent 50%, black 50%, black 100%);
-  background-size: auto 200%;
-  background-position: 0 0;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  transition: background-position 1s;
-  /* Gradient heart */
-  /* Hover styles */
-}
-.btn--fav::after {
-  /* Including the heart */
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f004";
-  /* Heart color */
-  /*
-  The background gradient half-transparent / half-gradient is cliped onto the icon and only the transparent part appears. During the transition, the gradient will replace the transparency.
-  */
-  background-image: linear-gradient(0, #FF79DA 0%, #9356DC 50%, transparent 50%, transparent 100%);
-  background-size: auto 200%;
-  background-position: 0 0;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  transition: background-position 1s;
-  /* Positionning */
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  align-content: flex-start;
-  gap: 0 0;
-}
-.btn--fav:hover {
-  background-position: 0 100%;
-}
-.btn--fav:hover::after {
-  background-position: 0 100%;
 }
 
 /********************************************************************************
@@ -644,7 +563,7 @@ main {
   padding: 0 0 16px 16px;
   grid-area: location;
 }
-.restaurant-card__btn {
+.restaurant-card .fav-btn {
   grid-area: fav;
   padding: 16px;
   margin-right: 16px;
@@ -902,6 +821,85 @@ main {
   .dish-card__selection-icon {
     justify-self: end;
   }
+}
+
+/********************************************************************************
+    Fav button component
+        * Heart shape
+        * Fills up on hover
+********************************************************************************/
+.fav-btn {
+  width: min-content;
+  height: min-content;
+  color: inherit;
+  font-size: 1.5rem;
+  font-weight: normal;
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  font-variant: normal;
+  font-style: normal;
+  line-height: 1;
+  position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  /* To place the gradient heart */
+  padding: 10px;
+  /* Increase target size for accessibility */
+  border: none;
+  /* Heart color */
+  /*
+      The background gradient half-transparent / half-black is cliped onto the icon and only the black part appears. During the transition, the transparent will replace the black color.
+  */
+  background-image: linear-gradient(0, transparent 0%, transparent 50%, black 50%, black 100%);
+  background-size: auto 200%;
+  background-position: 0 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: background-position 1s;
+  /* Gradient heart */
+  /* Hover styles */
+}
+.fav-btn::after {
+  /* Including the heart */
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f004";
+  /* Heart color */
+  /*
+  The background gradient half-transparent / half-gradient is cliped onto the icon and only the transparent part appears. During the transition, the gradient will replace the transparency.
+  */
+  background-image: linear-gradient(0, #FF79DA 0%, #9356DC 50%, transparent 50%, transparent 100%);
+  background-size: auto 200%;
+  background-position: 0 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: background-position 1s;
+  /* Positionning */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  gap: 0 0;
+}
+.fav-btn:hover {
+  background-position: 0 100%;
+}
+.fav-btn:hover::after {
+  background-position: 0 100%;
 }
 
 /* Import layout */
