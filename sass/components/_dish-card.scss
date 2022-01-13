@@ -19,6 +19,10 @@ $border-radius: $space-150x;
     @include grid($template-columns: 1fr repeat(2, auto), $template-rows: auto, $areas: "title price icon", $justify-items: stretch, $align-items: stretch);
 
 
+    /* To make the title link cover the entire card */
+    @include position($type: relative);
+
+
     &__description {
         padding: $space-150x $space-base;
         flex-grow: 1;
@@ -34,6 +38,13 @@ $border-radius: $space-150x;
 
         a {
             @include link-reset;
+
+            /* Make the whole card clicable */
+            &::after {
+                content: "";
+                @include position($top: 0, $bottom: 0, $left: 0, $right: 0);
+                border-radius:$border-radius;
+            }
         }
     }
 

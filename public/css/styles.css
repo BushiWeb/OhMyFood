@@ -749,6 +749,12 @@ main {
   align-items: stretch;
   row-gap: 0;
   column-gap: 0;
+  /* To make the title link cover the entire card */
+  position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
   /*******************************************************
       Breakpoints
   ********************************************************/
@@ -776,6 +782,16 @@ main {
 .dish-card__title a {
   color: inherit;
   text-decoration: none;
+  /* Make the whole card clicable */
+}
+.dish-card__title a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 12px;
 }
 .dish-card__subtitle {
   color: inherit;
