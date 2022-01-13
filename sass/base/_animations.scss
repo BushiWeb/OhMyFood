@@ -20,3 +20,35 @@
         transform: none;
     }
 }
+
+
+/* Cube rotation */
+@keyframes cube-rotation {
+    0% {
+        transform: none;
+    }
+
+    17% {
+        transform: rotateX(-90deg);
+    }
+
+    34% {
+        transform: rotateX(-90deg) rotate(90deg);
+    }
+
+    50% {
+        transform: rotateX(-90deg) rotate(90deg) rotate(90deg);
+    }
+
+    67% {
+        transform: rotateX(-90deg) rotate(90deg) rotate(90deg) rotateX(90deg);
+    }
+
+    84% {
+        transform: rotateX(-90deg) rotate(90deg) rotate(90deg) rotateX(90deg) rotateY(90deg);
+    }
+
+    100% {
+        transform: rotateX(-90deg) rotate(90deg) rotate(90deg) rotateX(90deg) rotateY(90deg) rotateY(90deg);
+    }
+}

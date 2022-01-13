@@ -18,6 +18,8 @@
     &__cube {
         @include position(fixed, 50%, 50%);
         transform-style: preserve-3d;
+        transform-origin: center center -12.5vmin;
+        animation: cube-rotation 3s infinite;
     }
 
 
@@ -55,7 +57,7 @@
         }
 
         &:nth-child(4) {
-            transform: translate(-50%, -50%) rotateX(-90deg);
+            transform: translate(-50%, -50%) rotateY(180deg) rotateX(-90deg);
             background-color: green;
         }
 
@@ -65,7 +67,7 @@
         }
 
         &:nth-child(6) {
-            transform: translate(-50%, -50%) rotateY(-90deg);
+            transform: translate(-50%, -50%) rotateX(90deg) rotateY(-90deg);
             background-color: red;
         }
     }
