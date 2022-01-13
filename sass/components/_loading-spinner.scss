@@ -52,7 +52,7 @@
         }
 
         &:nth-child(3) {
-            transform: translate(-50%, -50%) rotateY(90deg);
+            transform: translate(-50%, -50%) rotateX(90deg) rotateY(-90deg);
             background-color: orange;
         }
 
@@ -67,7 +67,7 @@
         }
 
         &:nth-child(6) {
-            transform: translate(-50%, -50%) rotateX(90deg) rotateY(-90deg);
+            transform: translate(-50%, -50%) rotateY(90deg);
             background-color: red;
         }
     }
