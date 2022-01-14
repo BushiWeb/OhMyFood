@@ -24,32 +24,20 @@
 
 /* Cube rotation */
 @keyframes cube-rotation {
-    0% {
-        transform: none;
-    }
+    $rotation-length: math.div(100%, 6);
+    $transformation-str: none;
+    $rotations: rotateX(-90deg) rotate(90deg) rotate(90deg) rotateX(90deg) rotateY(90deg) rotateY(90deg);
 
-    17% {
-        transform: rotateX(-90deg);
-    }
+    @for $i from 0 through 6 {
+        @if $i == 1 {
+            $transformation-str: nth($rotations, 1);
+        } @else if $i > 1 {
+            $transformation-str: $transformation-str #{nth($rotations, $i)};
+        }
 
-    34% {
-        transform: rotateX(-90deg) rotate(90deg);
-    }
-
-    50% {
-        transform: rotateX(-90deg) rotate(90deg) rotate(90deg);
-    }
-
-    67% {
-        transform: rotateX(-90deg) rotate(90deg) rotate(90deg) rotateX(90deg);
-    }
-
-    84% {
-        transform: rotateX(-90deg) rotate(90deg) rotate(90deg) rotateX(90deg) rotateY(90deg);
-    }
-
-    100% {
-        transform: rotateX(-90deg) rotate(90deg) rotate(90deg) rotateX(90deg) rotateY(90deg) rotateY(90deg);
+        #{$rotation-length * $i} {
+            transform: $transformation-str;
+        }
     }
 }
 
