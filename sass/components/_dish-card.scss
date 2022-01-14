@@ -43,10 +43,16 @@ $selection-icon-size: 50px;
     &__title {
         @include text-style($size: $m-font-size, $weight: bold);
         @include margin-reset;
-        @include ellipsis;
 
-        a {
-            @include link-reset;
+        button {
+            @include ellipsis;
+            background-color: transparent;
+            font: inherit;
+            border: none;
+            padding: 0;
+            margin: 0;
+            display: block;
+            max-width: 100%;
 
             /* Make the whole card clicable */
             &::after {
