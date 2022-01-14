@@ -19,3 +19,13 @@
         transform: translateY(-50%);
     }
 }
+
+
+/* Create a pseudo-element that covers the entire container (last positionned element). Useful for card links or buttons */
+@mixin pseudo-cover($border-radius: 0, $pseudo-element: after) {
+    &::#{$pseudo-element} {
+        content: "";
+        @include position($top: 0, $bottom: 0, $left: 0, $right: 0);
+        border-radius:$border-radius;
+    }
+}

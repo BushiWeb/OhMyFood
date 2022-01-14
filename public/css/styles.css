@@ -46,6 +46,7 @@
  ********************************************************************/
 /* Positionning mixin
    $center, $h-center and $v-center allow to automatically center element in the container, on both axis */
+/* Create a pseudo-element that covers the entire container (last positionned element). Useful for card links or buttons */
 /********************************************************************
     Reset
  ********************************************************************/

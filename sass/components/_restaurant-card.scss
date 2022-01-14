@@ -43,11 +43,7 @@ $border-radius: $space-150x;
         @include link-reset();
 
         /* Make the whole card clicable */
-        &::after {
-            content: "";
-            @include position($top: 0, $bottom: 0, $left: 0, $right: 0);
-            border-radius:$border-radius;
-        }
+        @include pseudo-cover($border-radius);
     }
 
 
