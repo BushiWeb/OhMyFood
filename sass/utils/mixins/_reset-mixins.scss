@@ -12,6 +12,7 @@
 /* Resets button styles to remove background, border, font styles and dimensions */
 @mixin button-reset($text-color: inherit) {
     font: inherit;
+    text-align: left;
     background-color: transparent;
     border: none;
     @include padding-reset;

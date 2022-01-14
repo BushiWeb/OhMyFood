@@ -778,6 +778,7 @@ main {
 }
 .dish-card__title button {
   font: inherit;
+  text-align: left;
   background-color: transparent;
   border: none;
   padding: 0;
@@ -916,10 +917,12 @@ main {
     padding-bottom: 8px;
   }
   .dish-card__title {
-    white-space: normal;
-    /* Remove ellipsis because we have a vertical layout, and it is okay for the title to wrap in that case */
     margin: 0;
     margin-bottom: 8px;
+  }
+  .dish-card__title button {
+    white-space: normal;
+    /* Remove ellipsis because we have a vertical layout, and it is okay for the title to wrap in that case */
   }
   .dish-card__subtitle {
     white-space: normal;
@@ -959,6 +962,7 @@ main {
 ********************************************************************************/
 .fav-btn {
   font: inherit;
+  text-align: left;
   background-color: transparent;
   border: none;
   padding: 0;

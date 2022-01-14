@@ -134,8 +134,11 @@ $selection-icon-size: 50px;
 
 
         &__title {
-            white-space: normal; /* Remove ellipsis because we have a vertical layout, and it is okay for the title to wrap in that case */
             @include margin-bottom-only($space-base);
+
+            button {
+                white-space: normal; /* Remove ellipsis because we have a vertical layout, and it is okay for the title to wrap in that case */
+            }
         }
 
 
