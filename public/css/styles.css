@@ -777,12 +777,13 @@ main {
   margin: 0;
 }
 .dish-card__title button {
+  padding: 0;
+  margin: 0;
   font: inherit;
   text-align: left;
   background-color: transparent;
   border: none;
-  padding: 0;
-  margin: 0;
+  cursor: pointer;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -961,12 +962,13 @@ main {
         * Fills up on hover
 ********************************************************************************/
 .fav-btn {
+  padding: 0;
+  margin: 0;
   font: inherit;
   text-align: left;
   background-color: transparent;
   border: none;
-  padding: 0;
-  margin: 0;
+  cursor: pointer;
   width: min-content;
   height: min-content;
   color: inherit;
