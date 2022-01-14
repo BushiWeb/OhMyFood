@@ -9,6 +9,16 @@
 }
 
 
+/* Resets button styles to remove background, border, font styles and dimensions */
+@mixin button-reset($text-color: inherit) {
+    font: inherit;
+    background-color: transparent;
+    border: none;
+    @include padding-reset;
+    @include margin-reset;
+}
+
+
 /* Removes lists paddings, margins and bullets */
 @mixin list-reset {
     list-style-type: none;

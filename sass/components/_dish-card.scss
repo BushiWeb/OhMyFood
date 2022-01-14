@@ -45,12 +45,8 @@ $selection-icon-size: 50px;
         @include margin-reset;
 
         button {
+            @include button-reset;
             @include ellipsis;
-            background-color: transparent;
-            font: inherit;
-            border: none;
-            padding: 0;
-            margin: 0;
             display: block;
             max-width: 100%;
 

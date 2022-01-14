@@ -5,11 +5,11 @@
 ********************************************************************************/
 
 .fav-btn {
+    @include button-reset;
     @include dimensions($size: min-content);
     @include text-style($size: $xl-font-size, $line-height: 1);
     @include position($type: relative); /* To place the gradient heart */
     padding: 10px; /* Increase target size for accessibility */
-    border: none;
 
     /* Heart color */
     /*

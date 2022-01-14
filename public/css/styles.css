@@ -50,6 +50,7 @@
     Reset
  ********************************************************************/
 /* Resets link styles to remove underlining and default color */
+/* Resets button styles to remove background, border, font styles and dimensions */
 /* Removes lists paddings, margins and bullets */
 /********************************************************************
     Fonts
@@ -775,14 +776,14 @@ main {
   margin: 0;
 }
 .dish-card__title button {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  background-color: transparent;
   font: inherit;
+  background-color: transparent;
   border: none;
   padding: 0;
   margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   display: block;
   max-width: 100%;
   /* Make the whole card clicable */
@@ -956,6 +957,11 @@ main {
         * Fills up on hover
 ********************************************************************************/
 .fav-btn {
+  font: inherit;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
   width: min-content;
   height: min-content;
   color: inherit;
@@ -974,7 +980,6 @@ main {
   /* To place the gradient heart */
   padding: 10px;
   /* Increase target size for accessibility */
-  border: none;
   /* Heart color */
   /*
       The background gradient half-transparent / half-black is cliped onto the icon and only the black part appears. During the transition, the transparent will replace the black color.
