@@ -44,14 +44,14 @@
 
 
 <body>
-    <div class="loading-spinner">
+    <div class="loading-spinner" role="progressbar" aria-roledescription="Chargement du contenu">
         <div class="loading-spinner__cube">
             <div class="loading-spinner__cube-face"><img src="./public/images/brand/ohmyfood@2x.svg" alt="Ohmyfood"></i></div>
-            <div class="loading-spinner__cube-face"><i class="fas fa-utensils"></i></div>
-            <div class="loading-spinner__cube-face"><i class="fas fa-fish"></i></div>
-            <div class="loading-spinner__cube-face"><i class="fas fa-wine-glass-alt"></i></div>
-            <div class="loading-spinner__cube-face"><i class="fas fa-cheese"></i></div>
-            <div class="loading-spinner__cube-face"><i class="fas fa-coffee"></i></div>
+            <div class="loading-spinner__cube-face"><i class="fas fa-utensils" aria-hidden="true"></i></div>
+            <div class="loading-spinner__cube-face"><i class="fas fa-fish" aria-hidden="true"></i></div>
+            <div class="loading-spinner__cube-face"><i class="fas fa-wine-glass-alt" aria-hidden="true"></i></div>
+            <div class="loading-spinner__cube-face"><i class="fas fa-cheese" aria-hidden="true"></i></div>
+            <div class="loading-spinner__cube-face"><i class="fas fa-coffee" aria-hidden="true"></i></div>
         </div>
     </div>
 
@@ -60,8 +60,8 @@
     </header>
 
     <!-- Search location -->
-    <p class="location">
-        <i class="fas fa-map-marker-alt"></i>
+    <p class="location" aria-label="Localisation">
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
         Paris, Belleville
     </p>
 
@@ -78,9 +78,9 @@
             <h2 class="operating__title">Fonctionnement</h2>
 
             <ol class="operating__steps">
-                <li class="operating__step-card step-card"><i class="fas fa-mobile-alt step-card__icon"></i>Choisissez un restaurant</li>
-                <li class="operating__step-card step-card"><i class="fas fa-list-ul step-card__icon"></i>Composez votre menu</li>
-                <li class="operating__step-card step-card"><i class="fas fa-store step-card__icon"></i>Dégustez au restaurants</li>
+                <li class="operating__step-card step-card"><i class="fas fa-mobile-alt step-card__icon" aria-hidden="true"></i>Choisissez un restaurant</li>
+                <li class="operating__step-card step-card"><i class="fas fa-list-ul step-card__icon"></i aria-hidden="true">Composez votre menu</li>
+                <li class="operating__step-card step-card"><i class="fas fa-store step-card__icon"></i aria-hidden="true">Dégustez au restaurants</li>
             </ol>
         </section>
 
@@ -94,29 +94,29 @@
                 <li class="restaurant-card restaurant-card--new restaurants__cards">
                     <img src="public/images/restaurants/la_palette_du_gout.jpg" alt="Table de restaurant avec une assiette contenant une entrée phare de La pallette du goût" class="restaurant-card__img">
                     <h3 class="restaurant-card__title"><a href="restaurants_pages/la_palette_du_gout.html" class="restaurant-card__link">La palette du goût</a></h3>
-                    <p class="restaurant-card__location">Ménilmontant</p>
-                    <button type="button" class="fav-btn restaurant-card__btn"><i class="far fa-heart"></i></button>
+                    <p class="restaurant-card__location" aria-label="Localisation">Ménilmontant</p>
+                    <button type="button" class="fav-btn restaurant-card__btn" role="checkbox"><i class="far fa-heart" aria-hidden="true"><span class="sr-only">Ajouter en favoris</span></i></button>
                 </li>
 
                 <li class="restaurant-card restaurant-card--new restaurants__cards">
                     <img src="public/images/restaurants/la_note_enchantee.jpg" alt="Table de restaurant avec une assiette contenant un plat phare de La note enchantée" class="restaurant-card__img">
                     <h3 class="restaurant-card__title"><a href="restaurants_pages/la_note_enchantee.html" class="restaurant-card__link">La note enchantée</a></h3>
-                    <p class="restaurant-card__location">Charonne</p>
-                    <button type="button" class="fav-btn restaurant-card__btn"><i class="far fa-heart"></i></button>
+                    <p class="restaurant-card__location" aria-label="Localisation">Charonne</p>
+                    <button type="button" class="fav-btn restaurant-card__btn" role="checkbox"><i class="far fa-heart" aria-hidden="true"><span class="sr-only">Ajouter en favoris</span></i></button>
                 </li>
 
                 <li class="restaurant-card restaurants__cards">
                     <img src="public/images/restaurants/a_la_francaise.jpg" alt="Table de restaurant avec une assiette contenant un plat phare de À la française" class="restaurant-card__img">
                     <h3 class="restaurant-card__title"><a href="restaurants_pages/a_la_francaise.html" class="restaurant-card__link">À la française</a></h3>
-                    <p class="restaurant-card__location">Cité Rouge</p>
-                    <button type="button" class="fav-btn restaurant-card__btn"><i class="far fa-heart"></i></button>
+                    <p class="restaurant-card__location" aria-label="Localisation">Cité Rouge</p>
+                    <button type="button" class="fav-btn restaurant-card__btn" role="checkbox"><i class="far fa-heart" aria-hidden="true"><span class="sr-only">Ajouter en favoris</span></i></button>
                 </li>
 
                 <li class="restaurant-card restaurants__cards">
                     <img src="public/images/restaurants/le_delice_des_sens.jpg" alt="Table de restaurant avec une assiette contenant un plat phare Du délice des sens" class="restaurant-card__img">
                     <h3 class="restaurant-card__title"><a href="restaurants_pages/le_delice_des_sens.html" class="restaurant-card__link">Le délice des sens</a></h3>
-                    <p class="restaurant-card__location">Folie-Méricourt</p>
-                    <button type="button" class="fav-btn restaurant-card__btn"><i class="far fa-heart"></i></button>
+                    <p class="restaurant-card__location" aria-label="Localisation">Folie-Méricourt</p>
+                    <button type="button" class="fav-btn restaurant-card__btn" role="checkbox"><i class="far fa-heart" aria-hidden="true"><span class="sr-only">Ajouter en favoris</span></i></button>
                 </li>
             </ul>
         </section>
