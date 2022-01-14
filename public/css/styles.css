@@ -865,6 +865,8 @@ main {
   border-radius: 0 12px 12px 0;
   /* Only left borders */
   overflow: hidden;
+  z-index: -1;
+  /* The icon goes underneath the link cover */
   /* Sets up transition on hover */
   transform: translateX(100%);
   transition: transform 500ms;

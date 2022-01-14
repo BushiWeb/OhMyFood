@@ -81,6 +81,7 @@ $selection-icon-size: 50px;
         background-color: $tertiary-color;
         border-radius: 0 $border-radius $border-radius 0; /* Only left borders */
         overflow: hidden;
+        z-index: -1; /* The icon goes underneath the link cover */
 
         /* Sets up transition on hover */
         transform: translateX(100%);
