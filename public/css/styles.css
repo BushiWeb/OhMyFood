@@ -471,19 +471,19 @@ main {
   0% {
     transform: none;
   }
-  17% {
+  16.6666666667% {
     transform: rotateX(-90deg);
   }
-  34% {
+  33.3333333333% {
     transform: rotateX(-90deg) rotate(90deg);
   }
   50% {
     transform: rotateX(-90deg) rotate(90deg) rotate(90deg);
   }
-  67% {
+  66.6666666667% {
     transform: rotateX(-90deg) rotate(90deg) rotate(90deg) rotateX(90deg);
   }
-  84% {
+  83.3333333333% {
     transform: rotateX(-90deg) rotate(90deg) rotate(90deg) rotateX(90deg) rotateY(90deg);
   }
   100% {
