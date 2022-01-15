@@ -877,34 +877,34 @@ main {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3), 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
 }
 .dish-card:nth-of-type(1) {
-  animation: fade-up 750ms ease-out 150ms both;
+  animation: fade-up 1s ease-out 300ms both;
 }
 .dish-card:nth-of-type(2) {
-  animation: fade-up 750ms ease-out 300ms both;
+  animation: fade-up 1s ease-out 600ms both;
 }
 .dish-card:nth-of-type(3) {
-  animation: fade-up 750ms ease-out 450ms both;
+  animation: fade-up 1s ease-out 900ms both;
 }
 .dish-card:nth-of-type(4) {
-  animation: fade-up 750ms ease-out 600ms both;
+  animation: fade-up 1s ease-out 1200ms both;
 }
 .dish-card:nth-of-type(5) {
-  animation: fade-up 750ms ease-out 750ms both;
+  animation: fade-up 1s ease-out 1500ms both;
 }
 .dish-card:nth-of-type(6) {
-  animation: fade-up 750ms ease-out 900ms both;
+  animation: fade-up 1s ease-out 1800ms both;
 }
 .dish-card:nth-of-type(7) {
-  animation: fade-up 750ms ease-out 1050ms both;
+  animation: fade-up 1s ease-out 2100ms both;
 }
 .dish-card:nth-of-type(8) {
-  animation: fade-up 750ms ease-out 1200ms both;
+  animation: fade-up 1s ease-out 2400ms both;
 }
 .dish-card:nth-of-type(9) {
-  animation: fade-up 750ms ease-out 1350ms both;
+  animation: fade-up 1s ease-out 2700ms both;
 }
 .dish-card:nth-of-type(10) {
-  animation: fade-up 750ms ease-out 1500ms both;
+  animation: fade-up 1s ease-out 3000ms both;
 }
 .dish-card:hover {
   padding-right: 50px;
