@@ -4,6 +4,8 @@
 /* Font sizes */
 /* Colors */
 /* Sizes */
+/* Header specific styles, given for the image window in the menus */
+/* Height of the header, top and bottom padding plus line-height */
 /* Breakpoints */
 /* Include all mixins */
 /********************************************************************
@@ -1145,6 +1147,7 @@ main {
   top: auto;
   bottom: auto;
   /* For the arrow placement */
+  line-height: 1.15;
   padding: 20px 5.33vw 10px;
   background-color: #FFFFFF;
   /*******************************************************
@@ -1511,11 +1514,14 @@ main {
 /********************************************************************************
     Restaurant menu bloc, main element of the menu pages
         * The image is clipped at the back of the page and shows
-          throught the margin
+          throught the margin, as a kind of image window
 ********************************************************************************/
+/* Variables, only used in this block */
+/* Height of the image above de menu content and below the header. On large screens, 40vh is used to avoid having the images taking all the screen, annd on tall screens 60vw is used for the same reasons */
+/* Styles */
 .restaurant-menu {
   margin-top: min(60vw, 40vh);
-  /* Large top margin to left the image show throught. Use the function min to control the height */
+  /* Large top margin to create the image window */
   padding: 32px 5.33vw 72px;
   background-color: whitesmoke;
   border-radius: 32px 32px 0 0;
@@ -1542,6 +1548,8 @@ main {
   width: 100%;
   height: auto;
   max-height: 100%;
+  /* Protects the image from getting to small and letting whitespace showing underneath. The minimal height of the image is the height of the window, plus the height of the header (it it positionned at the top of the screen) + plus the size of the main border double (for safety) */
+  min-height: calc(min(60vw, 40vh) + 64px + 30px + 2.3rem);
   object-fit: cover;
 }
 .restaurant-menu__title {

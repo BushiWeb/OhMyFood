@@ -8,7 +8,8 @@
 .page-header {
     @include dimensions-wide;
     @include position($type: relative); /* For the arrow placement */
-    padding: 20px $mobile-page-padding 10px;
+    line-height: $header-line-height;
+    padding: $header-top-padding $mobile-page-padding $header-bottom-padding;
     background-color: $neutral-base;
 
 
@@ -43,7 +44,7 @@
     ********************************************************/
 
     @include tablet {
-        padding: 20px $tablet-page-padding 10px;
+        padding: $header-top-padding $tablet-page-padding $header-bottom-padding;
 
 
         &__back-link {
@@ -54,7 +55,7 @@
 
 
     @include desktop {
-        padding: 20px $desktop-page-padding 10px;
+        padding: $header-top-padding $desktop-page-padding $header-bottom-padding;
 
 
         &__back-link {
