@@ -8,6 +8,7 @@
     <!-- Font family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap" as="style" type="font/woff2" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap" rel="stylesheet">
 
     <!--Stylesheets-->
@@ -25,7 +26,7 @@
     <meta name="og:title" content="Ohmyfood! - Le délice des sens">
     <meta name="og:type" content="website">
     <meta name="og:image" content="https://emeric-francisod.github.io/EmericFrancisod_3_27122021/public/images/restaurants/le_delice_des_sens.jpg">
-    <meta name="og:image:alt" content="Table de restaurant avec une assiette contenant un plat Du délice des sens">
+    <meta name="og:image:alt" content="Table de restaurant avec une assiette contenant un plat phare Du délice des sens">
     <meta name="og:url" content="https://emeric-francisod.github.io/EmericFrancisod_3_27122021/">
     <meta name="og:description" content="Ohmyfood! est une entreprise de commande de repas en ligne. Notre concept permet aux utilisateurs de composer leur propre menu et réduire leur temps d’attente dans les restaurants car leur menu est préparé à l’avance. Plus de perte de temps à consulter la carte !">
     <meta name="og:sitename" content="Ohmyfood">
@@ -36,135 +37,155 @@
     <meta property="twitter:url" content="https://emeric-francisod.github.io/EmericFrancisod_3_27122021/">
     <meta name="twitter:description" content="Ohmyfood! est une entreprise de commande de repas en ligne. Notre concept permet aux utilisateurs de composer leur propre menu et réduire leur temps d’attente dans les restaurants car leur menu est préparé à l’avance. Plus de perte de temps à consulter la carte !">
     <meta name="twitter:image" content="https://emeric-francisod.github.io/EmericFrancisod_3_27122021/public/images/restaurants/le_delice_des_sens.jpg">
-    <meta name="twitter:image:alt" content="Table de restaurant avec une assiette contenant un plat Du délice des sens">
+    <meta name="twitter:image:alt" content="Table de restaurant avec une assiette contenant un plat phare Du délice des sens">
 
     <!--Icon-->
     <link rel="icon" type="image/png" href="../public/images/brand/icon.png" />
 </head>
 <body>
-    <header>
-        <a href="../index.html"><i class="fas fa-arrow-left"></i></a>
-        <h1>ohmyfood</h1>
+    <header class="page-header">
+        <a href="../index.html" class="page-header__back-link"><i class="fas fa-arrow-left" aria-hidden="true"></i><span class="sr-only">Retour vers l'accueil</span></a>
+        <h1 class="page-header__title">ohmyfood</h1>
     </header>
 
     <main class="restaurant-menu">
+        <!-- Background image -->
         <div class="restaurant-menu__image">
-            <img src="../public/images/restaurants/le_delice_des_sens.jpg" alt="">
+            <img src="../public/images/restaurants/le_delice_des_sens.jpg" alt="Table de restaurant avec une assiette contenant un plat phare Du délice des sens" width="3024" height="3780">
         </div>
 
-        <h2>Le délice des sens</h2>
-        <a href="#" class="button button--fav"><i class="fas fa-heart"></i></a>
+        <h2 class="restaurant-menu__title">
+            Le délice des sens
+            <button type="button" class="restaurant-menu__fav fav-btn" aria-label="Ajouter aux favoris"><i class="far fa-heart" aria-hidden="true"></i></button>
+        </h2>
+
+        <div class="restaurant-menu__menu">
+            <!-- dish-cards title's button is extended to the whole card using CSS, in order to preserve accessibility while making the whole card clicable -->
+
+            <!-- Starter -->
+            <section class="restaurant-menu__section menu-section">
+                <h3 class="menu-section__title">ENTRÉES</h3>
+
+                <ul class="menu-section__dish-list">
+                    <li class="dish-card">
+                        <hgroup class="dish-card__description">
+                            <h4 class="dish-card__title"><button type="button">Ravioles de foie gras</button></h4>
+                            <h5 class="dish-card__subtitle">Accompagnés de leur crème à la truffe</h5>
+                        </hgroup>
+                        <p class="dish-card__price">25€</p>
+                        <div class="dish-card__selection-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+                    </li>
+
+                    <li class="dish-card">
+                        <hgroup class="dish-card__description">
+                            <h4 class="dish-card__title"><button type="button">Caviar osciètre</button></h4>
+                            <h5 class="dish-card__subtitle">Sur blini à la farine de blé noir</h5>
+                        </hgroup>
+                        <p class="dish-card__price">35€</p>
+                        <div class="dish-card__selection-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+                    </li>
+
+                    <li class="dish-card">
+                        <hgroup class="dish-card__description">
+                            <h4 class="dish-card__title"><button type="button">Homar et espuma de potiron</button></h4>
+                            <h5 class="dish-card__subtitle">Mariné aux zestes d'orange</h5>
+                        </hgroup>
+                        <p class="dish-card__price">20€</p>
+                        <div class="dish-card__selection-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+                    </li>
+
+                    <li class="dish-card">
+                        <hgroup class="dish-card__description">
+                            <h4 class="dish-card__title"><button type="button">Foie gras de canard cuit entier</button></h4>
+                            <h5 class="dish-card__subtitle">Confiture de figue et pain toasté</h5>
+                        </hgroup>
+                        <p class="dish-card__price">35€</p>
+                        <div class="dish-card__selection-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+                    </li>
+                </ul>
+            </section>
 
 
-        <!-- Starter -->
-        <section class="restaurant-menu__starter">
-            <h3>Entrées</h3>
-            <ul>
-                <li class="dish-card">
-                    <hgroup>
-                        <h4><a href="#">Tartare de thon</a></h4>
-                        <h5>Assaisonné au yuzu</h5>
-                    </hgroup>
-                    <p>25€</p>
-                    <div class="dish-card__selection-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
-                </li>
+            <!-- Main course -->
+            <section class="restaurant-menu__section menu-section">
+                <h3 class="menu-section__title">PLATS</h3>
 
-                <li class="dish-card">
-                    <hgroup>
-                        <h4><a href="#">Bouchée de homard croustillant</a></h4>
-                        <h5>Et sa farandole de petits légumes</h5>
-                    </hgroup>
-                    <p>35€</p>
-                    <div class="dish-card__selection-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
-                </li>
+                <ul class="menu-section__dish-list">
+                    <li class="dish-card">
+                        <hgroup class="dish-card__description">
+                            <h4 class="dish-card__title"><button type="button">Noix de coquilles Saint-Jacques</button></h4>
+                            <h5 class="dish-card__subtitle">Sur lit de purée de céleri-rave</h5>
+                        </hgroup>
+                        <p class="dish-card__price">40€</p>
+                        <div class="dish-card__selection-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+                    </li>
 
-                <li class="dish-card">
-                    <hgroup>
-                        <h4><a href="#">Velouté de cèpes</a></h4>
-                        <h5>Aux truffes</h5>
-                    </hgroup>
-                    <p>20€</p>
-                    <div class="dish-card__selection-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
-                </li>
-            </ul>
-        </section>
+                    <li class="dish-card">
+                        <hgroup class="dish-card__description">
+                            <h4 class="dish-card__title"><button type="button">Langoustine poêlée</button></h4>
+                            <h5 class="dish-card__subtitle">Purée de patate douce</h5>
+                        </hgroup>
+                        <p class="dish-card__price">35€</p>
+                        <div class="dish-card__selection-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+                    </li>
 
-
-        <!-- Main course -->
-        <section class="restaurant-menu__main-course">
-            <h3>Plats</h3>
-            <ul>
-                <li class="dish-card">
-                    <hgroup>
-                        <h4><a href="#">Poulet rôti aux herbes de Provence</a></h4>
-                        <h5>Et sa crème de truffe</h5>
-                    </hgroup>
-                    <p>40€</p>
-                    <div class="dish-card__selection-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
-                </li>
-
-                <li class="dish-card">
-                    <hgroup>
-                        <h4><a href="#">Langouste rôtie</a></h4>
-                        <h5>Et ses légumes de saison</h5>
-                    </hgroup>
-                    <p>35€</p>
-                    <div class="dish-card__selection-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
-                </li>
-
-                <li class="dish-card">
-                    <hgroup>
-                        <h4><a href="#">Côte de boeuf Angus</a></h4>
-                        <h5>Et sa purée de panais</h5>
-                    </hgroup>
-                    <p>44€</p>
-                    <div class="dish-card__selection-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
-                </li>
-            </ul>
-        </section>
+                    <li class="dish-card">
+                        <hgroup class="dish-card__description">
+                            <h4 class="dish-card__title"><button type="button">Mijoté de queue de boeuf</button></h4>
+                            <h5 class="dish-card__subtitle">Et riz sauvage aux zestes de citron</h5>
+                        </hgroup>
+                        <p class="dish-card__price">44€</p>
+                        <div class="dish-card__selection-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+                    </li>
+                </ul>
+            </section>
 
 
-        <!-- Dessert -->
-        <section class="restaurant-menu__dessert">
-            <h3>Desserts</h3>
-            <ul>
-                <li class="dish-card">
-                    <hgroup>
-                        <h4><a href="#">Farandole de desserts</a></h4>
-                        <h5>Du chef</h5>
-                    </hgroup>
-                    <p>18€</p>
-                    <div class="dish-card__selection-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
-                </li>
+            <!-- Dessert -->
+            <section class="restaurant-menu__section menu-section">
+                <h3 class="menu-section__title">DESSERTS</h3>
 
-                <li class="dish-card">
-                    <hgroup>
-                        <h4><a href="#">Crème brulée</a></h4>
-                        <h5>Revisitée</h5>
-                    </hgroup>
-                    <p>22€</p>
-                    <div class="dish-card__selection-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
-                </li>
+                <ul class="menu-section__dish-list">
+                    <li class="dish-card">
+                        <hgroup class="dish-card__description">
+                            <h4 class="dish-card__title"><button type="button">Macaron noisette et chocolat</button></h4>
+                            <h5 class="dish-card__subtitle">Glace au caramel brun et sel de Guérande</h5>
+                        </hgroup>
+                        <p class="dish-card__price">18€</p>
+                        <div class="dish-card__selection-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+                    </li>
 
-                <li class="dish-card">
-                    <hgroup>
-                        <h4><a href="#">Tiramisu</a></h4>
-                        <h5>À la noisette</h5>
-                    </hgroup>
-                    <p>23€</p>
-                    <div class="dish-card__selection-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
-                </li>
-            </ul>
-        </section>
+                    <li class="dish-card">
+                        <hgroup class="dish-card__description">
+                            <h4 class="dish-card__title"><button type="button">Baba au rhum revisité</button></h4>
+                            <h5 class="dish-card__subtitle">Avec son coulis de citron</h5>
+                        </hgroup>
+                        <p class="dish-card__price">22€</p>
+                        <div class="dish-card__selection-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+                    </li>
+
+                    <li class="dish-card">
+                        <hgroup class="dish-card__description">
+                            <h4 class="dish-card__title"><button type="button">Tarte au citron meringuée</button></h4>
+                            <h5 class="dish-card__subtitle">Déstructurée</h5>
+                        </hgroup>
+                        <p class="dish-card__price">23€</p>
+                        <div class="dish-card__selection-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <a href="#" class="btn restaurant-menu__btn">Commander</a>
     </main>
 
-    <footer>
-        <h2>ohmyfood</h2>
-        <ul>
+    <footer class="page-footer">
+        <h2 class="page-footer__title">ohmyfood</h2>
+        <ul class="page-footer__link-list">
             <li><a href="#"><i class="fas fa-utensils"></i> un restaurant</a></li>
             <li><a href="#"><i class="fas fa-hands-helping"></i>Devenir partenaire</a></li>
             <li><a href="#">Mentions légales</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="mailto:contact@ohmyfood.com">Contact</a></li>
         </ul>
     </footer>
 </body>
