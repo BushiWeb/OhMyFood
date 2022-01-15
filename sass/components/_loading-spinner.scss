@@ -8,6 +8,7 @@
 /* Variables, used only in this class */
 $cube-size: 25vmin;
 $screen-time: 3s;
+$fade-out-duration: 750ms;
 
 /* Styles */
 .loading-spinner {
@@ -19,7 +20,7 @@ $screen-time: 3s;
 
 
     /* Animation: fade-out after 3s */
-    animation: fade-out 500ms $screen-time backwards;
+    animation: fade-out $fade-out-duration $screen-time backwards;
 
 
     perspective: 1000px;
@@ -29,7 +30,7 @@ $screen-time: 3s;
         @include position(fixed, 50%, 50%);
         transform-style: preserve-3d;
         transform-origin: center center math.div(-$cube-size, 2);
-        animation: cube-rotation $screen-time 3;
+        animation: cube-rotation $screen-time infinite;
     }
 
 
