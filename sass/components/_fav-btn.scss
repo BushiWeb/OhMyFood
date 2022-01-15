@@ -3,7 +3,10 @@
         * Heart shape
         * Fills up on hover
 ********************************************************************************/
+/* Variables, only used in this file */
+$animation-duration: 2s;
 
+/* Styles */
 .fav-btn {
     @include button-reset;
     @include dimensions($size: min-content);
@@ -21,7 +24,7 @@
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    transition: background-position 1s;
+    transition: background-position $animation-duration;
 
 
     /* Gradient heart */
@@ -45,7 +48,7 @@
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
-        transition: background-position 1s;
+        transition: background-position $animation-duration;
 
         /* Positionning */
         @include position($top: 0, $left: 0, $right: 0, $bottom: 0);
