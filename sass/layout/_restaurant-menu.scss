@@ -29,8 +29,8 @@ $main-border-radius: $space-400x;
             /* Protects from the image getting to big and overflowing */
             @include dimensions-wide;
             max-height: 100%;
-            /* Protects the image from getting to small and letting whitespace showing underneath. The minimal height of the image is the height of the window, plus the height of the header (it it positionned at the top of the screen) + plus the size of the main border double (for safety) */
-            min-height: calc($image-window + $main-border-radius * 2 + $page-header-height);
+            /* Protects the image from getting to small and letting whitespace showing underneath. The minimal height of the image is the height of the window, plus the height of the header (it it positionned at the top of the screen) + plus the size of the main border */
+            min-height: calc($image-window + $main-border-radius + $page-header-height);
             object-fit: cover;
         }
     }

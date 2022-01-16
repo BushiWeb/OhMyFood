@@ -8,13 +8,13 @@
 .page-header {
     @include dimensions-wide;
     @include position($type: relative); /* For the arrow placement */
-    line-height: $header-line-height;
     padding: $header-top-padding $mobile-page-padding $header-bottom-padding;
     background-color: $neutral-base;
 
 
     &__title {
         text-align: center;
+        line-height: $header-line-height;
     }
 
 

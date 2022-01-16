@@ -1139,7 +1139,6 @@ main {
   top: auto;
   bottom: auto;
   /* For the arrow placement */
-  line-height: 1.15;
   padding: 20px 5.33vw 10px;
   background-color: #FFFFFF;
   /*******************************************************
@@ -1152,6 +1151,7 @@ main {
 }
 .page-header__title {
   text-align: center;
+  line-height: 1.15;
 }
 .page-header__back-link {
   color: inherit;
@@ -1540,8 +1540,8 @@ main {
   width: 100%;
   height: auto;
   max-height: 100%;
-  /* Protects the image from getting to small and letting whitespace showing underneath. The minimal height of the image is the height of the window, plus the height of the header (it it positionned at the top of the screen) + plus the size of the main border double (for safety) */
-  min-height: calc(min(60vw, 40vh) + 64px + 30px + 2.3rem);
+  /* Protects the image from getting to small and letting whitespace showing underneath. The minimal height of the image is the height of the window, plus the height of the header (it it positionned at the top of the screen) + plus the size of the main border */
+  min-height: calc(min(60vw, 40vh) + 32px + 30px + 2.3rem);
   object-fit: cover;
 }
 .restaurant-menu__title {
