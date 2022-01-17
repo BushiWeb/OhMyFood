@@ -5,35 +5,17 @@
 ********************************************************************************/
 
 /* Variables, only used in this block */
-$image-window-vw-relative: 60vw;
-$image-window-vh-relative: 40vh;
-$image-window: min($image-window-vw-relative, $image-window-vh-relative); /* Height of the image above de menu content and below the header. On large screens, 40vh is used to avoid having the images taking all the screen, annd on tall screens 60vw is used for the same reasons */
 $main-border-radius: $space-400x;
 
 /* Styles */
 .restaurant-menu {
-    margin-top: $image-window; /* Large top margin to create the image window */
+    margin-top: -$main-border-radius; /* Large top margin to create the image window */
     padding: $space-400x $mobile-page-padding $space-900x;
     background-color: $neutral-light;
     border-radius: $main-border-radius $main-border-radius 0 0;
 
 
     @include flexbox($direction: column, $align-items: stretch);
-
-
-    &__image {
-        @include position($type: fixed, $top: 0, $left: 0, $right: 0, $bottom: 0);
-        z-index: -1;
-
-        img {
-            /* Protects from the image getting to big and overflowing */
-            @include dimensions-wide;
-            max-height: 100%;
-            /* Protects the image from getting to small and letting whitespace showing underneath. The minimal height of the image is the height of the window, plus the height of the header (it it positionned at the top of the screen) + plus the size of the main border */
-            min-height: calc($image-window + $main-border-radius + $page-header-height);
-            object-fit: cover;
-        }
-    }
 
 
     &__title {
