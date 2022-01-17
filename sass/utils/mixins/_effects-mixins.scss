@@ -2,7 +2,7 @@
     Effects
  ********************************************************************/
 
-/* Button hover */
+/* Button hover. Darkens the shadow on hover. Can receive extra properties. */
 @mixin button-hover {
     &:hover {
         @include shadow($dark: true);
@@ -12,7 +12,7 @@
 
 
 
-/* Fade-up */
+/* Fade-up. Gives the fade-up animations to all the elements, with a bit more delay each time. */
 @mixin fade-up-entry($delay: 300ms, $length: 1s, $element-nb: 10) {
     @for $i from 1 through $element-nb {
         &:nth-of-type(#{$i}) {

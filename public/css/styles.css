@@ -26,10 +26,12 @@
 /********************************************************************
     Shadows
  ********************************************************************/
-/* Creates shadows of different intensities */
-/********************************************************************
+/* Creates shadows of different intensities, depending on the dark parameter */
+/*****************************************************************************
     Breakpoints
- ********************************************************************/
+    Create different breakpoints depending on the $breakpoints variable.
+    Needs content to work.
+ *****************************************************************************/
 /* Tablet breakpoint */
 /* Desktop breakpoint */
 /********************************************************************
@@ -65,8 +67,8 @@
 /********************************************************************
     Effects
  ********************************************************************/
-/* Button hover */
-/* Fade-up */
+/* Button hover. Darkens the shadow on hover. Can receive extra properties. */
+/* Fade-up. Gives the fade-up animations to all the elements, with a bit more delay each time. */
 /* Import vendors */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document

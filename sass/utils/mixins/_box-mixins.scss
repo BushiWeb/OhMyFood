@@ -67,7 +67,7 @@
     Shadows
  ********************************************************************/
 
-/* Creates shadows of different intensities */
+/* Creates shadows of different intensities, depending on the dark parameter */
 @mixin shadow($dark: false) {
     @if $dark {
         box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3), 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 8px 16px 0px rgba(0,0,0,0.1);
