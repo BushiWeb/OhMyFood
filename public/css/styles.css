@@ -600,7 +600,7 @@ main {
   right: auto;
   top: auto;
   bottom: auto;
-  /* Image of the card */
+  /* Image of the card, element picture */
   /* Name of the restaurant */
   /* Link to the restaurant menu. Covers the entire card using a pseudo-element */
   /*******************************************************
@@ -612,13 +612,16 @@ main {
   /* New modifier, ta add the "Nouveau" badge */
 }
 .restaurant-card__img {
+  grid-area: img;
+  /* Image inside of the picture element */
+}
+.restaurant-card__img img {
   width: 100%;
   height: auto;
   border-radius: 12px 12px 0 0;
   aspect-ratio: 2/1;
   /* Keeps the image at the same aspect-ratio, whatever the viewport width is. Thus, keeps the restaurant-card correctly proportionned */
   object-fit: cover;
-  grid-area: img;
 }
 .restaurant-card__title {
   margin: 0;

@@ -23,13 +23,17 @@ $border-radius: $space-150x;
     @include position($type: relative);
 
 
-    /* Image of the card */
+    /* Image of the card, element picture */
     &__img {
-        @include dimensions-wide; //width: 100%
-        border-radius: $border-radius $border-radius 0 0; //Border radius on the top corners, to match the border radius of the card
-        aspect-ratio: 2/1; /* Keeps the image at the same aspect-ratio, whatever the viewport width is. Thus, keeps the restaurant-card correctly proportionned */
-        object-fit: cover;
         grid-area: img;
+
+        /* Image inside of the picture element */
+        img {
+            @include dimensions-wide; //width: 100%
+            border-radius: $border-radius $border-radius 0 0; //Border radius on the top corners, to match the border radius of the card
+            aspect-ratio: 2/1; /* Keeps the image at the same aspect-ratio, whatever the viewport width is. Thus, keeps the restaurant-card correctly proportionned */
+            object-fit: cover;
+        }
     }
 
 
