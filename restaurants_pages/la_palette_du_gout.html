@@ -52,7 +52,26 @@
 
     <!-- Banner image -->
     <div class="banner-image">
-        <img src="../public/images/restaurants/la_palette_du_gout.jpg" alt="Table de restaurant avec une assiette contenant une entrée phare de La pallette du goût" width="4402" height="2935">
+        <picture>
+            <source
+                sizes="100vw"
+                srcset="../public/images/restaurants/xs-images/la_palette_du_gout.webp 500w,
+                    ../public/images/restaurants/s-images/la_palette_du_gout.webp 800w,
+                    ../public/images/restaurants/m-images/la_palette_du_gout.webp 1300w,
+                    ../public/images/restaurants/l-images/la_palette_du_gout.webp 2000w,
+                    ../public/images/restaurants/xl-images/la_palette_du_gout.webp 4402w"
+                type="image/webp"
+            >
+            <img src="../public/images/restaurants/xs-images/la_palette_du_gout.jpg"
+                alt="Table de restaurant avec une assiette contenant un plat phare de À la française"
+                sizes="100vw"
+                srcset="../public/images/restaurants/xs-images/la_palette_du_gout.jpg 500w,
+                    ../public/images/restaurants/s-images/la_palette_du_gout.jpg 800w,
+                    ../public/images/restaurants/m-images/la_palette_du_gout.jpg 1300w,
+                    ../public/images/restaurants/l-images/la_palette_du_gout.jpg 2000w,
+                    ../public/images/restaurants/xl-images/la_palette_du_gout.jpg 4402w"
+            >
+        </picture>
     </div>
 
     <main class="restaurant-menu">

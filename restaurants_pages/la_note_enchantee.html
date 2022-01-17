@@ -52,7 +52,26 @@
 
     <!-- Banner image -->
     <div class="banner-image">
-        <img src="../public/images/restaurants/la_note_enchantee.jpg" alt="Table de restaurant avec une assiette contenant un plat phare de La note enchantée" width="3024" height="3780">
+        <picture>
+            <source
+                sizes="100vw"
+                srcset="../public/images/restaurants/xs-images/la_note_enchantee.webp 500w,
+                    ../public/images/restaurants/s-images/la_note_enchantee.webp 800w,
+                    ../public/images/restaurants/m-images/la_note_enchantee.webp 1300w,
+                    ../public/images/restaurants/l-images/la_note_enchantee.webp 2000w,
+                    ../public/images/restaurants/xl-images/la_note_enchantee.webp 3024w"
+                type="image/webp"
+            >
+            <img src="../public/images/restaurants/xs-images/la_note_enchantee.jpg"
+                alt="Table de restaurant avec une assiette contenant un plat phare de À la française"
+                sizes="100vw"
+                srcset="../public/images/restaurants/xs-images/la_note_enchantee.jpg 500w,
+                    ../public/images/restaurants/s-images/la_note_enchantee.jpg 800w,
+                    ../public/images/restaurants/m-images/la_note_enchantee.jpg 1300w,
+                    ../public/images/restaurants/l-images/la_note_enchantee.jpg 2000w,
+                    ../public/images/restaurants/xl-images/la_note_enchantee.jpg 3024w"
+            >
+        </picture>
     </div>
 
     <main class="restaurant-menu">

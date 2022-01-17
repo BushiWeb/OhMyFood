@@ -52,7 +52,26 @@
 
     <!-- Banner image -->
     <div class="banner-image">
-        <img src="../public/images/restaurants/a_la_francaise.jpg" alt="Table de restaurant avec une assiette contenant un plat phare de À la française" width="3936" height="2624">
+        <picture>
+            <source
+                sizes="100vw"
+                srcset="../public/images/restaurants/xs-images/a_la_francaise.webp 500w,
+                    ../public/images/restaurants/s-images/a_la_francaise.webp 800w,
+                    ../public/images/restaurants/m-images/a_la_francaise.webp 1300w,
+                    ../public/images/restaurants/l-images/a_la_francaise.webp 2000w,
+                    ../public/images/restaurants/xl-images/a_la_francaise.webp 3936w"
+                type="image/webp"
+            >
+            <img src="../public/images/restaurants/xs-images/a_la_francaise.jpg"
+                alt="Table de restaurant avec une assiette contenant un plat phare de À la française"
+                sizes="100vw"
+                srcset="../public/images/restaurants/xs-images/a_la_francaise.jpg 500w,
+                    ../public/images/restaurants/s-images/a_la_francaise.jpg 800w,
+                    ../public/images/restaurants/m-images/a_la_francaise.jpg 1300w,
+                    ../public/images/restaurants/l-images/a_la_francaise.jpg 2000w,
+                    ../public/images/restaurants/xl-images/a_la_francaise.jpg 3936w"
+            >
+        </picture>
     </div>
 
     <main class="restaurant-menu">

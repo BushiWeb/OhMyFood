@@ -50,7 +50,27 @@
 
     <!-- Banner image -->
     <div class="banner-image">
-        <img src="../public/images/restaurants/le_delice_des_sens.jpg" alt="Table de restaurant avec une assiette contenant un plat phare Du délice des sens" width="3024" height="3780">
+
+        <picture>
+            <source
+                sizes="100vw"
+                srcset="../public/images/restaurants/xs-images/le_delice_des_sens.webp 500w,
+                    ../public/images/restaurants/s-images/le_delice_des_sens.webp 800w,
+                    ../public/images/restaurants/m-images/le_delice_des_sens.webp 1300w,
+                    ../public/images/restaurants/l-images/le_delice_des_sens.webp 2000w,
+                    ../public/images/restaurants/xl-images/le_delice_des_sens.webp 5043w"
+                type="image/webp"
+            >
+            <img src="../public/images/restaurants/xs-images/le_delice_des_sens.jpg"
+                alt="Table de restaurant avec une assiette contenant un plat phare de À la française"
+                sizes="100vw"
+                srcset="../public/images/restaurants/xs-images/le_delice_des_sens.jpg 500w,
+                    ../public/images/restaurants/s-images/le_delice_des_sens.jpg 800w,
+                    ../public/images/restaurants/m-images/le_delice_des_sens.jpg 1300w,
+                    ../public/images/restaurants/l-images/le_delice_des_sens.jpg 2000w,
+                    ../public/images/restaurants/xl-images/le_delice_des_sens.jpg 5043w"
+            >
+        </picture>
     </div>
 
     <main class="restaurant-menu">
