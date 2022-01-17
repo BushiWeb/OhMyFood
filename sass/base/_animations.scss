@@ -1,6 +1,8 @@
-/* All the keyframes used in the website */
+/********************************************
+    All the keyframes used in the website
+*********************************************/
 
-/* The element will rotate 1 full turn */
+/* 1 turn rotation animation */
 @keyframes rotation {
     to {
         transform: rotate(1turn);
@@ -8,7 +10,7 @@
 }
 
 
-/* The element will appear with a fading effect while rising */
+/* Element entry: fade in + rising */
 @keyframes fade-up {
     from {
         opacity: 0;
@@ -23,18 +25,29 @@
 
 
 /* Cube rotation */
+/*
+    Animation generatid using Sass
+*/
 @keyframes cube-rotation {
-    $rotation-length: math.div(100%, 6);
+    /* Face number on a cube */
+    $face-number: 6;
+    /* Divide the animations into 6 equal proportions */
+    $rotation-length: math.div(100%, $face-number);
+    /* String containing the current transformation */
     $transformation-str: none;
+    /* List containing the different transformations to apply */
     $rotations: rotateX(-90deg) rotate(90deg) rotate(90deg) rotateX(90deg) rotateY(90deg) rotateY(90deg);
 
-    @for $i from 0 through 6 {
+    /* We go throught all the faces + the initial state */
+    @for $i from 0 through $face-number {
+        /* For the initial state, the transformation is already in the string. If we target the first face, we give the string the right transformation. For all the others, we add the transformations to the previous ones */
         @if $i == 1 {
             $transformation-str: nth($rotations, 1);
         } @else if $i > 1 {
             $transformation-str: $transformation-str #{nth($rotations, $i)};
         }
 
+        /* We finally give the right transformation to the right animation moment */
         #{$rotation-length * $i} {
             transform: $transformation-str;
         }
@@ -42,17 +55,15 @@
 }
 
 
-/* Fade out animation */
+/* Exit: fade out */
 @keyframes fade-out {
     from {
-        display: block;
         opacity: 1;
         transform: none;
     }
 
     to {
         opacity: 0;
-        display: none;
         transform: none;
     }
 }
