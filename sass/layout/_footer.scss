@@ -3,28 +3,37 @@
 ********************************************************************************/
 
 .page-footer {
-    @include dimensions-wide;
-    @include text-style($color: white);
+    @include dimensions-wide; //width: 100%
+    @include text-style($color: white); //White text
     padding: $space-300x $mobile-page-padding $space-400x;
     background-color: $neutral-darker;
 
 
+    /* Ohmyfood title */
     &__title {
-        @include h2-style($family: $title-font-family, $size: $m-font-size, $weight: normal);
-        @include margin-bottom-only($space-300x);
+        @include h2-style($family: $title-font-family, $size: $m-font-size, $weight: normal); //Title style, with title font, medium font size and normal weight
+        @include margin-bottom-only($space-300x); //Margin reset but with a value for the bottom margin
     }
 
 
+    /* List of links in the footer */
     &__link-list {
-        @include list-reset();
-        @include flexbox($direction: column, $align-items: flex-start, $row-gap: $space-base);
+        @include list-reset(); //Reset default lists styles
+        @include flexbox($direction: row, $wrap: wrap, $row-gap: $space-base); //Flexbox layout, to organise the links. We use the flow row wrap for the tablet and desktop versions.
 
-        a {
-            @include flexbox($align-items: center, $column-gap: $space-150x);
-            @include link-reset();
+        /* List item, containing the links */
+        li {
+            @include dimensions($width: 100%);
 
-            i {
-                font-size: $s-font-size;
+            /* Links within the list */
+            a {
+                @include flexbox($align-items: center, $column-gap: $space-150x); //flexbox layout to align the icons and the text
+                @include link-reset(); //Reset default link styles
+
+                /* Icons within the links */
+                i {
+                    font-size: $s-font-size;
+                }
             }
         }
     }
@@ -35,13 +44,15 @@
         Breakpoints
     ********************************************************/
 
+    /* On tablet, the link are placed on two columns */
     @include tablet {
         padding: $space-400x $tablet-page-padding $space-600x;
 
-
+        /* List of links in the footer */
         &__link-list {
-            @include flexbox($direction: row, $wrap: wrap, $row-gap: $space-150x);
+            row-gap: $space-150x;
 
+            /* List item, containing the links */
             li {
                 @include dimensions($width: 50%);
             }
@@ -49,12 +60,14 @@
     }
 
 
+    /* On desktop, the link are placed on four columns */
     @include desktop {
         padding: $space-400x $desktop-page-padding $space-600x;
 
+        /* List of links in the footer */
         &__link-list {
-            flex-wrap: nowrap;
 
+            /* List item, containing the links */
             li {
                 @include dimensions($width: 25%);
             }

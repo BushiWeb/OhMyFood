@@ -5,17 +5,16 @@
 /* Variables, only used in this block */
 $image-window-vw-relative: 60vw;
 $image-window-vh-relative: 40vh;
-$image-window: min($image-window-vw-relative, $image-window-vh-relative); /* Height of the image above de menu content and below the header. On large screens, 40vh is used to avoid having the images taking all the screen, annd on tall screens 60vw is used for the same reasons */
+$image-window: min($image-window-vw-relative, $image-window-vh-relative); /* Height of the image. On screens with ratios below 2/3, we use the width relative measure. On screens with ratio over 2/3, we use the height relative measure. The goal is to have a picture that doesn't take to much screen real estate.*/
 
 /* Styles */
 .banner-image {
-    @include dimensions-wide;
+    @include dimensions-wide; //width: 100%
     height: $image-window;
-    z-index: -1;
+    z-index: -1; //Put the image behind the content
 
     img {
-        /* Protects from the image getting to big and overflowing */
-        @include dimensions(100%, 100%);
+        @include dimensions(100%, 100%); //The images stretches to fit it's component
         object-fit: cover;
     }
 }

@@ -5,22 +5,28 @@
         * Shadow
 ********************************************************************************/
 
+/* Variables, used only in this bloc */
+$header-top-padding: 20px;
+$header-bottom-padding: 10px;
+
+/* Styles */
 .page-header {
-    @include dimensions-wide;
+    @include dimensions-wide; //Width: 100%
     @include position($type: relative); /* For the arrow placement */
     padding: $header-top-padding $mobile-page-padding $header-bottom-padding;
     background-color: $neutral-base;
 
 
+    /* Page title: Ohmyfood */
     &__title {
         text-align: center;
-        line-height: $header-line-height;
     }
 
 
+    //Home link, arrow shaped. Position absolute
     &__back-link {
-        @include link-reset;
-        @include position($v-center: true, $left: 0, $top: 50%);
+        @include link-reset; //Reset default link styles
+        @include position($v-center: true, $left: 0, $top: 50%); //Absolute positionning, centered vertically
         padding: 20px;
         padding-left: $mobile-page-padding;
         font-size: $m-font-size;
@@ -32,7 +38,7 @@
         Modifiers
     ********************************************************/
 
-    /* Shadow. Adds shadow underneath the header */
+    /* Shadow. Adds dark shadow underneath the header */
     &--shadow {
         @include shadow(true);
     }
@@ -43,6 +49,7 @@
         Breakpoints
     ********************************************************/
 
+    /* On tablet, change the padding */
     @include tablet {
         padding: $header-top-padding $tablet-page-padding $header-bottom-padding;
 
@@ -54,6 +61,7 @@
 
 
 
+    /* On desktop, change the padding */
     @include desktop {
         padding: $header-top-padding $desktop-page-padding $header-bottom-padding;
 

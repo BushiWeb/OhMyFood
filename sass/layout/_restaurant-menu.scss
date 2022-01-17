@@ -9,33 +9,37 @@ $main-border-radius: $space-400x;
 
 /* Styles */
 .restaurant-menu {
-    margin-top: -$main-border-radius; /* Large top margin to create the image window */
+    margin-top: -$main-border-radius; /* Negative margin to go over the manu banner */
     padding: $space-400x $mobile-page-padding $space-900x;
     background-color: $neutral-light;
     border-radius: $main-border-radius $main-border-radius 0 0;
 
 
-    @include flexbox($direction: column, $align-items: stretch);
+    @include flexbox($direction: column, $align-items: stretch); //Flexbox to organise the content vertically
 
 
+    /* Restaurant name and fav-button */
     &__title {
-        @include text-style($family: $title-font-family, $size: $xl-font-size);
-        @include margin-bottom-only($space-500x);
+        @include text-style($family: $title-font-family, $size: $xl-font-size); //Large text with title font
+        @include margin-bottom-only($space-500x); //No margin except for the bottom one
 
-        @include flexbox($justify-content: space-between);
+        @include flexbox($justify-content: space-between); //Flexbox to align the text and the button
     }
 
 
+    /* Container, containing the different menu sections */
     &__menu {
-        @include flexbox(column, $align-items: stretch);
+        @include flexbox(column, $align-items: stretch); //Flexbox to align the sections
     }
 
 
+    /* Menu sections (entry, main course or desert) */
     &__section {
         margin-bottom: $space-600x;
     }
 
 
+    /* Order button */
     &__btn {
         align-self: center;
     }
@@ -46,15 +50,18 @@ $main-border-radius: $space-400x;
         Breakpoints
     ********************************************************/
 
+    /* On tablet, change the paddings and dimensions */
     @include tablet {
         padding: $space-400x $tablet-page-padding $space-900x;
 
+        /* Restaurant name and fav button */
         &__title {
-            @include margin-bottom-only($space-700x);
+            @include margin-bottom-only($space-700x); //No margin except tor the bottom one
             justify-content: flex-start;
             column-gap: $space-400x;
         }
 
+        /* Menu section (entry, main course, desert) */
         &__section {
             padding: 0 $tablet-page-padding;
         }
@@ -62,9 +69,11 @@ $main-border-radius: $space-400x;
 
 
 
+    /* On desktop, Change dimensions */
     @include desktop {
         padding: $space-400x $desktop-page-padding $space-900x;
 
+        /* Menu section */
         &__section {
             margin-bottom: $space-800x;
         }

@@ -3,7 +3,7 @@
 ********************************************************************************/
 
 .home-main {
-    @include flexbox($direction: column, $align-items: stretch);
+    @include flexbox($direction: column, $align-items: stretch); //Flex layout to organise the different sections. By default, everything is in one column.
 
 
 
@@ -11,19 +11,23 @@
         Breakpoints
     ********************************************************/
 
+    /* On desktop, change the organisatio of the page. The CTA will take one row, and the restaurants as well as the operating will live on the same row */
     @include desktop {
-        @include flexbox($direction: row, $align-items: stretch, $wrap: wrap);
+        @include flexbox($direction: row, $align-items: stretch, $wrap: wrap); //Change the flexbox layout
 
+        /* Call to action section */
         &__cta {
-            @include dimensions-wide();
+            @include dimensions-wide(); //Width: 100%
         }
 
+        /* Restaurants list section */
         &__restaurants {
-            @include dimensions($width: 65%);
+            @include dimensions($width: 65%); //Width: 65%
         }
 
+        /* Operating section */
         &__operating {
-            @include dimensions($width: 35%);
+            @include dimensions($width: 35%); //Width: 35%
         }
     }
 }

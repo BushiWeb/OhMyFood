@@ -34,11 +34,5 @@ $space-700x: $space-base * 7;
 $space-800x: $space-base * 8;
 $space-900x: $space-base * 9;
 
-/* Header specific styles, given for the image window in the menus */
-$header-top-padding: 20px;
-$header-bottom-padding: 10px;
-$header-line-height: 1.15;
-$page-header-height: calc($header-bottom-padding + $header-top-padding + $header-line-height * $xxl-font-size); /* Height of the header, top and bottom padding plus line-height */
-
 /* Breakpoints */
 $breakpoints: ("tablet": 768px, "desktop": 992px);

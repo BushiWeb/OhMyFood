@@ -7,16 +7,18 @@
     background-color: $neutral-base;
 
 
+    /* Title of the section "Fonctionnement */
     &__title {
-        @include margin-bottom-only;
+        @include margin-bottom-only; //Remove all margins but the bottom one
     }
 
 
+    /* List containing the different steps of operation */
     &__steps {
-        @include list-reset;
-        @include flexbox($direction: column, $align-items: flex-end, $row-gap: $space-300x);
+        @include list-reset; //Reset default lists styling
+        @include flexbox($direction: column, $align-items: flex-end, $row-gap: $space-300x); //Flexbox to align the different steps
 
-        /* Reset list counter to display */
+        /* Reset list counter to display step number */
         counter-reset: step-counter;
     }
 
@@ -26,21 +28,25 @@
         Breakpoints
     ********************************************************/
 
+    /* On tablet, change the size of the elements and the padding */
     @include tablet {
         padding: $space-700x $tablet-page-padding $space-800x;
 
+        /* List containing the different steps of operation */
         &__steps {
-            @include dimensions($width: 80%);
-            margin: auto;
+            @include dimensions($width: 80%); //Sets up the width
+            margin: auto; //To center the list horizontally
         }
     }
 
 
+    /* On desktop, change the size of the elements and the padding */
     @include desktop {
         padding: $space-700x $mobile-page-padding $space-800x $mobile-page-padding;
 
+        /* List containing the different steps of operation */
         &__steps {
-            @include dimensions-wide;
+            @include dimensions-wide; //Width: 100%
         }
     }
 }

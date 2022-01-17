@@ -1,31 +1,33 @@
 /********************************************************************************
-    Menu section block
+    Menu section block (entry, main course and desert)
         * Title
         * List of dishes
 ********************************************************************************/
 
 .menu-section {
+    /* Section title (entry, main course or desert) */
     &__title {
-        @include margin-bottom-only($space-300x);
-        @include text-style($size: $m-font-size);
+        @include margin-bottom-only($space-300x); //Margin reset and sets up bottom margin
+        @include text-style($size: $m-font-size); //Medium size text
 
 
-        /* Creates the underlining */
+        /* Creates the underline*/
         &::after {
-            content: "";
+            content: ""; //No content
             display: block;
             border-top: solid 3px $tertiary-color;
-            @include dimensions($width: $space-500x);
+            @include dimensions($width: $space-500x); //Size of the bloc
             margin-top: $space-base;
         }
     }
 
 
+    /* List of meals */
     &__dish-list {
-        @include list-reset;
-        @include dimensions-wide;
+        @include list-reset; //Reset default lists styles
+        @include dimensions-wide; //Width: 100%
 
-        @include flexbox($direction: column, $align-items: stretch, $row-gap: $space-150x);
+        @include flexbox($direction: column, $align-items: stretch, $row-gap: $space-150x); //Flexbox layout, to organise the meals inside of the list
     }
 
 
@@ -34,7 +36,9 @@
         Breakpoints
     ********************************************************/
 
+    /* On desktop, change the list's flexbox layout to put the meals on a row */
     @include desktop {
+        /* List of meals */
         &__dish-list {
             @include flexbox($direction: row, $justify-content: flex-start, $align-items: stretch, $align-content: stretch, $wrap: wrap, $row-gap: $space-400x, $column-gap: $space-400x);
         }

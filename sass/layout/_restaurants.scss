@@ -7,15 +7,17 @@
     background-color: $neutral-light;
 
 
+    /* Section title "Restaurants" */
     &__title {
-        @include margin-bottom-only($space-300x);
+        @include margin-bottom-only($space-300x); //No margin except for the bottom one
     }
 
 
+    /* Restaurants list */
     &__list {
-        @include list-reset;
+        @include list-reset; //Reset default lists styles
 
-        @include flexbox($direction: column, $align-items: stretch, $row-gap: $space-300x);
+        @include flexbox($direction: column, $align-items: stretch, $row-gap: $space-300x); //Flexbox, to organise the restaurants cards
     }
 
 
@@ -24,25 +26,30 @@
         Breakpoints
     ********************************************************/
 
+    /* On tablet, change the list organisation to create a 2x2 grid */
     @include tablet {
         padding: $space-700x $tablet-page-padding $space-800x;
 
+        /* Restaurants list */
         &__list {
-            @include flexbox($direction: row, $wrap: wrap, $justify-content: space-between, $align-items: stretch, $row-gap: $space-400x, $column-gap: $space-400x);
+            @include flexbox($direction: row, $wrap: wrap, $justify-content: space-between, $align-items: stretch, $row-gap: $space-400x, $column-gap: $space-400x); //Change the flexbox layout to allow wrapping, in a row
         }
 
+        /* Restaurant card, in the list */
         &__cards {
-            @include dimensions($width: 45%);
+            @include dimensions($width: 45%); //Sets up the width
             flex-grow: 1;
         }
     }
 
 
 
+    /* On desktop, change a few dimensions */
     @include desktop {
         padding: $space-700x $desktop-page-padding $space-800x 0;
         background-color: $neutral-base;
 
+        /* Restaurants list */
         &__list {
             $gap: $space-500x;
         }

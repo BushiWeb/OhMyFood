@@ -8,50 +8,58 @@
 
 
     /* Grid layout, to adapt the layout for the desktop version */
+    /* By default, everything is stacked */
     @include grid(1fr, auto auto auto, "title""intro""btn", center, $justify-content: center);
 
 
+    /* Title of the call to action */
     &__title {
-        @include h2-style($align: center);
-        @include margin-bottom-only($space-200x);
+        @include h2-style($align: center); //Header text style, default but centered
+        @include margin-bottom-only($space-200x); //Reset the margin and gives a new value to the bottom margin
         grid-area: title;
     }
 
 
+    /* Intro text bellow the title */
     &__intro {
-        @include text-style($size: $m-font-size, $align: center);
-        @include margin-bottom-only;
+        @include text-style($size: $m-font-size, $align: center); //Medium sized, centered text
+        @include margin-bottom-only($space-400x); //Reset the margin and gives a new value to the bottom margin
         grid-area: intro;
     }
 
 
+    /* Call to action button */
     &__btn {
         grid-area: btn;
         align-self: center;
     }
 
 
+
+    /*******************************************************
+    Breakpoints
+    ********************************************************/
+
+    /* On tablet, adapt the padding */
     @include tablet {
         padding: $space-700x $tablet-page-padding $space-700x;
     }
 
 
-
-    /*******************************************************
-        Breakpoints
-    ********************************************************/
-
+    /* On desktop, change the layout to place the button next to the text */
     @include desktop {
-        @include grid-area(repeat(2, auto), repeat(2, auto), "title btn""intro btn");
+        @include grid-area(repeat(2, auto), repeat(2, auto), "title btn""intro btn"); //Change the areas of the grid
         column-gap: $space-400x;
         padding: $space-900x $desktop-page-padding;
 
 
+        /* Title of the call to action */
         &__title {
             margin: $space-base 0;
         }
 
 
+        /* Intro text bellow the title */
         &__intro {
             margin: $space-200x 0;
         }

@@ -4,8 +4,6 @@
 /* Font sizes */
 /* Colors */
 /* Sizes */
-/* Header specific styles, given for the image window in the menus */
-/* Height of the header, top and bottom padding plus line-height */
 /* Breakpoints */
 /* Include all mixins */
 /********************************************************************
@@ -1203,6 +1201,8 @@ main {
     Shadow modifier
         * Shadow
 ********************************************************************************/
+/* Variables, used only in this bloc */
+/* Styles */
 .page-header {
   width: 100%;
   height: auto;
@@ -1214,17 +1214,19 @@ main {
   /* For the arrow placement */
   padding: 20px 5.33vw 10px;
   background-color: #FFFFFF;
+  /* Page title: Ohmyfood */
   /*******************************************************
       Modifiers
   ********************************************************/
-  /* Shadow. Adds shadow underneath the header */
+  /* Shadow. Adds dark shadow underneath the header */
   /*******************************************************
       Breakpoints
   ********************************************************/
+  /* On tablet, change the padding */
+  /* On desktop, change the padding */
 }
 .page-header__title {
   text-align: center;
-  line-height: 1.15;
 }
 .page-header__back-link {
   color: inherit;
@@ -1297,6 +1299,7 @@ main {
   /*******************************************************
       Breakpoints
   ********************************************************/
+  /* On desktop, change the organisatio of the page. The CTA will take one row, and the restaurants as well as the operating will live on the same row */
 }
 @media (min-width: 992px) {
   .home-main {
@@ -1306,6 +1309,9 @@ main {
     align-items: stretch;
     align-content: flex-start;
     gap: 0 0;
+    /* Call to action section */
+    /* Restaurants list section */
+    /* Operating section */
   }
   .home-main__cta {
     width: 100%;
@@ -1328,6 +1334,7 @@ main {
   padding: 40px 5.33vw 56px;
   background-color: whitesmoke;
   /* Grid layout, to adapt the layout for the desktop version */
+  /* By default, everything is stacked */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
@@ -1338,9 +1345,14 @@ main {
   align-items: stretch;
   row-gap: 0;
   column-gap: 0;
+  /* Title of the call to action */
+  /* Intro text bellow the title */
+  /* Call to action button */
   /*******************************************************
-      Breakpoints
+  Breakpoints
   ********************************************************/
+  /* On tablet, adapt the padding */
+  /* On desktop, change the layout to place the button next to the text */
 }
 .cta__title {
   color: inherit;
@@ -1384,6 +1396,8 @@ main {
     grid-template-areas: "title btn" "intro btn";
     column-gap: 32px;
     padding: 72px 5vw;
+    /* Title of the call to action */
+    /* Intro text bellow the title */
   }
   .cta__title {
     margin: 8px 0;
@@ -1399,9 +1413,13 @@ main {
 .operating {
   padding: 56px 5.33vw 64px;
   background-color: #FFFFFF;
+  /* Title of the section "Fonctionnement */
+  /* List containing the different steps of operation */
   /*******************************************************
       Breakpoints
   ********************************************************/
+  /* On tablet, change the size of the elements and the padding */
+  /* On desktop, change the size of the elements and the padding */
 }
 .operating__title {
   margin: 0;
@@ -1417,12 +1435,13 @@ main {
   align-items: flex-end;
   align-content: flex-start;
   gap: 24px 0;
-  /* Reset list counter to display */
+  /* Reset list counter to display step number */
   counter-reset: step-counter;
 }
 @media (min-width: 768px) {
   .operating {
     padding: 56px 8vw 64px;
+    /* List containing the different steps of operation */
   }
   .operating__steps {
     width: 80%;
@@ -1433,6 +1452,7 @@ main {
 @media (min-width: 992px) {
   .operating {
     padding: 56px 5.33vw 64px 5.33vw;
+    /* List containing the different steps of operation */
   }
   .operating__steps {
     width: 100%;
@@ -1446,9 +1466,13 @@ main {
 .restaurants {
   padding: 56px 5.33vw 64px;
   background-color: whitesmoke;
+  /* Section title "Restaurants" */
+  /* Restaurants list */
   /*******************************************************
       Breakpoints
   ********************************************************/
+  /* On tablet, change the list organisation to create a 2x2 grid */
+  /* On desktop, change a few dimensions */
 }
 .restaurants__title {
   margin: 0;
@@ -1468,6 +1492,8 @@ main {
 @media (min-width: 768px) {
   .restaurants {
     padding: 56px 8vw 64px;
+    /* Restaurants list */
+    /* Restaurant card, in the list */
   }
   .restaurants__list {
     display: flex;
@@ -1487,6 +1513,7 @@ main {
   .restaurants {
     padding: 56px 5vw 64px 0;
     background-color: #FFFFFF;
+    /* Restaurants list */
   }
 }
 
@@ -1506,9 +1533,13 @@ main {
   line-height: initial;
   padding: 24px 5.33vw 32px;
   background-color: #363636;
+  /* Ohmyfood title */
+  /* List of links in the footer */
   /*******************************************************
       Breakpoints
   ********************************************************/
+  /* On tablet, the link are placed on two columns */
+  /* On desktop, the link are placed on four columns */
 }
 .page-footer__title {
   color: inherit;
@@ -1527,13 +1558,19 @@ main {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row wrap;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: baseline;
   align-content: flex-start;
   gap: 8px 0;
+  /* List item, containing the links */
 }
-.page-footer__link-list a {
+.page-footer__link-list li {
+  width: 100%;
+  height: auto;
+  /* Links within the list */
+}
+.page-footer__link-list li a {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
@@ -1542,21 +1579,19 @@ main {
   gap: 0 12px;
   color: inherit;
   text-decoration: none;
+  /* Icons within the links */
 }
-.page-footer__link-list a i {
+.page-footer__link-list li a i {
   font-size: 0.75rem;
 }
 @media (min-width: 768px) {
   .page-footer {
     padding: 32px 8vw 48px;
+    /* List of links in the footer */
   }
   .page-footer__link-list {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: baseline;
-    align-content: flex-start;
-    gap: 12px 0;
+    row-gap: 12px;
+    /* List item, containing the links */
   }
   .page-footer__link-list li {
     width: 50%;
@@ -1566,9 +1601,10 @@ main {
 @media (min-width: 992px) {
   .page-footer {
     padding: 32px 5vw 48px;
+    /* List of links in the footer */
   }
   .page-footer__link-list {
-    flex-wrap: nowrap;
+    /* List item, containing the links */
   }
   .page-footer__link-list li {
     width: 25%;
@@ -1585,7 +1621,7 @@ main {
 /* Styles */
 .restaurant-menu {
   margin-top: -32px;
-  /* Large top margin to create the image window */
+  /* Negative margin to go over the manu banner */
   padding: 32px 5.33vw 72px;
   background-color: whitesmoke;
   border-radius: 32px 32px 0 0;
@@ -1595,9 +1631,15 @@ main {
   align-items: stretch;
   align-content: flex-start;
   gap: 0 0;
+  /* Restaurant name and fav-button */
+  /* Container, containing the different menu sections */
+  /* Menu sections (entry, main course or desert) */
+  /* Order button */
   /*******************************************************
       Breakpoints
   ********************************************************/
+  /* On tablet, change the paddings and dimensions */
+  /* On desktop, Change dimensions */
 }
 .restaurant-menu__title {
   color: inherit;
@@ -1634,6 +1676,8 @@ main {
 @media (min-width: 768px) {
   .restaurant-menu {
     padding: 32px 8vw 72px;
+    /* Restaurant name and fav button */
+    /* Menu section (entry, main course, desert) */
   }
   .restaurant-menu__title {
     margin: 0;
@@ -1648,6 +1692,7 @@ main {
 @media (min-width: 992px) {
   .restaurant-menu {
     padding: 32px 5vw 72px;
+    /* Menu section */
   }
   .restaurant-menu__section {
     margin-bottom: 64px;
@@ -1655,14 +1700,17 @@ main {
 }
 
 /********************************************************************************
-    Menu section block
+    Menu section block (entry, main course and desert)
         * Title
         * List of dishes
 ********************************************************************************/
 .menu-section {
+  /* Section title (entry, main course or desert) */
+  /* List of meals */
   /*******************************************************
       Breakpoints
   ********************************************************/
+  /* On desktop, change the list's flexbox layout to put the meals on a row */
 }
 .menu-section__title {
   margin: 0;
@@ -1675,7 +1723,7 @@ main {
   font-variant: normal;
   font-style: normal;
   line-height: initial;
-  /* Creates the underlining */
+  /* Creates the underline*/
 }
 .menu-section__title::after {
   content: "";
@@ -1699,6 +1747,9 @@ main {
   gap: 12px 0;
 }
 @media (min-width: 992px) {
+  .menu-section {
+    /* List of meals */
+  }
   .menu-section__dish-list {
     display: flex;
     flex-flow: row wrap;
@@ -1713,7 +1764,7 @@ main {
     Restaurant menu image, above the main content
 ********************************************************************************/
 /* Variables, only used in this block */
-/* Height of the image above de menu content and below the header. On large screens, 40vh is used to avoid having the images taking all the screen, annd on tall screens 60vw is used for the same reasons */
+/* Height of the image. On screens with ratios below 2/3, we use the width relative measure. On screens with ratio over 2/3, we use the height relative measure. The goal is to have a picture that doesn't take to much screen real estate.*/
 /* Styles */
 .banner-image {
   width: 100%;
@@ -1722,7 +1773,6 @@ main {
   z-index: -1;
 }
 .banner-image img {
-  /* Protects from the image getting to big and overflowing */
   width: 100%;
   height: 100%;
   object-fit: cover;

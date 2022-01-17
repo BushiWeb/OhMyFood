@@ -3,12 +3,12 @@
 ********************************************************************************/
 
 .location {
-    @include text-style($weight: bold);
-    @include dimensions-wide;
-    @include margin-reset;
+    @include text-style($weight: bold); //Bold text
+    @include dimensions-wide; //Width: 100%
+    @include margin-reset; //No margins
     padding: $space-200x $mobile-page-padding;
     background-color: $neutral-medium;
 
 
-    @include flexbox($justify-content: center, $column-gap: $space-200x);
+    @include flexbox($justify-content: center, $column-gap: $space-200x); //Flexbox layout to align the text and the icon
 }
