@@ -8,45 +8,48 @@
 /* Variables, specific to that component */
 $border-radius: $space-150x;
 $transition-timing: 1000ms;
-$selection-icon-size: 50px;
+$selection-icon-size: 50px; //Size of the selection icon
 
 /* Styles */
 .dish-card {
-    @include shadow();
+    @include shadow(); //Add light shadow
     background-color: $neutral-base;
     border-radius: $border-radius;
-    min-width: 300px;
+    min-width: 300px; //If the card gets to thin, most of the text will be hidden by overflowing. So we give it a min-width
     overflow: hidden;
 
 
     /* Flexbox */
     @include flexbox($align-items: stretch);
-    transition: grid-template-columns $transition-timing;
 
 
     /* To place the title link and the selection icon */
     @include position($type: relative);
 
 
-    /* Margin right transition, to give enough place for the selection icon */
+    /* Padding right transition, to give enough place for the selection icon */
     padding-right: 0;
     transition: padding-right $transition-timing;
 
 
+    /* Contains the name of the meal and the description */
     &__description {
         padding: $space-150x $space-base;
+        /* Can grow to display as much text as possible, and can shrink as much as needed, even if the text must overflow */
         flex-grow: 1;
         min-width: 0;
     }
 
 
+    /* Name of the meal */
     &__title {
-        @include text-style($size: $m-font-size, $weight: bold);
-        @include margin-reset;
+        @include text-style($size: $m-font-size, $weight: bold); //Medium and bold text
+        @include margin-reset; //No margin
 
+        /* This button covers the whole card to make it clicable, using a pseudo-element */
         button {
-            @include button-reset;
-            @include ellipsis;
+            @include button-reset; //Reset button styling
+            @include ellipsis; //Add an overflow hidden with ellipsis
             display: block;
             max-width: 100%;
 
@@ -56,35 +59,38 @@ $selection-icon-size: 50px;
     }
 
 
+    /* Descripion of the meal */
     &__subtitle {
-        @include text-style($size: $base-font-size);
-        @include margin-reset;
-        @include ellipsis;
+        @include text-style($size: $base-font-size); //Text with base font size
+        @include margin-reset; //No margin
+        @include ellipsis; //Add an overflow hidden with ellipsis
     }
 
 
+    /* Price of the meal */
     &__price {
-        @include text-style($size: $base-font-size, $weight: bold);
-        @include margin-reset;
-        @include padding-reset;
+        @include text-style($size: $base-font-size, $weight: bold); //Bold text, base font size
+        @include margin-reset; //No margin
+        @include padding-reset; //No padding
         margin-right: $space-150x;
         padding-bottom: $space-150x;
-        align-self: flex-end;
+        align-self: flex-end; //Display the price at the bottom of the card
     }
 
 
+    /* Icons indicating that the meal is selected */
     &__selection-icon {
-        @include text-style($color: $neutral-base, $size: $m-font-size, $weight: bold, $align: center);
-        @include flexbox($justify-content: center, $align-items: center);
-        @include position($top: 0, $bottom: 0, $right: 0);
-        @include dimensions($width: $selection-icon-size);
+        @include text-style($color: $neutral-base, $size: $m-font-size, $weight: bold, $align: center); //Text styling with neutral color, medium size, bold and horizontaly centered
+        @include flexbox($justify-content: center, $align-items: center); //For alignement, since we don't know the height of the element for vertical alignement
+        @include position($top: 0, $bottom: 0, $right: 0); //Positionned on the right size, stretching the entire height
+        @include dimensions($width: $selection-icon-size); //Give the width of the element
         background-color: $tertiary-color;
         border-radius: 0 $border-radius $border-radius 0; /* Only left borders */
         overflow: hidden;
         z-index: -1; /* The icon goes underneath the link cover */
 
         /* Sets up transition on hover */
-        transform: translateX(100%);
+        transform: translateX(100%); //Slide the element out of the card
         transition: transform $transition-timing;
     }
 
@@ -94,18 +100,21 @@ $selection-icon-size: 50px;
         Animations
     ********************************************************/
 
-    @include button-hover;
+    @include button-hover; //Darkens the shadow on hover
 
 
-    @include fade-up-entry;
+    @include fade-up-entry; //Entry animation: fade-up
 
 
     &:hover {
-        padding-right: $selection-icon-size;
+        padding-right: $selection-icon-size; //Increase right padding to give enough space for the selection icon to apppear
 
+        /* Icons indicating that the meal is selected */
         .dish-card__selection-icon {
-            transform: none;
+            transform: none; //The selection icon returns to its origial place
 
+            /* Icon within the element */
+            /* Give the rotation animation. We give it on the hover to replay it on each hover, and not only once */
             i {
                 transform: rotate(0turn);
                 animation: rotation $transition-timing;
@@ -119,23 +128,28 @@ $selection-icon-size: 50px;
         Breakpoints
     ********************************************************/
 
+    /*
+        On desktop, change the look of the card.
+        The card becomes vertically align and the icon appears sliding from the bottom.
+    */
     @include desktop {
-        @include dimensions($width: 30%);
-        @include padding-reset;
+        @include dimensions($width: 30%); //By default (if enough space and not to much), three meal will be on one row
+        @include padding-reset; //No padding
         flex-direction: column;
         min-width: 230px;
         max-width: 500px;
 
 
-
+        /* Contains the name of the meal + its description */
         &__description {
             padding: $space-200x;
             padding-bottom: $space-base;
         }
 
 
+        /* Name of the meal */
         &__title {
-            @include margin-bottom-only($space-base);
+            @include margin-bottom-only($space-base); //Reset margins and give a margin bottom
 
             button {
                 white-space: normal; /* Remove ellipsis because we have a vertical layout, and it is okay for the title to wrap in that case */
@@ -143,11 +157,14 @@ $selection-icon-size: 50px;
         }
 
 
+        /* Description of the meal */
         &__subtitle {
             white-space: normal; /* Remove ellipsis because we have a vertical layout, and it is okay for the title to wrap in that case */
         }
 
 
+        /* Price of the meal */
+        /* Change the margins. To avoid the card changing size when the element appears, the price is at the bottom of the page with a gap above it (margin). As the icon appears, the gap above shrinks while the bottom margins grows to create space for the icon */
         &__price {
             margin-top: $selection-icon-size;
             margin-bottom: 0;
@@ -155,6 +172,8 @@ $selection-icon-size: 50px;
         }
 
 
+        /* Icons indicating that the meal is selected */
+        /* Change the position of the element to be on the bottom, with the same logic */
         &__selection-icon {
             @include position($left: 0, $bottom: 0, $right: 0);
             @include dimensions($height: $selection-icon-size);
@@ -170,8 +189,10 @@ $selection-icon-size: 50px;
         /* Animations */
 
         &:hover {
-            padding-right: 0;
+            padding-right: 0; //Remove the padding given on the default hover
 
+            /* Price of the meal */
+            /* Invert top and botto margin to move the price */
             .dish-card__price {
                 margin-top: 0;
                 margin-bottom: $selection-icon-size;

@@ -3,14 +3,15 @@
         * Heart shape
         * Fills up on hover
 ********************************************************************************/
+
 /* Variables, only used in this file */
 $animation-duration: 2s;
 
 /* Styles */
 .fav-btn {
-    @include button-reset;
-    @include dimensions($size: min-content);
-    @include text-style($size: $xl-font-size, $line-height: 1);
+    @include button-reset; //Reset button styles
+    @include dimensions($size: min-content); //Width to min-content: the border of the button sticks to the icon
+    @include text-style($size: $xl-font-size, $line-height: 1); //Extra large icon with the same line-height
     @include position($type: relative); /* To place the gradient heart */
     padding: 10px; /* Increase target size for accessibility */
 
@@ -19,28 +20,29 @@ $animation-duration: 2s;
         The background gradient half-transparent / half-black is cliped onto the icon and only the black part appears. During the transition, the transparent will replace the black color.
     */
     background-image: linear-gradient(0,transparent 0%, transparent 50%, black 50%, black 100%);
-    background-size: auto 200%;
+    background-size: auto 200%; //Double gradient height to just display half of it (black or transparent
     background-position: 0 0;
-    background-clip: text;
+    background-clip: text; //The background color is only displayed behind the text
     -webkit-background-clip: text;
-    color: transparent;
-    transition: background-position $animation-duration;
+    color: transparent; //To let the background color show through
+    transition: background-position $animation-duration; //Animate background position to change the color
 
 
     /* Gradient heart */
     &::after {
-        /* Including the heart */
+        /* Including the heart, as recommended by FontAwesome */
         font-style: normal;
         font-variant: normal;
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
         font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        content: "\f004";
+        font-weight: 900; //Solid icon
+        content: "\f004"; //Heart icon
 
         /* Heart color */
         /*
-        The background gradient half-transparent / half-gradient is cliped onto the icon and only the transparent part appears. During the transition, the gradient will replace the transparency.
+            The background gradient half-transparent / half-gradient is cliped onto the icon and only the transparent part appears. During the transition, the gradient will replace the transparency.
+            Same method used with the HTML heart icon, described above.
         */
         background-image: linear-gradient(0,$secondary-color 0%, $primary-color 50%, transparent 50%, transparent 100%);
         background-size: auto 200%;
@@ -51,13 +53,21 @@ $animation-duration: 2s;
         transition: background-position $animation-duration;
 
         /* Positionning */
-        @include position($top: 0, $left: 0, $right: 0, $bottom: 0);
-        @include flexbox($justify-content: center, $align-items: center);
+        @include position($top: 0, $left: 0, $right: 0, $bottom: 0); //Place the pseudo-element over the element and stretch it to the full width and height
+        @include flexbox($justify-content: center, $align-items: center); //Center the icon to cover the HTML icon
 
     }
 
 
-    /* Hover styles */
+
+    /*******************************************************
+        Animations
+    ********************************************************/
+
+    /* On hover, both of the gradients rise to change the color smoothly:
+            The HTML icon goes from black to transparent
+            The CSS heart goes from transparent to gradient
+    */
     &:hover {
         background-position: 0 100%;
 

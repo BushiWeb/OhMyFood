@@ -3,17 +3,21 @@
         * Shadow
         * Counter in a buble on the left side. Increments automatically
 ********************************************************************************/
+/* Variables only used in this element */
+$bubble-size: $space-300x;
 
+/* Styles */
 .step-card {
-    @include text-style($weight: bold);
-    @include shadow();
-    @include dimensions($width: calc(100% - $space-300x / 2), $height: 90px); /* Widht value given for the ::before pseudo-element */
+    @include text-style($weight: bold); //Bold text
+    @include shadow(); //Light shadow
+    @include dimensions($width: calc(100% - $bubble-size / 2), $height: 90px); /* Widht value given for the ::before pseudo-element */
     background-color: $neutral-light;
     border-radius: $space-300x;
-    padding-left: $space-400x; /* $space-300x + half of the ::before pseudo-element */
+    padding-left: calc($space-300x + $bubble-size / 2); /* $space-300x + half of the ::before pseudo-element */
     padding-right: $space-300x;
 
 
+    /* Flexbox layout to align the icon and the text */
     @include flexbox($align-items: center, $column-gap: $space-300x);
 
 
@@ -25,6 +29,7 @@
     counter-increment: step-counter;
 
 
+    /* Icon before the text */
     &__icon {
         color: $neutral-dark;
     }
@@ -32,10 +37,10 @@
 
     /* Step number */
     &::before {
-        content: counter(step-counter);
-        @include text-style($size: $s-font-size, $color: white);
-        @include centered-icon();
-        @include position($center: true, $left: 0, $top: 50%);
+        content: counter(step-counter); //Contains the value of the counter
+        @include text-style($size: $s-font-size, $color: $neutral-base); //Small neutral text
+        @include centered-icon($bubble-size); //Center the text in the bubble, and creates a round container
+        @include position($center: true, $left: 0, $top: 50%); //Place the bubble in place
         background-color: $primary-color;
     }
 

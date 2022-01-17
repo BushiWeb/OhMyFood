@@ -408,11 +408,17 @@ template {
 }
 
 /* Import base styles */
+/********************************************
+    General box-sizing
+*********************************************/
 /* All elements have box-sizing: border-box, except those whose property is redefined in the normalize file */
 * {
   box-sizing: border-box;
 }
 
+/********************************************
+    Fonts
+*********************************************/
 /*
     Basic font rules
 */
@@ -432,6 +438,9 @@ h1 {
   margin: 0;
 }
 
+/********************************************
+    Alignement of the elements in the page
+*********************************************/
 /*
     On desktop the content is to short for the footer to reach the bottom of the page. Thus it floats, and leaves a white band beneath it.
     Flexbox is used to solve this problem, allowing the main content to stretch and "push" the footer down.
@@ -450,14 +459,16 @@ main {
   flex-grow: 1;
 }
 
-/* All the keyframes used in the website */
-/* The element will rotate 1 full turn */
+/********************************************
+    All the keyframes used in the website
+*********************************************/
+/* 1 turn rotation animation */
 @keyframes rotation {
   to {
     transform: rotate(1turn);
   }
 }
-/* The element will appear with a fading effect while rising */
+/* Element entry: fade in + rising */
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -469,39 +480,59 @@ main {
   }
 }
 /* Cube rotation */
+/*
+    Animation generatid using Sass
+*/
 @keyframes cube-rotation {
+  /* Face number on a cube */
+  /* Divide the animations into 6 equal proportions */
+  /* String containing the current transformation */
+  /* List containing the different transformations to apply */
+  /* We go throught all the faces + the initial state */
+  /* For the initial state, the transformation is already in the string. If we target the first face, we give the string the right transformation. For all the others, we add the transformations to the previous ones */
+  /* We finally give the right transformation to the right animation moment */
   0% {
     transform: none;
   }
+  /* For the initial state, the transformation is already in the string. If we target the first face, we give the string the right transformation. For all the others, we add the transformations to the previous ones */
+  /* We finally give the right transformation to the right animation moment */
   16.6666666667% {
     transform: rotateX(-90deg);
   }
+  /* For the initial state, the transformation is already in the string. If we target the first face, we give the string the right transformation. For all the others, we add the transformations to the previous ones */
+  /* We finally give the right transformation to the right animation moment */
   33.3333333333% {
     transform: rotateX(-90deg) rotate(90deg);
   }
+  /* For the initial state, the transformation is already in the string. If we target the first face, we give the string the right transformation. For all the others, we add the transformations to the previous ones */
+  /* We finally give the right transformation to the right animation moment */
   50% {
     transform: rotateX(-90deg) rotate(90deg) rotate(90deg);
   }
+  /* For the initial state, the transformation is already in the string. If we target the first face, we give the string the right transformation. For all the others, we add the transformations to the previous ones */
+  /* We finally give the right transformation to the right animation moment */
   66.6666666667% {
     transform: rotateX(-90deg) rotate(90deg) rotate(90deg) rotateX(90deg);
   }
+  /* For the initial state, the transformation is already in the string. If we target the first face, we give the string the right transformation. For all the others, we add the transformations to the previous ones */
+  /* We finally give the right transformation to the right animation moment */
   83.3333333333% {
     transform: rotateX(-90deg) rotate(90deg) rotate(90deg) rotateX(90deg) rotateY(90deg);
   }
+  /* For the initial state, the transformation is already in the string. If we target the first face, we give the string the right transformation. For all the others, we add the transformations to the previous ones */
+  /* We finally give the right transformation to the right animation moment */
   100% {
     transform: rotateX(-90deg) rotate(90deg) rotate(90deg) rotateX(90deg) rotateY(90deg) rotateY(90deg);
   }
 }
-/* Fade out animation */
+/* Exit: fade out */
 @keyframes fade-out {
   from {
-    display: block;
     opacity: 1;
     transform: none;
   }
   to {
     opacity: 0;
-    display: none;
     transform: none;
   }
 }
@@ -514,6 +545,7 @@ main {
         * Stronger shadow and lighter color on hover
 ********************************************************************************/
 .btn {
+  /* Basic styling */
   color: inherit;
   text-decoration: none;
   color: white;
@@ -532,6 +564,7 @@ main {
   /*******************************************************
       Animations
   ********************************************************/
+  /* Mixin darkens shadow. Add property to lighten the gradient */
 }
 .btn:hover {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3), 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
@@ -550,6 +583,7 @@ main {
 .restaurant-card {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1), 0px 12px 24px 0px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
+  /* Grid layout with two columns and three rows */
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: auto auto auto;
@@ -566,6 +600,9 @@ main {
   right: auto;
   top: auto;
   bottom: auto;
+  /* Image of the card */
+  /* Name of the restaurant */
+  /* Link to the restaurant menu. Covers the entire card using a pseudo-element */
   /*******************************************************
       Animations
   ********************************************************/
@@ -656,6 +693,8 @@ main {
         * Shadow
         * Counter in a buble on the left side. Increments automatically
 ********************************************************************************/
+/* Variables only used in this element */
+/* Styles */
 .step-card {
   color: inherit;
   font-size: 1rem;
@@ -671,9 +710,10 @@ main {
   /* Widht value given for the ::before pseudo-element */
   background-color: whitesmoke;
   border-radius: 24px;
-  padding-left: 32px;
+  padding-left: 36px;
   /* $space-300x + half of the ::before pseudo-element */
   padding-right: 24px;
+  /* Flexbox layout to align the icon and the text */
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
@@ -688,6 +728,7 @@ main {
   bottom: auto;
   /* Increment counter */
   counter-increment: step-counter;
+  /* Icon before the text */
   /* Step number */
   /* Last step styling */
 }
@@ -696,7 +737,7 @@ main {
 }
 .step-card::before {
   content: counter(step-counter);
-  color: white;
+  color: #FFFFFF;
   font-size: 0.75rem;
   font-weight: normal;
   text-align: left;
@@ -745,25 +786,34 @@ main {
   align-items: stretch;
   align-content: flex-start;
   gap: 0 0;
-  transition: grid-template-columns 1000ms;
   /* To place the title link and the selection icon */
   position: relative;
   left: auto;
   right: auto;
   top: auto;
   bottom: auto;
-  /* Margin right transition, to give enough place for the selection icon */
+  /* Padding right transition, to give enough place for the selection icon */
   padding-right: 0;
   transition: padding-right 1000ms;
+  /* Contains the name of the meal and the description */
+  /* Name of the meal */
+  /* Descripion of the meal */
+  /* Price of the meal */
+  /* Icons indicating that the meal is selected */
   /*******************************************************
       Animations
   ********************************************************/
   /*******************************************************
       Breakpoints
   ********************************************************/
+  /*
+      On desktop, change the look of the card.
+      The card becomes vertically align and the icon appears sliding from the bottom.
+  */
 }
 .dish-card__description {
   padding: 12px 8px;
+  /* Can grow to display as much text as possible, and can shrink as much as needed, even if the text must overflow */
   flex-grow: 1;
   min-width: 0;
 }
@@ -777,6 +827,7 @@ main {
   font-style: normal;
   line-height: initial;
   margin: 0;
+  /* This button covers the whole card to make it clicable, using a pseudo-element */
 }
 .dish-card__title button {
   padding: 0;
@@ -898,9 +949,12 @@ main {
 }
 .dish-card:hover {
   padding-right: 50px;
+  /* Icons indicating that the meal is selected */
 }
 .dish-card:hover .dish-card__selection-icon {
   transform: none;
+  /* Icon within the element */
+  /* Give the rotation animation. We give it on the hover to replay it on each hover, and not only once */
 }
 .dish-card:hover .dish-card__selection-icon i {
   transform: rotate(0turn);
@@ -914,6 +968,13 @@ main {
     flex-direction: column;
     min-width: 230px;
     max-width: 500px;
+    /* Contains the name of the meal + its description */
+    /* Name of the meal */
+    /* Description of the meal */
+    /* Price of the meal */
+    /* Change the margins. To avoid the card changing size when the element appears, the price is at the bottom of the page with a gap above it (margin). As the icon appears, the gap above shrinks while the bottom margins grows to create space for the icon */
+    /* Icons indicating that the meal is selected */
+    /* Change the position of the element to be on the bottom, with the same logic */
     /*******************************************************/
     /* Animations */
   }
@@ -953,6 +1014,8 @@ main {
   }
   .dish-card:hover {
     padding-right: 0;
+    /* Price of the meal */
+    /* Invert top and botto margin to move the price */
   }
   .dish-card:hover .dish-card__price {
     margin-top: 0;
@@ -1005,10 +1068,16 @@ main {
   color: transparent;
   transition: background-position 2s;
   /* Gradient heart */
-  /* Hover styles */
+  /*******************************************************
+      Animations
+  ********************************************************/
+  /* On hover, both of the gradients rise to change the color smoothly:
+          The HTML icon goes from black to transparent
+          The CSS heart goes from transparent to gradient
+  */
 }
 .fav-btn::after {
-  /* Including the heart */
+  /* Including the heart, as recommended by FontAwesome */
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
@@ -1018,7 +1087,8 @@ main {
   content: "\f004";
   /* Heart color */
   /*
-  The background gradient half-transparent / half-gradient is cliped onto the icon and only the transparent part appears. During the transition, the gradient will replace the transparency.
+      The background gradient half-transparent / half-gradient is cliped onto the icon and only the transparent part appears. During the transition, the gradient will replace the transparency.
+      Same method used with the HTML heart icon, described above.
   */
   background-image: linear-gradient(0, #FF79DA 0%, #9356DC 50%, transparent 50%, transparent 100%);
   background-size: auto 200%;
@@ -1095,8 +1165,11 @@ main {
   align-content: flex-start;
   gap: 0 0;
   backface-visibility: hidden;
+  /* Image inside of the face */
+  /* Icon inside of the face */
   /* Cube face initial orientation */
   transform-origin: center center -12.5vmin;
+  /* Targets the different sides to place them in a cube fashion. Apply a translation to center them correctly, then a rotation to place the face, then a rotation to orient their content if needed */
 }
 .loading-spinner__cube-face img {
   width: 90%;

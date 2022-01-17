@@ -11,10 +11,11 @@ $border-radius: $space-150x;
 
 /* Styles */
 .restaurant-card {
-    @include shadow();
+    @include shadow(); //Adds light shadow
     border-radius:$border-radius;
 
 
+    /* Grid layout with two columns and three rows */
     @include grid(1fr auto, auto auto auto, "img img""title fav""location fav", $align-items: flex-start);
 
 
@@ -22,39 +23,44 @@ $border-radius: $space-150x;
     @include position($type: relative);
 
 
+    /* Image of the card */
     &__img {
-        @include dimensions($width: 100%);
-        border-radius: $border-radius $border-radius 0 0;
+        @include dimensions-wide; //width: 100%
+        border-radius: $border-radius $border-radius 0 0; //Border radius on the top corners, to match the border radius of the card
         aspect-ratio: 2/1; /* Keeps the image at the same aspect-ratio, whatever the viewport width is. Thus, keeps the restaurant-card correctly proportionned */
         object-fit: cover;
         grid-area: img;
     }
 
 
+    /* Name of the restaurant */
     &__title {
-        @include margin-reset();
-        @include text-style($size: $m-font-size, $weight: bold);
+        @include margin-reset(); //No margin
+        @include text-style($size: $m-font-size, $weight: bold); //Mediu and bold text
         padding: $space-200x 0 $space-base $space-200x;
         grid-area: title;
     }
 
 
+    /* Link to the restaurant menu. Covers the entire card using a pseudo-element */
     &__link {
-        @include link-reset();
+        @include link-reset(); //Reset default link styling
 
         /* Make the whole card clicable */
         @include pseudo-cover($border-radius);
     }
 
 
+    //Restaurant location
     &__location {
-        @include margin-reset();
-        @include text-style();
+        @include margin-reset(); //No margin
+        @include text-style(); //Default text styling, see the mixin
         padding:  0 0 $space-200x $space-200x;
         grid-area: location;
     }
 
 
+    //Fav button, override padding and margins to place the element
     .fav-btn {
         grid-area: fav;
         padding: $space-200x;
@@ -67,7 +73,7 @@ $border-radius: $space-150x;
         Animations
     ********************************************************/
 
-    @include button-hover;
+    @include button-hover; //Darkens the shadow
 
 
 
@@ -78,8 +84,8 @@ $border-radius: $space-150x;
     /* New modifier, ta add the "Nouveau" badge */
     &--new::before {
         content: "Nouveau";
-        @include text-style($weight: bold, $color: color.scale($tertiary-color, $lightness: -50%), $size: $s-font-size);
-        @include position($top: $space-150x, $right: $space-150x);
+        @include text-style($weight: bold, $color: color.scale($tertiary-color, $lightness: -50%), $size: $s-font-size); //Bold, small text, with a darker tertiary color
+        @include position($top: $space-150x, $right: $space-150x); //Positions the badge on the top right corner of the card
         background-color: $tertiary-color;
         padding: $space-base $space-150x;
         border-radius: 3px;

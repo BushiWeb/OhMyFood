@@ -7,12 +7,13 @@
 ********************************************************************************/
 
 .btn {
-    @include link-reset();
-    @include text-style($weight: bold, $align: center, $color: white, $line-height: 1.15);
-    @include shadow();
+    /* Basic styling */
+    @include link-reset(); //Reset the default styles
+    @include text-style($weight: bold, $align: center, $color: white, $line-height: 1.15); //Bold text, centered, white with line-height of 1.15
+    @include shadow(); //Add light shadow
     padding: $space-200x $space-400x;
     border-radius: calc($space-200x * 2 + $base-font-size * 1.15); /* Calculate the button height using the padding and the line-height */
-    background-image: linear-gradient(172deg, $secondary-color 0%, $primary-color 100%);
+    background-image: linear-gradient(172deg, $secondary-color 0%, $primary-color 100%); //Diagonal linear gradient from the secondary color to the primary color
 
 
 
@@ -20,6 +21,7 @@
         Animations
     ********************************************************/
 
+    /* Mixin darkens shadow. Add property to lighten the gradient */
     @include button-hover {
         background-image: linear-gradient(172deg, color.scale($secondary-color, $lightness: 15%) 0%, color.scale($primary-color, $lightness: 15%) 100%);
     }

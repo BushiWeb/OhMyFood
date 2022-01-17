@@ -13,46 +13,51 @@ $fade-out-duration: 750ms;
 /* Styles */
 .loading-spinner {
     /* Loader position */
-    @include position(fixed, 0, 0, 0, 0);
-    z-index: 100;
+    @include position(fixed, 0, 0, 0, 0); //Place the container to cover te entire viewport and stay fix on scroll
+    z-index: 100; //The container covers everything
     background-color: $neutral-base;
-    transform: translate(200%);
+    transform: translate(200%); //The container is translated on the side to disapear (only active after the animation, due to backward fill mode
 
 
     /* Animation: fade-out after 3s */
     animation: fade-out $fade-out-duration $screen-time backwards;
 
 
-    perspective: 1000px;
+    perspective: 1000px; //Sets up perspective for the cube
 
 
+    //Represents the cube, container of the faces
     &__cube {
-        @include position(fixed, 50%, 50%);
+        @include position(fixed, 50%, 50%); //Centers the cube
         transform-style: preserve-3d;
-        transform-origin: center center math.div(-$cube-size, 2);
-        animation: cube-rotation $screen-time infinite;
+        transform-origin: center center math.div(-$cube-size, 2); //The origin is in the middle of the cube, which means at the center of the element and back (half of the cube size)
+        animation: cube-rotation $screen-time infinite; //Animation of the cube rotation
     }
 
 
+    //Represent a face of the cube
     &__cube-face {
         /* Cube face position */
-        @include dimensions($size: $cube-size);
-        @include position(fixed, 50%, 50%);
-        @include flexbox($justify-content: center, $align-items: center);
+        @include dimensions($size: $cube-size); //Give widht and height
+        @include position(fixed, 50%, 50%); //Centers the face
+        @include flexbox($justify-content: center, $align-items: center); //Centers the content of the face, ether an image or an icon
         backface-visibility: hidden;
 
+        /* Image inside of the face */
         img {
             width: 90%;
         }
 
+        /* Icon inside of the face */
         i {
             font-size: $cube-size * 0.8;
         }
 
 
         /* Cube face initial orientation */
-        transform-origin: center center math.div(-$cube-size, 2);
+        transform-origin: center center math.div(-$cube-size, 2); //The origin is in the middle of the cube, which means at the center of the element and back (half of the cube size)
 
+        /* Targets the different sides to place them in a cube fashion. Apply a translation to center them correctly, then a rotation to place the face, then a rotation to orient their content if needed */
         &:nth-child(1) {
             transform: translate(-50%, -50%);
         }
