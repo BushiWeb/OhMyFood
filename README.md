@@ -17,5 +17,16 @@ This website consists of:
 - Frontend only.
 - Mobile first.
 - Sass, to create the stylesheet.
-- Normalize.css, to unify default styles accross browsers.
+- [https://github.com/necolas/normalize.css](Normalize.css), to unify default styles accross browsers.
 - No JavaScript, the animations are done using CSS only.
+
+## Browser compatibility
+This website is compatible with thel last versions of the following desktop / mobile browsers:
+- Google Chrome
+- Mozilla Firefox
+- Microsoft Edge
+- Opera
+
+## Images
+- Icons are provided by [https://fontawesome.com/](FontAwesome)
+- To improve performances and reduce data consumption, images are available in two formats (WebP and Jpeg) and four sizes
