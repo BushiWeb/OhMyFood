@@ -46,7 +46,7 @@ $bubble-size: $space-300x;
 
 
     /* Last step styling */
-    &:last-child {
+    &:hover {
         background-color: color.scale($primary-color, $alpha: -90%);
         .step-card__icon {
             color: $primary-color;

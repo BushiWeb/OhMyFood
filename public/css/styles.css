@@ -761,10 +761,10 @@ main {
   transform: translate(-50%, -50%);
   background-color: #9356DC;
 }
-.step-card:last-child {
+.step-card:hover {
   background-color: rgba(147, 86, 220, 0.1);
 }
-.step-card:last-child .step-card__icon {
+.step-card:hover .step-card__icon {
   color: #9356DC;
 }
 
