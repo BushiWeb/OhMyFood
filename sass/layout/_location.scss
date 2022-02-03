@@ -1,5 +1,5 @@
 /********************************************************************************
-    Location block
+    Location form
 ********************************************************************************/
 
 .location {
@@ -11,4 +11,17 @@
 
 
     @include flexbox($justify-content: center, $column-gap: $space-200x); //Flexbox layout to align the text and the icon
+
+    /* Input field for the location */
+    &__input {
+        /* Reset input default styling */
+        border: none;
+        background: inherit;
+        @include padding-reset;
+        @include margin-reset;
+
+        @include text-style($weight: bold, $align: center); //Bold text
+
+        width: 13ch; //Largeur du champ
+    }
 }

@@ -1267,7 +1267,7 @@ main {
 }
 
 /********************************************************************************
-    Location block
+    Location form
 ********************************************************************************/
 .location {
   color: inherit;
@@ -1289,6 +1289,23 @@ main {
   align-items: baseline;
   align-content: flex-start;
   gap: 0 16px;
+  /* Input field for the location */
+}
+.location__input {
+  /* Reset input default styling */
+  border: none;
+  background: inherit;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-variant: normal;
+  font-style: normal;
+  line-height: initial;
+  width: 13ch;
 }
 
 /********************************************************************************
