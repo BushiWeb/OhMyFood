@@ -1,4 +1,4 @@
-# EmericFrancisod_3_27122021
+# OhMyFood!
 This website corresponds to the second project of the OpenClassrooms web developer training.
 
 ## Ohmyfood!
